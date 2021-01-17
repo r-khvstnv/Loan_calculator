@@ -9,19 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="myWhite" >#EFEFEF</color>
-    <color name="myWhiteDark" >#BFEFEFEF</color>
-    <color name="myOrange">#F3A63A</color>
-    <color name="myRed">#AE435B</color>
-    <color name="myPurple">#7A4C75</color>
-    <color name="myBlue">#63BBD9</color>
-    <color name="myBlack">#121212</color>
-    <color name="myDarkPurple">#312C51</color>
-
-
     <color name="myPink">#ff9e9e</color>
-    <color name="myPurple2">#56549e</color>
-    <color name="myGreen">#72cec1</color>
-    <color name="myBlue2">#54acf6</color>
 
     <!-- Цвета меняющиеся также при изменении темы-->
     <color name="myWhite_DarkBlue">#EFEFEF</color>
