@@ -21,5 +21,17 @@
     <color name="myPink">#ff9e9e</color>
     <color name="myPurple2">#56549e</color>
     <color name="myGreen">#72cec1</color>
-    <color name="myBlue2">#54acf6</color>h
+    <color name="myBlue2">#54acf6</color>
+
+    <!-- Цвета меняющиеся также при изменении темы-->
+    <color name="myWhite_DarkBlue">#EFEFEF</color>
+    <color name="myWhite_GoldTransparent">#EFEFEF</color>
+    <color name="myPink_GoldTransparent">#ff9e9e</color>
+    <color name="myPinkLight">#E9DADA</color>
+    <color name="myDarkBlueN">#292E3C</color>
+    <color name="myDarkBlue_GoldTransparent">#292E3C</color>
+    <color name="myGoldTransparent">#B3F5BC8C</color>
+    <color name="myGold">#F5BC8C</color>
+
+
 </resources>

@@ -6,13 +6,17 @@
     android:viewportHeight="48">
     <group>
         <path
-            android:fillColor="#7A4C75"
-            android:strokeColor="#F3A63A"
+            android:fillColor="#292E3C"
+            android:pathData="M4 8c0-4.42 3.58-8 8-8h84c4.42 0 8 3.58 8 8v24c0 4.42-3.58 8-8 8h-84c-4.42 0-8-3.58-8-8z"/>
+        <path
+            android:strokeColor="#CCF5BC8C"
             android:strokeWidth="1"
             android:pathData="M4.5 8c0-4.14 3.36-7.5 7.5-7.5h84c4.14 0 7.5 3.36 7.5 7.5v24c0 4.14-3.36 7.5-7.5 7.5h-84c-4.14 0-7.5-3.36-7.5-7.5z"/>
         <path
-            android:fillColor="#F3A63A"
-            android:strokeColor="#F3A63A"
+            android:fillColor="#CCF5BC8C"
+            android:pathData="M54 8c0-4.42 3.58-8 8-8h34c4.42 0 8 3.58 8 8v24c0 4.42-3.58 8-8 8h-34c-4.42 0-8-3.58-8-8z"/>
+        <path
+            android:strokeColor="#CCF5BC8C"
             android:strokeWidth="1"
             android:pathData="M54.5 8c0-4.14 3.36-7.5 7.5-7.5h34c4.14 0 7.5 3.36 7.5 7.5v24c0 4.14-3.36 7.5-7.5 7.5h-34c-4.14 0-7.5-3.36-7.5-7.5z"/>
         <path
