@@ -12,7 +12,6 @@
         <activity
             android:name=".CreditDetail"
             android:windowSoftInputMode="stateAlwaysVisible" />
-        <activity android:name=".FinalTable" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

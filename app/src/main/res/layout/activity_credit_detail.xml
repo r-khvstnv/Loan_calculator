@@ -1,183 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:ads="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@drawable/layout_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/layout_background"
+    android:orientation="vertical"
     tools:context=".CreditDetail">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="visible"
         >
+
+        <!-- Credit type -->
         <TextView
-            android:textSize="26sp"
             android:id="@+id/tv_credit_type"
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="50dp"
-            android:text="@string/credit_type"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/st_credit_type"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:textSize="26sp"
+            />
+        <TextView
             android:id="@+id/tv_selectedCreditType"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="50dp"
-            android:text="@string/selected_credit_type"
+            app:layout_constraintLeft_toRightOf="@id/tv_credit_type"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Selected"
             android:textAlignment="textStart"
             android:textColor="@color/myDarkBlue_GoldTransparent"
-            app:layout_constraintLeft_toRightOf="@id/tv_credit_type"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="26sp"
+            />
 
+        <!-- Loan amount -->
         <TextView
-            android:textSize="22sp"
             android:id="@+id/tv_loanAmount"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
             android:layout_marginEnd="30dp"
-            android:text="@string/loan_amount"
+            app:layout_constraintBottom_toBottomOf="@+id/et_amount"
+            app:layout_constraintRight_toLeftOf="@id/et_amount"
+            android:text="@string/st_loan_amount"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
-            app:layout_constraintRight_toLeftOf="@id/et_amount"
-            app:layout_constraintTop_toBottomOf="@id/tv_credit_type" />
-
-        <EditText
             android:textSize="22sp"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
-            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+            />
+        <EditText
             android:id="@+id/et_amount"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginEnd="30dp"
-            android:hint="@string/units"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_credit_type"
+            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
             android:ems="3"
+            android:hint="@string/st_units_hint"
             android:inputType="numberSigned"
             android:textAlignment="textEnd"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_credit_type" />
-
-        <TextView
-            android:id="@+id/tv_percentage"
-            android:textSize="22sp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/annual_percentage"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            app:layout_constraintRight_toLeftOf="@id/et_percent"
-            app:layout_constraintTop_toBottomOf="@id/et_amount" />
-
-        <EditText
-            android:id="@+id/et_percent"
-            android:textSize="22sp"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
             android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
-            android:layout_marginEnd="30dp"
-            android:hint="%"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:textAlignment="textEnd"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_amount" />
-
-        <TextView
-            android:id="@+id/tv_period"
             android:textSize="22sp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/period"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            app:layout_constraintRight_toLeftOf="@id/et_loanPeriod"
-            app:layout_constraintTop_toBottomOf="@id/et_percent" />
-
-        <EditText
-            android:id="@+id/et_loanPeriod"
-            android:textSize="22sp"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
-            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
-            android:layout_marginRight="30dp"
-            android:hint="@string/months"
-            android:ems="10"
-            android:inputType="numberSigned"
-            android:textAlignment="textEnd"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_percent" />
-
-        <com.google.android.gms.ads.AdView
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/adView_secondBanner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="70dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_calculate"
-            ads:layout_constraintTop_toBottomOf="@id/et_loanPeriod"
-            ads:adSize="SMART_BANNER"
-            ads:adUnitId="@string/banner_id"
-            >
-
-        </com.google.android.gms.ads.AdView>
-
-        <Button
-            android:id="@+id/btn_calculate"
-            android:textSize="24sp"
-            android:background="@drawable/calculate_button_background"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"
-            android:paddingHorizontal="50dp"
-            android:elevation="10dp"
-            android:translationZ="10dp"
-            android:text="@string/calculate"
-            android:textColor="@color/myWhite_GoldTransparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
-
-        <Button
-            android:id="@+id/btn_undo"
-            android:background="@drawable/undo_button"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginBottom="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:elevation="10dp"
-            android:translationZ="10dp"
-
             />
 
+        <!-- Interest -->
+        <TextView
+            android:id="@+id/tv_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="@id/et_percent"
+            app:layout_constraintRight_toLeftOf="@id/et_percent"
+            android:text="@string/st_annual_percentage"
+            android:textAlignment="textEnd"
+            android:textColor="@color/myDarkBlue_GoldTransparent"
+            android:textSize="22sp"
+            />
+        <EditText
+            android:id="@+id/et_percent"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_et_gap"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_amount"
+            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
+            android:ems="10"
+            android:hint="%"
+            android:inputType="numberSigned"
+            android:textAlignment="textEnd"
+            android:textColor="@color/myDarkBlue_GoldTransparent"
+            android:textColorHint="@color/myDarkBlue_GoldTransparent"
+            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+            android:textSize="22sp"
+            />
+
+        <!-- Period -->
+        <TextView
+            android:id="@+id/tv_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="@id/et_loanPeriod"
+            app:layout_constraintRight_toLeftOf="@id/et_loanPeriod"
+            android:text="@string/st_period"
+            android:textAlignment="textEnd"
+            android:textColor="@color/myDarkBlue_GoldTransparent"
+            android:textSize="22sp"
+            />
+        <EditText
+            android:id="@+id/et_loanPeriod"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_et_gap"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_percent"
+            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
+            android:ems="10"
+            android:hint="@string/st_months_hint"
+            android:inputType="numberSigned"
+            android:textAlignment="textEnd"
+            android:textColor="@color/myDarkBlue_GoldTransparent"
+            android:textColorHint="@color/myDarkBlue_GoldTransparent"
+            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+            android:textSize="22sp"
+            />
+
+        <!-- Grace period -->
+        <TextView
+            android:id="@+id/tv_gracePeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="@id/et_gracePeriod"
+            app:layout_constraintRight_toLeftOf="@id/et_gracePeriod"
+            android:text="@string/st_grace_period"
+            android:textAlignment="textEnd"
+            android:textColor="@color/myDarkBlue_GoldTransparent"
+            android:textSize="22sp"
+            />
+        <EditText
+            android:id="@+id/et_gracePeriod"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_et_gap"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_period"
+            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
+            android:ems="10"
+            android:text="0"
+            android:inputType="numberSigned"
+            android:textAlignment="textEnd"
+            android:textColor="@color/myDarkBlue_GoldTransparent"
+            android:textColorHint="@color/myDarkBlue_GoldTransparent"
+            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+            android:textSize="22sp"
+            />
+
+        <!-- Ads -->
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView_detailsFirstBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_id"
+            ads:layout_constraintTop_toBottomOf="@id/et_gracePeriod">
+        </com.google.android.gms.ads.AdView>
+
+        <!-- Calculate button -->
+        <LinearLayout
+            android:id="@+id/ll_calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/adView_detailsFirstBanner"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/calculate_button_background"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="50dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/st_calculate"
+                android:textAllCaps="true"
+                android:textColor="@color/myWhite_GoldTransparent"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <!-- Layout with all detailed info -->
+        <LinearLayout
+            android:id="@+id/ll_resultTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_calculate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="vertical"
+            >
+            <!-- Titles for detailed info -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="@dimen/dim_item_month_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_month"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="14sp"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_main_debt"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_interest"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_total_payment"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    />
+                <TextView
+                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_balance"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    />
+            </LinearLayout>
+
+            <!-- Rv with detailed items-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_detailsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <!-- Total payments info-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="5dp"
+                android:text="@string/st_title_total"
+                android:textAlignment="center"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textSize="24sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_main_debt"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_main_debt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    tools:text="1000000"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="24sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_interest"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_total_interest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    tools:text="1000000"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="24sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/st_title_full_payment"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_total_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    tools:text="1000000"
+                    android:textAlignment="center"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="24sp"
+                    />
+            </LinearLayout>
+
+
+            <!-- Ads -->
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView_detailsSecondBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="@string/banner_id"
+                >
+            </com.google.android.gms.ads.AdView>
+
+
+            <!-- Main Page button -->
+            <LinearLayout
+                android:id="@+id/ll_mainPage"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginVertical="30dp"
+                android:background="@drawable/calculate_button_background"
+                android:layout_gravity="center"
+                android:elevation="5dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="50dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/st_main_page"
+                    android:textAllCaps="true"
+                    android:textColor="@color/myWhite_GoldTransparent"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </ScrollView>

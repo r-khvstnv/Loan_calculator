@@ -9,9 +9,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_main.*
+import com.rssll971.loancalculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    //binding
+    private lateinit var binding: ActivityMainBinding
     //Различные переменные
     //режим темы
     private var isNightMode: Boolean = false
@@ -22,7 +24,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         //Автоматическая смена темы согласно устройству
             //Проверяем не зыпускалась ли активити,
@@ -30,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         when(isFirstRun){
             false -> {/*ничего не изменяем, тк мы вернулись к этой активити*/}
 
-            true -> {themeModeDefault()} //вводим именения, тк первый запуск
+            true -> {themeModeDefault()} //вводим изменения, тк первый запуск
         }
 
         //******************************************************************
@@ -45,20 +49,20 @@ class MainActivity : AppCompatActivity() {
         //Реклама
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder().build()
-        adView_firstBanner.loadAd(adRequest)
+        binding.adViewFirstBanner.loadAd(adRequest)
 
         //Кнопки выбранного кредита
         //дополнительно передаем значение типа кредита
-        ll_annuty.setOnClickListener {
-            setCreditInfo(R.string.annuity)
+        binding.llAnnuity.setOnClickListener {
+            setCreditInfo(binding.tvAnnuityTitle.text.toString())
         }
-        ll_proportional.setOnClickListener {
-            setCreditInfo(R.string.proportional)
+        binding.llProportional.setOnClickListener {
+            setCreditInfo(binding.tvProportionalTitle.text.toString())
         }
 
 
         //Кнопка смены темы
-        tb_nightMode.setOnCheckedChangeListener { _, isChecked ->
+        binding.tbNightMode.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 //Меняем тему на темную
                 themeModeToDark()
@@ -87,10 +91,8 @@ class MainActivity : AppCompatActivity() {
 
     // установить соответсвенно той, что на устройстве
     private fun themeModeDefault(){
-        //Текущая тема на устройстве
-        var currentNightMode = Configuration.UI_MODE_NIGHT_MASK
         //Меняем режим темы на аналогичный устройстве
-        when(currentNightMode){
+        when(Configuration.UI_MODE_NIGHT_MASK){
             //Светлая тема
             Configuration.UI_MODE_NIGHT_NO -> {
                 isNightMode = false
@@ -109,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
 
     //Блок для перехода к заполению данных о кредите
-    private fun setCreditInfo(loanType: Int){
+    private fun setCreditInfo(loanType: String){
         //Запуск приложения успешно совершен
         //сообщаем это программе, чтобы при возращении обратно к этой активити
         //не возникли проблемы
@@ -117,12 +119,10 @@ class MainActivity : AppCompatActivity() {
 
         //Создаем новую активити
         val intent = Intent(this, CreditDetail::class.java)
-        //TODO ПЕРЕДАТЬ ЗНАЧЕНИЯ ТЕМЫ И ЯЗЫКА
+        intent.putExtra("LoanType", loanType)
         //TODO ПЕРЕДАТЬ ТИП КРЕДИТА
         //запускаем новую активити
         startActivity(intent)
-        //завершаем текущую активити
-        finish()
     }
 
 

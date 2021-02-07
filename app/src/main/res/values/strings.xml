@@ -1,25 +1,35 @@
 <resources>
+    <!-- TODO TEST ID-->
     <string name="ad_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
 
 
     <string name="app_name">Loan calculator</string>
-    <string name="type_of_credit">Select Type of Loan</string>
-    <string name="proportional">Proportional</string>
-    <string name="annuity">Annuity</string>
-    <string name="annuity_meaning">Annuity meaning</string>
-    <string name="proportional_meaning">Proportional meaning</string>
-    <string name="prompt">Prompt</string>
 
-    <string name="credit_type">Type of credit:</string>
-    <string name="selected_credit_type">Selected</string>
-    <string name="loan_amount">Loan amount:</string>
-    <string name="units">c.u</string>
-    <string name="annual_percentage">Interest:</string>
-    <string name="period">Period:</string>
-    <string name="months">months</string>
-    <string name="calculate">Calculate</string>
-    <string name="detailed">Detailed</string>
+    <string name="st_title_credit_choose">Select Type of Loan</string>
+    <string name="st_proportional">Proportional</string>
+    <string name="st_annuity">Annuity</string>
+    <string name="st_annuity_meaning">Annuity meaning</string>
+    <string name="st_proportional_meaning">Proportional meaning</string>
+    <string name="st_prompt">Prompt</string>
+
+    <string name="st_credit_type">Type of credit:</string>
+    <string name="st_loan_amount">Loan amount:</string>
+    <string name="st_units_hint">c.u</string>
+    <string name="st_annual_percentage">Interest:</string>
+    <string name="st_period">Period:</string>
+    <string name="st_months_hint">months</string>
+    <string name="st_grace_period">Grace Period:</string>
+    <string name="st_calculate">Calculate</string>
+
+    <string name="st_month">Month</string>
+    <string name="st_title_main_debt">Main Debt</string>
+    <string name="st_title_interest">Interest</string>
+    <string name="st_title_total_payment">Payment</string>
+    <string name="st_title_balance">Balance</string>
+    <string name="st_title_total">Total:</string>
+    <string name="st_title_full_payment">Full payment</string>
+    <string name="st_main_page">Main Page</string>
 
 
 </resources>

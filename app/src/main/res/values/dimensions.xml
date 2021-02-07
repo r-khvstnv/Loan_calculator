@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dim_et_gap">40dp</dimen>
+    <dimen name="dim_item_text_size">14sp</dimen>
+    <dimen name="dim_item_title_text_size">18sp</dimen>
+    <dimen name="dim_item_width">90dp</dimen>
+    <dimen name="dim_item_month_width">40dp</dimen>
+
+</resources>

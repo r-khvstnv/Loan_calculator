@@ -7,44 +7,49 @@
     android:orientation="vertical"
     android:background="@drawable/layout_background"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/tv_typeOfCredit"
+    <LinearLayout
+        android:id="@+id/ll_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:paddingRight="30dp"
-        android:paddingLeft="20dp"
-        android:paddingVertical="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:elevation="10dp"
-        android:translationZ="10dp"
-        android:text="@string/type_of_credit"
-        android:textSize="28sp"
-        android:textAlignment="textStart"
-        android:textColor="@color/myWhite_DarkBlue"
+        android:elevation="5dp"
         android:background="@drawable/credit_type_main_background"
-        />
-    <LinearLayout
-        android:id="@+id/ll_annuty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/credit_layout_background"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:elevation="10dp"
-        android:translationZ="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_typeOfCredit">
-
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="30dp"
+            android:paddingLeft="20dp"
+            android:paddingVertical="10dp"
+            android:text="@string/st_title_credit_choose"
+            android:textSize="28sp"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite_DarkBlue"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_annuity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_title"
+        android:background="@drawable/credit_layout_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:elevation="5dp"
+        >
+        <TextView
+            android:id="@+id/tv_annuity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/annuity"
+            android:text="@string/st_annuity"
             android:textSize="28sp"
             android:textColor="@color/myPink_GoldTransparent"
             />
@@ -52,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/annuity_meaning"
+            android:text="@string/st_annuity_meaning"
             android:textSize="18sp"
             android:textColor="@color/myWhite_GoldTransparent"
             />
@@ -60,30 +65,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/prompt"
+            android:text="@string/st_prompt"
             android:textSize="14sp"
             android:textColor="@color/myWhite_GoldTransparent"
             />
     </LinearLayout>
+
+
     <LinearLayout
         android:id="@+id/ll_proportional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_annuity"
         android:background="@drawable/credit_layout_background"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:elevation="10dp"
-        android:translationZ="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_annuty">
-
+        android:elevation="5dp"
+        >
         <TextView
+            android:id="@+id/tv_proportional_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/proportional"
+            android:text="@string/st_proportional"
             android:textSize="28sp"
             android:textColor="@color/myPink_GoldTransparent"
             />
@@ -91,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/proportional_meaning"
+            android:text="@string/st_proportional_meaning"
             android:textSize="18sp"
             android:textColor="@color/myWhite_GoldTransparent"
             />
@@ -137,7 +144,7 @@
         android:elevation="10dp"
         android:translationZ="10dp"
         android:orientation="horizontal"
-        android:background="@drawable/darkmode_toggle"
+        android:background="@drawable/dark_mode_toggle"
         android:textOff=""
         android:textOn=""
         android:checked="false"
