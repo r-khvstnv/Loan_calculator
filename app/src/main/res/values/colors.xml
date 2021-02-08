@@ -16,7 +16,8 @@
     <color name="myWhite_GoldTransparent">#EFEFEF</color>
     <color name="myPink_GoldTransparent">#ff9e9e</color>
     <color name="myPinkLight">#E9DADA</color>
-    <color name="myDarkBlueN">#292E3C</color>
+    <color name="myDarkBlue">#292E3C</color>
+    <color name="myDarkBlue_BlackBlue">#292E3C</color>
     <color name="myDarkBlue_GoldTransparent">#292E3C</color>
     <color name="myGoldTransparent">#B3F5BC8C</color>
     <color name="myGold">#F5BC8C</color>

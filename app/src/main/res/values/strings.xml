@@ -23,9 +23,9 @@
     <string name="st_calculate">Calculate</string>
 
     <string name="st_month">Month</string>
-    <string name="st_title_main_debt">Main Debt</string>
+    <string name="st_title_debt">Main Debt</string>
     <string name="st_title_interest">Interest</string>
-    <string name="st_title_total_payment">Payment</string>
+    <string name="st_title_total_payment">Total Payment</string>
     <string name="st_title_balance">Balance</string>
     <string name="st_title_total">Total:</string>
     <string name="st_title_full_payment">Full payment</string>

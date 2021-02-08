@@ -3,17 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/layout_background"
     android:orientation="vertical"
     tools:context=".CreditDetail">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"
         >
-
         <!-- Credit type -->
         <TextView
             android:id="@+id/tv_credit_type"
@@ -23,6 +24,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_selectedCreditType"
             android:text="@string/st_credit_type"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
@@ -36,6 +38,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintLeft_toRightOf="@id/tv_credit_type"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             tools:text="Selected"
             android:textAlignment="textStart"
             android:textColor="@color/myDarkBlue_GoldTransparent"
@@ -45,11 +48,12 @@
         <!-- Loan amount -->
         <TextView
             android:id="@+id/tv_loanAmount"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             app:layout_constraintBottom_toBottomOf="@+id/et_amount"
             app:layout_constraintRight_toLeftOf="@id/et_amount"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:text="@string/st_loan_amount"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
@@ -57,7 +61,7 @@
             />
         <EditText
             android:id="@+id/et_amount"
-            android:layout_width="150dp"
+            android:layout_width="@dimen/dim_edit_text_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginEnd="30dp"
@@ -77,19 +81,20 @@
         <!-- Interest -->
         <TextView
             android:id="@+id/tv_percentage"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_percent"
-            app:layout_constraintRight_toLeftOf="@id/et_percent"
+            app:layout_constraintBottom_toBottomOf="@id/et_interest"
+            app:layout_constraintRight_toLeftOf="@id/et_interest"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:text="@string/st_annual_percentage"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textSize="22sp"
             />
         <EditText
-            android:id="@+id/et_percent"
-            android:layout_width="150dp"
+            android:id="@+id/et_interest"
+            android:layout_width="@dimen/dim_edit_text_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginEnd="30dp"
@@ -109,11 +114,12 @@
         <!-- Period -->
         <TextView
             android:id="@+id/tv_period"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             app:layout_constraintBottom_toBottomOf="@id/et_loanPeriod"
             app:layout_constraintRight_toLeftOf="@id/et_loanPeriod"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:text="@string/st_period"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
@@ -121,12 +127,12 @@
             />
         <EditText
             android:id="@+id/et_loanPeriod"
-            android:layout_width="150dp"
+            android:layout_width="@dimen/dim_edit_text_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginEnd="30dp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_percent"
+            app:layout_constraintTop_toBottomOf="@id/et_interest"
             android:backgroundTint="@color/myDarkBlue_GoldTransparent"
             android:ems="10"
             android:hint="@string/st_months_hint"
@@ -141,11 +147,12 @@
         <!-- Grace period -->
         <TextView
             android:id="@+id/tv_gracePeriod"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             app:layout_constraintBottom_toBottomOf="@id/et_gracePeriod"
             app:layout_constraintRight_toLeftOf="@id/et_gracePeriod"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:text="@string/st_grace_period"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
@@ -153,7 +160,7 @@
             />
         <EditText
             android:id="@+id/et_gracePeriod"
-            android:layout_width="150dp"
+            android:layout_width="@dimen/dim_edit_text_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginEnd="30dp"
@@ -187,11 +194,11 @@
             android:id="@+id/ll_calculate"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="70dp"
             app:layout_constraintTop_toBottomOf="@id/adView_detailsFirstBanner"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@drawable/calculate_button_background"
+            android:background="@drawable/buttons_background"
             android:elevation="5dp"
             android:orientation="horizontal"
             android:paddingHorizontal="50dp"
@@ -211,11 +218,12 @@
             android:id="@+id/ll_resultTable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="80dp"
             app:layout_constraintTop_toBottomOf="@id/ll_calculate"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:orientation="vertical"
+            android:visibility="visible"
             >
             <!-- Titles for detailed info -->
             <LinearLayout
@@ -223,46 +231,65 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:gravity="center"
+                android:background="@color/myDarkBlue_BlackBlue"
+                android:elevation="5dp"
                 >
                 <TextView
-                    android:layout_width="@dimen/dim_item_month_width"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:rotation="-90"
                     android:text="@string/st_month"
                     android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="14sp"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
                     />
                 <TextView
-                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:text="@string/st_title_main_debt"
+                    android:layout_marginVertical="10dp"
+                    android:text="@string/st_title_debt"
                     android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold"
                     />
                 <TextView
-                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:text="@string/st_title_interest"
                     android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold"
                     />
                 <TextView
-                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:text="@string/st_title_total_payment"
                     android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold"
                     />
                 <TextView
-                    android:layout_width="@dimen/dim_item_width"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     android:text="@string/st_title_balance"
                     android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold"
                     />
             </LinearLayout>
 
@@ -271,103 +298,10 @@
                 android:id="@+id/rv_detailsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
+
                 >
             </androidx.recyclerview.widget.RecyclerView>
-
-
-            <!-- Total payments info-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="5dp"
-                android:text="@string/st_title_total"
-                android:textAlignment="center"
-                android:textColor="@color/myDarkBlue_GoldTransparent"
-                android:textSize="24sp"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="15dp"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/st_title_main_debt"
-                    android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="24sp"
-                    />
-                <TextView
-                    android:id="@+id/tv_main_debt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    tools:text="1000000"
-                    android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="24sp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="15dp"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/st_title_interest"
-                    android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="24sp"
-                    />
-                <TextView
-                    android:id="@+id/tv_total_interest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
-                    tools:text="1000000"
-                    android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="24sp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="15dp"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/st_title_full_payment"
-                    android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="24sp"
-                    />
-                <TextView
-                    android:id="@+id/tv_total_payment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    tools:text="1000000"
-                    android:textAlignment="center"
-                    android:textColor="@color/myDarkBlue_GoldTransparent"
-                    android:textSize="24sp"
-                    />
-            </LinearLayout>
 
 
             <!-- Ads -->
@@ -388,8 +322,8 @@
                 android:id="@+id/ll_mainPage"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
-                android:layout_marginVertical="30dp"
-                android:background="@drawable/calculate_button_background"
+                android:layout_marginVertical="40dp"
+                android:background="@drawable/buttons_background"
                 android:layout_gravity="center"
                 android:elevation="5dp"
                 android:orientation="horizontal"
@@ -404,8 +338,6 @@
                     android:textColor="@color/myWhite_GoldTransparent"
                     android:textSize="24sp" />
             </LinearLayout>
-
-
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
