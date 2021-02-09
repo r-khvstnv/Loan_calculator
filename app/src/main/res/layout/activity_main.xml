@@ -7,8 +7,8 @@
     android:orientation="vertical"
     android:background="@drawable/layout_background"
     tools:context=".MainActivity">
-    <LinearLayout
-        android:id="@+id/ll_title"
+    <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -16,19 +16,14 @@
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="5dp"
         android:background="@drawable/title_background"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="30dp"
-            android:paddingStart="20dp"
-            android:paddingVertical="10dp"
-            android:text="@string/st_title_credit_choose"
-            android:textSize="28sp"
-            android:textAlignment="textStart"
-            android:textColor="@color/myWhite_DarkBlue"
-            />
-    </LinearLayout>
+        android:paddingEnd="30dp"
+        android:paddingStart="20dp"
+        android:paddingVertical="10dp"
+        android:text="@string/st_title_credit_choose"
+        android:textSize="28sp"
+        android:textAlignment="textStart"
+        android:textColor="@color/myWhite_DarkBlue"
+        />
 
 
     <LinearLayout
@@ -38,7 +33,7 @@
         android:layout_marginTop="70dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
         android:background="@drawable/ll_credit_types_background"
         android:gravity="center_horizontal"
         android:orientation="vertical"
@@ -109,47 +104,31 @@
         android:id="@+id/adView_firstBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ads:layout_constraintBottom_toTopOf="@id/tb_language"
+        android:layout_marginTop="30dp"
+        ads:layout_constraintTop_toBottomOf="@id/ll_proportional"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="20dp"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_id"
         >
     </com.google.android.gms.ads.AdView>
 
-    <ToggleButton
-        android:id="@+id/tb_language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageButton
+        android:id="@+id/ib_settings"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="30dp"
-        android:elevation="10dp"
-        android:translationZ="10dp"
-        android:orientation="horizontal"
-        android:background="@drawable/lang_toggle"
-        android:textOff=""
-        android:textOn=""
+        android:background="@drawable/btn_settings"
+        android:contentDescription="@string/st_settings"
+        android:src="@drawable/ic_settings"
+        android:scaleType="fitCenter"
+        android:padding="10dp"
+        android:elevation="5dp"
         />
-    <ToggleButton
-        android:id="@+id/tb_nightMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintRight_toLeftOf="@id/tb_language"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="30dp"
-        android:elevation="10dp"
-        android:translationZ="10dp"
-        android:orientation="horizontal"
-        android:background="@drawable/dark_mode_toggle"
-        android:textOff=""
-        android:textOn=""
-        android:checked="false"
-        />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

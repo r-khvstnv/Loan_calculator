@@ -5,6 +5,10 @@
 
 
     <string name="app_name">Loan calculator</string>
+    <string name="app_version">1.0</string>
+    <string name="st_version">Version:</string>
+    <string name="st_back">Back</string>
+    <string name="st_settings">Settings</string>
 
     <string name="st_title_credit_choose">Select Type of Loan</string>
     <string name="st_proportional">Proportional</string>
@@ -27,9 +31,10 @@
     <string name="st_title_interest">Interest</string>
     <string name="st_title_total_payment">Total Payment</string>
     <string name="st_title_balance">Balance</string>
-    <string name="st_title_total">Total:</string>
+    <string name="st_title_total">Total</string>
     <string name="st_title_full_payment">Full payment</string>
     <string name="st_main_page">Main Page</string>
+
 
 
 </resources>

@@ -1,11 +1,17 @@
 package com.rssll971.loancalculator
 
+import android.app.Dialog
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
+import android.widget.TextView
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
@@ -14,13 +20,6 @@ import com.rssll971.loancalculator.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     //binding
     private lateinit var binding: ActivityMainBinding
-    //Различные переменные
-    //режим темы
-    private var isNightMode: Boolean = false
-    //Тип локализации
-    private var isLocalisationEng: Boolean = true
-    //Проверка на первый запуск активити
-    private var isFirstRun: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +27,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        //Автоматическая смена темы согласно устройству
-            //Проверяем не зыпускалась ли активити,
-            //тк пользователь мог сменить ее до этого
-        when(isFirstRun){
-            false -> {/*ничего не изменяем, тк мы вернулись к этой активити*/}
 
-            true -> {themeModeDefault()} //вводим изменения, тк первый запуск
-        }
+
+
 
         //******************************************************************
         //TODO УБРАТЬ, ТК ТОЛЬКО ДЛЯ ТЕСТОВОЙ ВЕРСИИ
@@ -60,18 +54,13 @@ class MainActivity : AppCompatActivity() {
             setCreditInfo(binding.tvProportionalTitle.text.toString())
         }
 
-
-        //Кнопка смены темы
-        binding.tbNightMode.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                //Меняем тему на темную
-                themeModeToDark()
-            } else {
-                //Меняем тему на светлую
-                themeModeToLight()
-            }
+        binding.ibSettings.setOnClickListener {
+            showSettings()
         }
-        //TODO СОЗДАТЬ СМЕНУ ЯЗЫКА И ЛОКАЛИЗАЦИЮ
+
+
+
+
 
     }
 
@@ -80,29 +69,27 @@ class MainActivity : AppCompatActivity() {
     //темная
     private fun themeModeToDark(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        isNightMode = true
     }
 
     //светлая
     private fun themeModeToLight(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        isNightMode = false
     }
 
     // установить соответсвенно той, что на устройстве
-    private fun themeModeDefault(){
+    private fun getNightModeStatus(): Boolean{
         //Меняем режим темы на аналогичный устройстве
-        when(Configuration.UI_MODE_NIGHT_MASK){
+        return when(resources.configuration.uiMode
+                and Configuration.UI_MODE_NIGHT_MASK){
             //Светлая тема
             Configuration.UI_MODE_NIGHT_NO -> {
-                isNightMode = false
-                themeModeToLight()
+                false
             }
             //Темная тема
             Configuration.UI_MODE_NIGHT_YES -> {
-                isNightMode = true
-                themeModeToDark()
+                true
             }
+            else -> false
         }
     }
     //--------------------------------------------------------------------
@@ -112,17 +99,40 @@ class MainActivity : AppCompatActivity() {
 
     //Блок для перехода к заполению данных о кредите
     private fun setCreditInfo(loanType: String){
-        //Запуск приложения успешно совершен
-        //сообщаем это программе, чтобы при возращении обратно к этой активити
-        //не возникли проблемы
-        isFirstRun = false
-
         //Создаем новую активити
         val intent = Intent(this, CreditDetail::class.java)
         intent.putExtra("LoanType", loanType)
-        //TODO ПЕРЕДАТЬ ТИП КРЕДИТА
         //запускаем новую активити
         startActivity(intent)
+    }
+
+
+    //настройки
+    private fun showSettings(){
+        val dialogSettings = Dialog(this)
+        dialogSettings.setContentView(R.layout.dialog_settings)
+        //чтобы применить кастомный фон
+        dialogSettings.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val tbNightMode = dialogSettings.findViewById<ToggleButton>(R.id.tb_nightMode)
+        var tbLanguage = dialogSettings.findViewById<ToggleButton>(R.id.tb_language)
+
+        dialogSettings.show()
+        getNightModeStatus()
+        if (getNightModeStatus()){
+            tbNightMode.isChecked = true
+        }
+
+        Log.i("NightMode", "${getNightModeStatus()}")
+        tbNightMode.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                //Меняем тему на темную
+                themeModeToDark()
+            } else {
+                //Меняем тему на светлую
+                themeModeToLight()
+            }
+        }
+        //TODO СОЗДАТЬ СМЕНУ ЯЗЫКА И ЛОКАЛИЗАЦИЮ
     }
 
 
