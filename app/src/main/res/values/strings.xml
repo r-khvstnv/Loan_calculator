@@ -1,22 +1,25 @@
 <resources>
     <!-- TODO TEST ID-->
-    <string name="ad_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_id" translatable="false">ca-app-pub-4362142146545991~8164250653</string>
+    <string name="main_banner_id" translatable="false">ca-app-pub-4362142146545991/6276453919</string>
+    <string name="first_details_banner_id" translatable="false">ca-app-pub-4362142146545991/2944370105</string>
+    <string name="second_details_banner_id" translatable="false">ca-app-pub-4362142146545991/6963506167</string>
 
 
-    <string name="app_name">Loan calculator</string>
-    <string name="app_version">1.0</string>
+    <string name="app_name">Simple Loan Сalculator</string>
+    <string name="app_version" translatable="false">1.0</string>
     <string name="st_version">Version:</string>
     <string name="st_back">Back</string>
     <string name="st_settings">Settings</string>
 
+    <!-- Main Activity-->
     <string name="st_title_credit_choose">Select Type of Loan</string>
-    <string name="st_proportional">Proportional</string>
+    <string name="st_proportional">Differential</string>
     <string name="st_annuity">Annuity</string>
-    <string name="st_annuity_meaning">Annuity meaning</string>
-    <string name="st_proportional_meaning">Proportional meaning</string>
-    <string name="st_prompt">Prompt</string>
-
+    <string name="st_annuity_meaning">The loan amount for payment is divided into unequal parts, and the interest rate is charged on the balance of the loan body. The amount of the contribution remains unchanged</string>
+    <string name="st_proportional_meaning">The loan amount is evenly divided for the entire term, and interest is charged monthly on the remaining amount of money. The amount of the contribution in the graph is reflected in unequal values</string>
+    <string name="st_prompt">Hint: More commonly used by banks</string>
+    <!-- Credit Details Activity-->
     <string name="st_credit_type">Type of credit:</string>
     <string name="st_loan_amount">Loan amount:</string>
     <string name="st_units_hint">c.u</string>
@@ -25,16 +28,14 @@
     <string name="st_months_hint">months</string>
     <string name="st_grace_period">Grace Period:</string>
     <string name="st_calculate">Calculate</string>
-
+    <!-- Result Layout-->
     <string name="st_month">Month</string>
     <string name="st_title_debt">Main Debt</string>
     <string name="st_title_interest">Interest</string>
     <string name="st_title_total_payment">Total Payment</string>
     <string name="st_title_balance">Balance</string>
     <string name="st_title_total">Total</string>
-    <string name="st_title_full_payment">Full payment</string>
-    <string name="st_main_page">Main Page</string>
-
-
-
+    <!-- Info-->
+    <string name="st_note">Note</string>
+    <string name="st_note_description">The calculation is preliminary. The exact amount of the monthly payment will be determined by the Bank based on the results of consideration of the application</string>
 </resources>

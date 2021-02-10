@@ -5,14 +5,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import com.rssll971.loancalculator.databinding.ActivityCreditDetailBinding
 import kotlin.math.pow
 
 class CreditDetail : AppCompatActivity() {
     //binding
     private lateinit var binding: ActivityCreditDetailBinding
+    //ads
+    private lateinit var mFirstSmartBannerAd: AdView
+    private lateinit var mResultSmartBannerAd: AdView
     //адаптер для rv
     private lateinit var resultAdapter: MonthResultAdapter
     //массив с результатами вычислений
@@ -27,12 +29,24 @@ class CreditDetail : AppCompatActivity() {
         binding = ActivityCreditDetailBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
         //Реклама
         MobileAds.initialize(this) {}
+        mFirstSmartBannerAd = findViewById(R.id.adView_detailsFirstBanner)
+        mResultSmartBannerAd = findViewById(R.id.adView_detailsSecondBanner)
         val adRequest = AdRequest.Builder().build()
-        binding.adViewDetailsFirstBanner.loadAd(adRequest)
-        binding.adViewDetailsSecondBanner.loadAd(adRequest)
-
+        mFirstSmartBannerAd.loadAd(adRequest)
+        mResultSmartBannerAd.loadAd(adRequest)
+        mFirstSmartBannerAd.adListener = object : AdListener(){
+            override fun onAdClosed() {
+                mFirstSmartBannerAd.loadAd(adRequest)
+            }
+        }
+        mResultSmartBannerAd.adListener = object : AdListener(){
+            override fun onAdClosed() {
+                mFirstSmartBannerAd.loadAd(adRequest)
+            }
+        }
 
         //выставляем тип кредита
         selectedCreditType = intent?.getStringExtra("LoanType").toString()
@@ -43,10 +57,11 @@ class CreditDetail : AppCompatActivity() {
 
 
 
-        //todo переделать
+
+
         binding.llCalculate.setOnClickListener {
             //проверяем наличие данных
-            if (binding.etAmount.text.trim().isNotEmpty() &&
+            if (binding.etAmount.text!!.trim().isNotEmpty() &&
                 binding.etInterest.text.trim().isNotEmpty() &&
                 binding.etLoanPeriod.text.trim().isNotEmpty()){
                 //проверяем наличие отсрочки
@@ -88,7 +103,7 @@ class CreditDetail : AppCompatActivity() {
         }
 
         //закрыть активити
-        binding.llMainPage.setOnClickListener {
+        binding.ibUp.setOnClickListener {
             binding.scrollView.smoothScrollTo(0, 0)
         }
     }
@@ -255,6 +270,11 @@ class CreditDetail : AppCompatActivity() {
         binding.tvTotalMainMonthAmount.text = String.format("%.2f", mainMonthAmountAll)
         binding.tvTotalInterestInMonth.text = String.format("%.2f", interestAll)
         binding.tvTotalGeneralAmountInMonth.text = String.format("%.2f", generalMonthAmountAll)
+
+        //ограничеваем максимальный размер rv если элементов больше 18
+        if (resultList.size > 18){
+            binding.rvDetailsContainer.layoutParams.height = resources.getDimension(R.dimen.dim_rv_height).toInt()
+        }
     }
 
     //показать результат

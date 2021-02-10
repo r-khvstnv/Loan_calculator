@@ -9,23 +9,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.rssll971.loancalculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     //binding
     private lateinit var binding: ActivityMainBinding
+    //ads
+    private lateinit var mSmartBannerAd: AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        getNightModeStatus()
+        if (getNightModeStatus()){
+            binding.tbNightMode.isChecked = true
+        }
 
 
 
@@ -42,8 +50,15 @@ class MainActivity : AppCompatActivity() {
 
         //Реклама
         MobileAds.initialize(this) {}
+        mSmartBannerAd = findViewById(R.id.adView_main_banner)
         val adRequest = AdRequest.Builder().build()
-        binding.adViewFirstBanner.loadAd(adRequest)
+        mSmartBannerAd.loadAd(adRequest)
+        mSmartBannerAd.adListener = object : AdListener(){
+            override fun onAdClosed() {
+                mSmartBannerAd.loadAd(adRequest)
+            }
+        }
+
 
         //Кнопки выбранного кредита
         //дополнительно передаем значение типа кредита
@@ -54,19 +69,22 @@ class MainActivity : AppCompatActivity() {
             setCreditInfo(binding.tvProportionalTitle.text.toString())
         }
 
-        binding.ibSettings.setOnClickListener {
-            showSettings()
+        binding.ibInfo.setOnClickListener {
+            showInfo()
         }
 
-
-
-
-
+        binding.tbNightMode.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                //Меняем тему на темную
+                themeModeToDark()
+            } else {
+                //Меняем тему на светлую
+                themeModeToLight()
+            }
+        }
     }
 
-    //**************************************************************************
-    //БЛОК СМЕНЫ ТЕМЫ СВЕТЛАЯ/ТЕМНАЯ
-    //темная
+
     private fun themeModeToDark(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
@@ -92,10 +110,6 @@ class MainActivity : AppCompatActivity() {
             else -> false
         }
     }
-    //--------------------------------------------------------------------
-    //TODO МЕНЯТЬ ЛОКАЛИЗАЦИЮ СООТВЕТСВЕННО ЯЗЫКУ НА ТЕЛЕФОНЕ
-    //TODO СДЕЛАТЬ ЛОКАЛИЗАЦИЮ
-
 
     //Блок для перехода к заполению данных о кредите
     private fun setCreditInfo(loanType: String){
@@ -108,32 +122,11 @@ class MainActivity : AppCompatActivity() {
 
 
     //настройки
-    private fun showSettings(){
+    private fun showInfo(){
         val dialogSettings = Dialog(this)
         dialogSettings.setContentView(R.layout.dialog_settings)
         //чтобы применить кастомный фон
         dialogSettings.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        val tbNightMode = dialogSettings.findViewById<ToggleButton>(R.id.tb_nightMode)
-        var tbLanguage = dialogSettings.findViewById<ToggleButton>(R.id.tb_language)
-
         dialogSettings.show()
-        getNightModeStatus()
-        if (getNightModeStatus()){
-            tbNightMode.isChecked = true
-        }
-
-        Log.i("NightMode", "${getNightModeStatus()}")
-        tbNightMode.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                //Меняем тему на темную
-                themeModeToDark()
-            } else {
-                //Меняем тему на светлую
-                themeModeToLight()
-            }
-        }
-        //TODO СОЗДАТЬ СМЕНУ ЯЗЫКА И ЛОКАЛИЗАЦИЮ
     }
-
-
 }

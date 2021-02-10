@@ -4,9 +4,9 @@
     <dimen name="dim_titles_width">150dp</dimen>
     <dimen name="dim_edit_text_width">150dp</dimen>
     <dimen name="dim_item_text_size">14sp</dimen>
-    <dimen name="dim_item_title_text_size">18sp</dimen>
+    <dimen name="dim_item_title_text_size">16sp</dimen>
     <dimen name="dim_item_width">90dp</dimen>
     <dimen name="dim_item_month_width">40dp</dimen>
-    <dimen name="dim_dialog_def_margin">20dp</dimen>
+    <dimen name="dim_rv_height">600dp</dimen>
 
 </resources>

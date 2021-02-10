@@ -20,27 +20,24 @@
             android:id="@+id/tv_credit_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/tv_selectedCreditType"
+            app:layout_constraintRight_toRightOf="parent"
             android:text="@string/st_credit_type"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textSize="26sp"
-            android:textStyle="bold"
             />
         <TextView
-            android:id="@+id/tv_selectedCreditType"
-            android:layout_width="170dp"
+            android:id="@+id/tv_selected_credit_type"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintLeft_toRightOf="@id/tv_credit_type"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_credit_type"
             app:layout_constraintRight_toRightOf="parent"
-            tools:text="Selected"
+            tools:text="@string/st_proportional"
             android:textAlignment="textStart"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textSize="26sp"
@@ -49,7 +46,7 @@
 
         <!-- Loan amount -->
         <TextView
-            android:id="@+id/tv_loanAmount"
+            android:id="@+id/tv_loan_amount"
             android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
@@ -69,9 +66,10 @@
             android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginEnd="30dp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_credit_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_selected_credit_type"
             android:backgroundTint="@color/myDarkBlue_GoldTransparent"
             android:ems="3"
+            android:maxLength="10"
             android:hint="@string/st_units_hint"
             android:inputType="numberSigned"
             android:textAlignment="textEnd"
@@ -113,6 +111,7 @@
             android:textColorHint="@color/myDarkBlue_GoldTransparent"
             android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
             android:textSize="22sp"
+            android:importantForAutofill="no"
             />
 
         <!-- Period -->
@@ -121,8 +120,8 @@
             android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_loanPeriod"
-            app:layout_constraintRight_toLeftOf="@id/et_loanPeriod"
+            app:layout_constraintBottom_toBottomOf="@id/et_loan_period"
+            app:layout_constraintRight_toLeftOf="@id/et_loan_period"
             app:layout_constraintLeft_toLeftOf="parent"
             android:text="@string/st_period"
             android:textAlignment="textEnd"
@@ -131,7 +130,7 @@
             android:textStyle="bold"
             />
         <EditText
-            android:id="@+id/et_loanPeriod"
+            android:id="@+id/et_loan_period"
             android:layout_width="@dimen/dim_edit_text_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
@@ -147,16 +146,17 @@
             android:textColorHint="@color/myDarkBlue_GoldTransparent"
             android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
             android:textSize="22sp"
+            android:importantForAutofill="no"
             />
 
         <!-- Grace period -->
         <TextView
-            android:id="@+id/tv_gracePeriod"
+            android:id="@+id/tv_grace_period"
             android:layout_width="@dimen/dim_titles_width"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_gracePeriod"
-            app:layout_constraintRight_toLeftOf="@id/et_gracePeriod"
+            app:layout_constraintBottom_toBottomOf="@id/et_grace_period"
+            app:layout_constraintRight_toLeftOf="@id/et_grace_period"
             app:layout_constraintLeft_toLeftOf="parent"
             android:text="@string/st_grace_period"
             android:textAlignment="textEnd"
@@ -165,7 +165,7 @@
             android:textStyle="bold"
             />
         <EditText
-            android:id="@+id/et_gracePeriod"
+            android:id="@+id/et_grace_period"
             android:layout_width="@dimen/dim_edit_text_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
@@ -174,13 +174,14 @@
             app:layout_constraintTop_toBottomOf="@id/tv_period"
             android:backgroundTint="@color/myDarkBlue_GoldTransparent"
             android:ems="10"
-            android:text="0"
+            android:hint="@string/st_months_hint"
             android:inputType="numberSigned"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textColorHint="@color/myDarkBlue_GoldTransparent"
             android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
             android:textSize="22sp"
+            android:importantForAutofill="no"
             />
 
         <!-- Ads -->
@@ -189,42 +190,38 @@
             android:id="@+id/adView_detailsFirstBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="@dimen/dim_et_gap"
+            android:elevation="5dp"
             ads:adSize="SMART_BANNER"
-            ads:adUnitId="@string/banner_id"
-            ads:layout_constraintTop_toBottomOf="@id/et_gracePeriod">
+            ads:adUnitId="@string/first_details_banner_id"
+            ads:layout_constraintTop_toBottomOf="@id/et_grace_period">
         </com.google.android.gms.ads.AdView>
 
         <!-- Calculate button -->
-        <LinearLayout
+        <TextView
             android:id="@+id/ll_calculate"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
+            android:paddingHorizontal="50dp"
+            android:gravity="center"
             app:layout_constraintTop_toBottomOf="@id/adView_detailsFirstBanner"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@drawable/buttons_background"
+            android:background="@drawable/buttons_ripple"
             android:elevation="5dp"
-            android:orientation="horizontal"
-            android:paddingHorizontal="50dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/st_calculate"
-                android:textAllCaps="true"
-                android:textColor="@color/myWhite_GoldTransparent"
-                android:textSize="24sp" />
-        </LinearLayout>
+            android:text="@string/st_calculate"
+            android:textAllCaps="true"
+            android:textColor="@color/myWhite_GoldTransparent"
+            android:textSize="24sp"
+            />
 
         <!-- Layout with all detailed info -->
         <LinearLayout
-            android:id="@+id/ll_resultTable"
+            android:id="@+id/ll_result_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="90dp"
             app:layout_constraintTop_toBottomOf="@id/ll_calculate"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -236,7 +233,6 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginHorizontal="5dp"
                 android:gravity="center"
                 android:background="@drawable/total_title_background"
@@ -302,7 +298,7 @@
 
             <!-- Rv with detailed items-->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_detailsContainer"
+                android:id="@+id/rv_details_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
@@ -315,7 +311,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginHorizontal="5dp"
                 android:paddingVertical="5dp"
                 android:background="@drawable/total_title_background"
@@ -337,6 +333,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     tools:text="123456789"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
@@ -348,6 +345,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     tools:text="123456789"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
@@ -359,6 +357,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     tools:text="123456789"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
@@ -385,27 +384,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:elevation="5dp"
                 ads:adSize="SMART_BANNER"
-                ads:adUnitId="@string/banner_id"
+                ads:adUnitId="@string/second_details_banner_id"
                 >
             </com.google.android.gms.ads.AdView>
 
 
             <!-- Main Page button -->
-            <TextView
-                android:id="@+id/ll_mainPage"
+            <ImageButton
+                android:id="@+id/ib_up"
                 android:layout_width="wrap_content"
-                android:layout_height="55dp"
-                android:layout_marginVertical="40dp"
-                android:background="@drawable/buttons_background"
-                android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="5dp"
+                android:background="@drawable/btn_small_ripple"
+                android:contentDescription="@string/st_settings"
+                android:src="@drawable/ic_up"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal"
                 android:elevation="5dp"
-                android:paddingHorizontal="50dp"
-                android:text="@string/st_main_page"
-                android:textAllCaps="true"
-                android:textColor="@color/myWhite_GoldTransparent"
-                android:textSize="24sp"
                 />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
