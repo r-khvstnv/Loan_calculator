@@ -1,5 +1,4 @@
 <resources>
-    <!-- TODO TEST ID-->
     <string name="ad_id" translatable="false">ca-app-pub-4362142146545991~8164250653</string>
     <string name="main_banner_id" translatable="false">ca-app-pub-4362142146545991/6276453919</string>
     <string name="first_details_banner_id" translatable="false">ca-app-pub-4362142146545991/2944370105</string>
@@ -28,6 +27,7 @@
     <string name="st_months_hint">months</string>
     <string name="st_grace_period">Grace Period:</string>
     <string name="st_calculate">Calculate</string>
+    <string name="st_add_data">Enter the missing data</string>
     <!-- Result Layout-->
     <string name="st_month">Month</string>
     <string name="st_title_debt">Main Debt</string>

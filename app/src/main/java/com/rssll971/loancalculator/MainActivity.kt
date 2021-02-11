@@ -30,25 +30,14 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        //выставляем правильное значение для tb
         getNightModeStatus()
         if (getNightModeStatus()){
             binding.tbNightMode.isChecked = true
         }
 
 
-
-
-
-        //******************************************************************
-        //TODO УБРАТЬ, ТК ТОЛЬКО ДЛЯ ТЕСТОВОЙ ВЕРСИИ
-        val toast = Toast.makeText(this,
-            "\nMade by: Ruslan Khvastunov\n\nClosed testing ONLY\n",
-            Toast.LENGTH_LONG)
-        toast.setGravity(Gravity.CENTER, 0, 0)
-        toast.show()
-        //******************************************************************
-
-        //Реклама
+        /** Реклама */
         MobileAds.initialize(this) {}
         mSmartBannerAd = findViewById(R.id.adView_main_banner)
         val adRequest = AdRequest.Builder().build()
@@ -60,19 +49,22 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+        /**
+         * Блок управления кнопками
+         */
         //Кнопки выбранного кредита
-        //дополнительно передаем значение типа кредита
         binding.llAnnuity.setOnClickListener {
             setCreditInfo(binding.tvAnnuityTitle.text.toString())
         }
         binding.llProportional.setOnClickListener {
             setCreditInfo(binding.tvProportionalTitle.text.toString())
         }
-
+        //информация
         binding.ibInfo.setOnClickListener {
             showInfo()
         }
-
+        //ночной режим
         binding.tbNightMode.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 //Меняем тему на темную
@@ -85,18 +77,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
+    /**
+     * Ниже 2 метода для смены темы
+     */
     private fun themeModeToDark(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
-
-    //светлая
     private fun themeModeToLight(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
-
-    // установить соответсвенно той, что на устройстве
+    /**
+     * Метод получения информации о текущей теме
+     */
     private fun getNightModeStatus(): Boolean{
-        //Меняем режим темы на аналогичный устройстве
         return when(resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK){
             //Светлая тема
@@ -111,7 +105,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //Блок для перехода к заполению данных о кредите
+
+    /**
+     * Метод перехода к заполнению данных о кредите
+     */
     private fun setCreditInfo(loanType: String){
         //Создаем новую активити
         val intent = Intent(this, CreditDetail::class.java)
@@ -121,7 +118,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    //настройки
+    /**
+     * Метод показа диалогового окна с информацией о приложении
+     */
     private fun showInfo(){
         val dialogSettings = Dialog(this)
         dialogSettings.setContentView(R.layout.dialog_settings)

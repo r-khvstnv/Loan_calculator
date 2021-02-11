@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-//класс адаптера для rv
+/** Класс адаптера для rv*/
 class MonthResultAdapter(private val itemsList: ArrayList<MonthCreditInfo>,
                          private val context: Context) :
     RecyclerView.Adapter<MonthResultAdapter.MyViewHolder>() {
+
     //класс с нашими элементами
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var tvMonth: TextView? = null
