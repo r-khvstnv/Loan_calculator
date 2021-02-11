@@ -278,9 +278,9 @@ class CreditDetail : AppCompatActivity() {
         val interestAll = totalItem.getInterestInMonth()
         val generalMonthAmountAll = totalItem.getGeneralAmountInMonth()
 
-        binding.tvTotalMainMonthAmount.text = String.format("%.2f", mainMonthAmountAll)
-        binding.tvTotalInterestInMonth.text = String.format("%.2f", interestAll)
-        binding.tvTotalGeneralAmountInMonth.text = String.format("%.2f", generalMonthAmountAll)
+        binding.tvTotalMainMonthAmount.text = String.format("%,.2f", mainMonthAmountAll)
+        binding.tvTotalInterestInMonth.text = String.format("%,.2f", interestAll)
+        binding.tvTotalGeneralAmountInMonth.text = String.format("%,.2f", generalMonthAmountAll)
 
         //ограничеваем максимальный размер rv если элементов больше 18
         if (resultList.size > 18){

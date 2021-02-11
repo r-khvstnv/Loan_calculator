@@ -174,7 +174,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_period"
             android:backgroundTint="@color/myDarkBlue_GoldTransparent"
             android:ems="10"
-            android:hint="@string/st_months_hint"
+            android:hint="@string/st_optional_hint"
             android:inputType="numberSigned"
             android:textAlignment="textEnd"
             android:textColor="@color/myDarkBlue_GoldTransparent"
@@ -366,7 +366,7 @@
                     />
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="1.5"
                     android:layout_height="wrap_content"
                     tools:text="0"
                     android:textAlignment="textEnd"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Базовый Кредитный Калькулятор</string>
+    <string name="app_name">Кредитный Калькулятор</string>
     <string name="st_version">Версия:</string>
     <string name="st_back">Назад</string>
     <string name="st_settings">Настройки</string>
@@ -27,4 +27,5 @@
     <string name="st_note">Примечание</string>
     <string name="st_note_description">Расчет носит предварительный характер. Точная сумма ежемесячного платежа будет определена Банком по результатам рассмотрения заявки</string>
     <string name="st_add_data">Введите недостающие данные</string>
+    <string name="st_optional_hint">Опционально</string>
 </resources>

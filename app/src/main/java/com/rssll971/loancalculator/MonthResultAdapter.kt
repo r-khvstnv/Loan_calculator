@@ -46,10 +46,10 @@ class MonthResultAdapter(private val itemsList: ArrayList<MonthCreditInfo>,
 
         //присваиваем значения
         holder.tvMonth!!.text = layoutItem.getMonth().toString()
-        holder.tvMainMonthAmount!!.text = String.format("%.2f", mainMonthAmount)
-        holder.tvInterestInMonth!!.text = String.format("%.2f", interestInMonth)
-        holder.tvGeneralAmountInMonth!!.text = String.format("%.2f", generalAmountInMonth)
-        holder.tvRemainderInMonth!!.text = String.format("%.2f", remainderInMonth)
+        holder.tvMainMonthAmount!!.text = String.format("%,.2f", mainMonthAmount)
+        holder.tvInterestInMonth!!.text = String.format("%,.2f", interestInMonth)
+        holder.tvGeneralAmountInMonth!!.text = String.format("%,.2f", generalAmountInMonth)
+        holder.tvRemainderInMonth!!.text = String.format("%,.2f", remainderInMonth)
     }
 
     override fun getItemCount(): Int {

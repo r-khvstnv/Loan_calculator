@@ -28,7 +28,7 @@
 
     <LinearLayout
         android:id="@+id/ll_annuity"
-        android:layout_width="320dp"
+        android:layout_width="340dp"
         android:layout_height="170dp"
         android:layout_marginTop="50dp"
         app:layout_constraintLeft_toLeftOf="parent"

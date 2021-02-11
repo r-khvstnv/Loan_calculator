@@ -25,6 +25,7 @@
     <string name="st_annual_percentage">Interest:</string>
     <string name="st_period">Period:</string>
     <string name="st_months_hint">months</string>
+    <string name="st_optional_hint">Optional</string>
     <string name="st_grace_period">Grace Period:</string>
     <string name="st_calculate">Calculate</string>
     <string name="st_add_data">Enter the missing data</string>
