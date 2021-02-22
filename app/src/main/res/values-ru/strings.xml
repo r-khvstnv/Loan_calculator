@@ -3,7 +3,7 @@
     <string name="app_name">Кредитный Калькулятор</string>
     <string name="st_version">Версия:</string>
     <string name="st_back">Назад</string>
-    <string name="st_settings">Настройки</string>
+    <string name="st_info">Информация</string>
     <string name="st_title_credit_choose">Выберите Тип Кредита</string>
     <string name="st_annuity">Аннуитетный</string>
     <string name="st_proportional">Дифференцированный</string>
@@ -28,4 +28,5 @@
     <string name="st_note_description">Расчет носит предварительный характер. Точная сумма ежемесячного платежа будет определена Банком по результатам рассмотрения заявки</string>
     <string name="st_add_data">Введите недостающие данные</string>
     <string name="st_optional_hint">Опционально</string>
+    <string name="st_up">Вверх</string>
 </resources>

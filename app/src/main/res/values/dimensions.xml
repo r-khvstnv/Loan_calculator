@@ -7,6 +7,6 @@
     <dimen name="dim_item_title_text_size">16sp</dimen>
     <dimen name="dim_item_width">90dp</dimen>
     <dimen name="dim_item_month_width">40dp</dimen>
-    <dimen name="dim_rv_height">600dp</dimen>
+    <dimen name="dim_rv_height">500dp</dimen>
 
 </resources>

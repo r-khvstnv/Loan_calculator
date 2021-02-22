@@ -283,7 +283,7 @@ class CreditDetail : AppCompatActivity() {
         binding.tvTotalGeneralAmountInMonth.text = String.format("%,.2f", generalMonthAmountAll)
 
         //ограничеваем максимальный размер rv если элементов больше 18
-        if (resultList.size > 18){
+        if (resultList.size > 15){
             binding.rvDetailsContainer.layoutParams.height = resources.getDimension(R.dimen.dim_rv_height).toInt()
         }
     }

@@ -5,11 +5,12 @@
     <string name="second_details_banner_id" translatable="false">ca-app-pub-4362142146545991/6963506167</string>
 
 
-    <string name="app_name">Simple Loan Сalculator</string>
-    <string name="app_version" translatable="false">1.0</string>
+    <string name="app_name">Simple Loan Calculator</string>
+    <string name="app_version" translatable="false">1.0.1</string>
     <string name="st_version">Version:</string>
     <string name="st_back">Back</string>
-    <string name="st_settings">Settings</string>
+    <string name="st_info">Info</string>
+    <string name="st_up">Up</string>
 
     <!-- Main Activity-->
     <string name="st_title_credit_choose">Select Type of Loan</string>

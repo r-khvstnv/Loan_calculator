@@ -192,7 +192,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
             android:elevation="5dp"
-            ads:adSize="SMART_BANNER"
+            ads:adSize="LARGE_BANNER"
             ads:adUnitId="@string/first_details_banner_id"
             ads:layout_constraintTop_toBottomOf="@id/et_grace_period">
         </com.google.android.gms.ads.AdView>
@@ -385,7 +385,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:elevation="5dp"
-                ads:adSize="SMART_BANNER"
+                ads:adSize="MEDIUM_RECTANGLE"
                 ads:adUnitId="@string/second_details_banner_id"
                 >
             </com.google.android.gms.ads.AdView>
@@ -397,11 +397,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:paddingVertical="10dp"
                 android:paddingHorizontal="5dp"
                 android:background="@drawable/btn_small_ripple"
-                android:contentDescription="@string/st_settings"
+                android:contentDescription="@string/st_up"
                 android:src="@drawable/ic_up"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center_horizontal"
