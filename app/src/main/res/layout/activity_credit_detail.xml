@@ -45,144 +45,114 @@
             />
 
         <!-- Loan amount -->
-        <TextView
-            android:id="@+id/tv_loan_amount"
-            android:layout_width="@dimen/dim_titles_width"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_amount"
+            style="@style/MyEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@+id/et_amount"
-            app:layout_constraintRight_toLeftOf="@id/et_amount"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:text="@string/st_loan_amount"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/et_amount"
-            android:layout_width="@dimen/dim_edit_text_width"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dim_et_gap"
-            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_selected_credit_type"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
-            android:ems="3"
-            android:maxLength="10"
-            android:hint="@string/st_units_hint"
-            android:inputType="numberSigned"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            />
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="3"
+                android:maxLength="10"
+                android:hint="@string/st_loan_amount"
+                android:inputType="numberSigned"
+                android:textAlignment="textEnd"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textSize="@dimen/dim_et_text_size"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Interest -->
-        <TextView
-            android:id="@+id/tv_percentage"
-            android:layout_width="@dimen/dim_titles_width"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_interest"
-            app:layout_constraintRight_toLeftOf="@id/et_interest"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:text="@string/st_annual_percentage"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/et_interest"
-            android:layout_width="@dimen/dim_edit_text_width"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_percentage"
+            style="@style/MyEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
-            android:layout_marginEnd="30dp"
+            android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_amount"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
-            android:ems="10"
-            android:hint="%"
-            android:inputType="numberSigned"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:importantForAutofill="no"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_amount"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_interest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/st_annual_percentage"
+                android:inputType="numberSigned"
+                android:textAlignment="textEnd"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textColorHint="@color/myDarkBlue_GoldTransparent"
+                android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+                android:textSize="@dimen/dim_et_text_size"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Period -->
-        <TextView
-            android:id="@+id/tv_period"
-            android:layout_width="@dimen/dim_titles_width"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_loan_period"
-            app:layout_constraintRight_toLeftOf="@id/et_loan_period"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:text="@string/st_period"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/et_loan_period"
-            android:layout_width="@dimen/dim_edit_text_width"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_loan_period"
+            style="@style/MyEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
-            android:layout_marginEnd="30dp"
+            android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_interest"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
-            android:ems="10"
-            android:hint="@string/st_months_hint"
-            android:inputType="numberSigned"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:importantForAutofill="no"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_percentage"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_loan_period"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/st_period"
+                android:inputType="numberSigned"
+                android:textAlignment="textEnd"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textColorHint="@color/myDarkBlue_GoldTransparent"
+                android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+                android:textSize="@dimen/dim_et_text_size"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Grace period -->
-        <TextView
-            android:id="@+id/tv_grace_period"
-            android:layout_width="@dimen/dim_titles_width"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_grace_period"
-            app:layout_constraintRight_toLeftOf="@id/et_grace_period"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:text="@string/st_grace_period"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/et_grace_period"
-            android:layout_width="@dimen/dim_edit_text_width"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_grace_period"
+            style="@style/MyEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_et_gap"
-            android:layout_marginEnd="30dp"
+            android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_period"
-            android:backgroundTint="@color/myDarkBlue_GoldTransparent"
-            android:ems="10"
-            android:hint="@string/st_optional_hint"
-            android:inputType="numberSigned"
-            android:textAlignment="textEnd"
-            android:textColor="@color/myDarkBlue_GoldTransparent"
-            android:textColorHint="@color/myDarkBlue_GoldTransparent"
-            android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-            android:textSize="22sp"
-            android:importantForAutofill="no"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_loan_period"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_grace_period"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/st_grace_period"
+                android:inputType="numberSigned"
+                android:textAlignment="textEnd"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textColorHint="@color/myDarkBlue_GoldTransparent"
+                android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+                android:textSize="@dimen/dim_et_text_size"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Ads -->
         <com.google.android.gms.ads.AdView
@@ -194,7 +164,7 @@
             android:elevation="5dp"
             ads:adSize="LARGE_BANNER"
             ads:adUnitId="@string/first_details_banner_id"
-            ads:layout_constraintTop_toBottomOf="@id/et_grace_period">
+            ads:layout_constraintTop_toBottomOf="@id/til_grace_period">
         </com.google.android.gms.ads.AdView>
 
         <!-- Calculate button -->

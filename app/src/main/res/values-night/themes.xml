@@ -14,7 +14,15 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.NoActionBarLoan" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.NoActionBarLoan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/myDarkBlue_GoldTransparent</item>
+        <item name="colorPrimaryVariant">@color/myDarkBlue_GoldTransparent</item>
+        <item name="colorOnPrimary">@color/myDarkBlue_GoldTransparent</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/myPink_GoldTransparent</item>
+        <item name="colorSecondaryVariant">@color/myPink_GoldTransparent</item>
+        <item name="colorOnSecondary">@color/myPink_GoldTransparent</item>
+
         <item name="android:statusBarColor">@color/myDarkBlue</item>
         <item name="android:navigationBarColor">@color/myDarkBlue</item>
 

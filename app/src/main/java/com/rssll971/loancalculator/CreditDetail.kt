@@ -1,8 +1,11 @@
 package com.rssll971.loancalculator
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.*
@@ -68,10 +71,10 @@ class CreditDetail : AppCompatActivity() {
         binding.llCalculate.setOnClickListener {
             //проверяем наличие данных
             if (binding.etAmount.text!!.trim().isNotEmpty() &&
-                binding.etInterest.text.trim().isNotEmpty() &&
-                binding.etLoanPeriod.text.trim().isNotEmpty()){
+                binding.etInterest.text!!.trim().isNotEmpty() &&
+                binding.etLoanPeriod.text!!.trim().isNotEmpty()){
                 //проверяем наличие периода отсрочки
-                if (binding.etGracePeriod.text.trim().isEmpty()){
+                if (binding.etGracePeriod.text!!.trim().isEmpty()){
                     binding.etGracePeriod.setText("0")
                 }
 
@@ -115,6 +118,17 @@ class CreditDetail : AppCompatActivity() {
         }
     }
 
+    /**
+     * Метод, который прячет клавиатуру,
+     * когда пользователь совершил действие вне области клавиатуры
+     */
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null){
+            val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
 
     /**
      * Дальше 2 метода вычесления кредита

@@ -20,14 +20,11 @@
     <string name="st_proportional_meaning">The loan amount is evenly divided for the entire term, and interest is charged monthly on the remaining amount of money. The amount of the contribution in the graph is reflected in unequal values</string>
     <string name="st_prompt">Hint: More commonly used by banks</string>
     <!-- Credit Details Activity-->
-    <string name="st_credit_type">Type of credit:</string>
-    <string name="st_loan_amount">Loan amount:</string>
-    <string name="st_units_hint">c.u</string>
-    <string name="st_annual_percentage">Interest:</string>
-    <string name="st_period">Period:</string>
-    <string name="st_months_hint">months</string>
-    <string name="st_optional_hint">Optional</string>
-    <string name="st_grace_period">Grace Period:</string>
+    <string name="st_credit_type">Type of credit</string>
+    <string name="st_loan_amount">Loan amount (c.u)</string>
+    <string name="st_annual_percentage">Interest (%)</string>
+    <string name="st_period">Period (months)</string>
+    <string name="st_grace_period">Grace Period (optional)</string>
     <string name="st_calculate">Calculate</string>
     <string name="st_add_data">Enter the missing data</string>
     <!-- Result Layout-->

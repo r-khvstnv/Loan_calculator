@@ -11,12 +11,10 @@
     <string name="st_annuity_meaning">Размер займа по платежу разбивается на неравные части, а процентная ставка начисляется на остаток тела кредита. Размер взноса остается неизменным</string>
     <string name="st_prompt">Подсказка: Чаще используется банками</string>
     <string name="st_credit_type">Тип кредита:</string>
-    <string name="st_loan_amount">Сумма кредита:</string>
-    <string name="st_units_hint">у.е.</string>
-    <string name="st_annual_percentage">Процентная ставка:</string>
-    <string name="st_period">Срок кредита:</string>
-    <string name="st_months_hint">месяцев</string>
-    <string name="st_grace_period">Льготный период:</string>
+    <string name="st_loan_amount">Сумма кредита (у.е.)</string>
+    <string name="st_annual_percentage">Проценты (%)</string>
+    <string name="st_period">Срок кредита (месяцев)</string>
+    <string name="st_grace_period">Льготный период (опционально)</string>
     <string name="st_calculate">Рассчитать</string>
     <string name="st_month">Месяц</string>
     <string name="st_title_debt">Основной долг</string>
@@ -27,6 +25,5 @@
     <string name="st_note">Примечание</string>
     <string name="st_note_description">Расчет носит предварительный характер. Точная сумма ежемесячного платежа будет определена Банком по результатам рассмотрения заявки</string>
     <string name="st_add_data">Введите недостающие данные</string>
-    <string name="st_optional_hint">Опционально</string>
     <string name="st_up">Вверх</string>
 </resources>

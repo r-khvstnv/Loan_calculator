@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="dim_et_gap">40dp</dimen>
-    <dimen name="dim_titles_width">150dp</dimen>
-    <dimen name="dim_edit_text_width">150dp</dimen>
+    <dimen name="dim_et_gap">30dp</dimen>
+    <dimen name="dim_et_margin_horizontal">30dp</dimen>
+    <dimen name="dim_et_text_size">20sp</dimen>
     <dimen name="dim_item_text_size">12sp</dimen>
     <dimen name="dim_item_title_text_size">16sp</dimen>
     <dimen name="dim_item_width">90dp</dimen>
