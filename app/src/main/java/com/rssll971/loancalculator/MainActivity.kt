@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
@@ -16,6 +18,9 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.rssll971.loancalculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,13 +28,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     //ads
     private lateinit var mSmartBannerAd: AdView
-
+    //analytics
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
+        //аналитика
+        firebaseAnalytics = Firebase.analytics
         //выставляем правильное значение для tb
         getNightModeStatus()
         if (getNightModeStatus()){

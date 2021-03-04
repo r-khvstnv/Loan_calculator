@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "511969987836",
+    "project_id": "loan-calculator-deafb",
+    "storage_bucket": "loan-calculator-deafb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511969987836:android:c50c44be74a5a82a7b1b79",
+        "android_client_info": {
+          "package_name": "com.rssll971.loancalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511969987836-mutumgn3g7fh3i0jc4t18fb5pt10n82f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwZkBzkU0ZrreZPMp2dtNUjKXHLDtR8gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511969987836-mutumgn3g7fh3i0jc4t18fb5pt10n82f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-4362142146545991~8164250653"
+    }
+  ],
+  "configuration_version": "1"
+}
