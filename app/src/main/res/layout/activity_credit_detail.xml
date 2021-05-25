@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
@@ -13,36 +12,34 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        >
+        android:visibility="visible">
         <!-- Credit type -->
         <TextView
             android:id="@+id/tv_credit_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:text="@string/st_credit_type"
             android:textAlignment="center"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textSize="26sp"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_selected_credit_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_credit_type"
-            app:layout_constraintRight_toRightOf="parent"
-            tools:text="@string/st_proportional"
             android:textAlignment="textStart"
             android:textColor="@color/myDarkBlue_GoldTransparent"
             android:textSize="26sp"
             android:textStyle="bold"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_credit_type"
+            tools:text="@string/st_proportional" />
 
         <!-- Loan amount -->
         <com.google.android.material.textfield.TextInputLayout
@@ -50,24 +47,23 @@
             style="@style/MyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_selected_credit_type"
-            >
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_selected_credit_type">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_amount"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="3"
-                android:maxLength="10"
                 android:hint="@string/st_loan_amount"
                 android:inputType="numberSigned"
+                android:maxLength="10"
                 android:textAlignment="textEnd"
                 android:textColor="@color/myDarkBlue_GoldTransparent"
-                android:textSize="@dimen/dim_et_text_size"
-                />
+                android:textSize="@dimen/dim_et_text_size" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -77,12 +73,12 @@
             style="@style/MyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/dim_et_gap"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_amount"
-            >
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_amount">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_interest"
                 android:layout_width="match_parent"
@@ -94,8 +90,7 @@
                 android:textColor="@color/myDarkBlue_GoldTransparent"
                 android:textColorHint="@color/myDarkBlue_GoldTransparent"
                 android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-                android:textSize="@dimen/dim_et_text_size"
-                />
+                android:textSize="@dimen/dim_et_text_size" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -105,12 +100,12 @@
             style="@style/MyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/dim_et_gap"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_percentage"
-            >
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_percentage">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_loan_period"
                 android:layout_width="match_parent"
@@ -122,8 +117,7 @@
                 android:textColor="@color/myDarkBlue_GoldTransparent"
                 android:textColorHint="@color/myDarkBlue_GoldTransparent"
                 android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-                android:textSize="@dimen/dim_et_text_size"
-                />
+                android:textSize="@dimen/dim_et_text_size" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -133,12 +127,12 @@
             style="@style/MyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dim_et_gap"
             android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/dim_et_gap"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_loan_period"
-            >
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_loan_period">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_grace_period"
                 android:layout_width="match_parent"
@@ -150,13 +144,11 @@
                 android:textColor="@color/myDarkBlue_GoldTransparent"
                 android:textColorHint="@color/myDarkBlue_GoldTransparent"
                 android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
-                android:textSize="@dimen/dim_et_text_size"
-                />
+                android:textSize="@dimen/dim_et_text_size" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Ads -->
-        <com.google.android.gms.ads.AdView
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView_detailsFirstBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -164,8 +156,7 @@
             android:elevation="5dp"
             ads:adSize="LARGE_BANNER"
             ads:adUnitId="@string/first_details_banner_id"
-            ads:layout_constraintTop_toBottomOf="@id/til_grace_period">
-        </com.google.android.gms.ads.AdView>
+            ads:layout_constraintTop_toBottomOf="@id/til_grace_period"/>
 
         <!-- Calculate button -->
         <TextView
@@ -173,18 +164,17 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_marginTop="50dp"
-            android:paddingHorizontal="50dp"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/adView_detailsFirstBanner"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:background="@drawable/buttons_ripple"
             android:elevation="5dp"
+            android:gravity="center"
+            android:paddingHorizontal="50dp"
             android:text="@string/st_calculate"
             android:textAllCaps="true"
             android:textColor="@color/myWhite_GoldTransparent"
             android:textSize="24sp"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adView_detailsFirstBanner" />
 
         <!-- Layout with all detailed info -->
         <LinearLayout
@@ -192,77 +182,75 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
-            app:layout_constraintTop_toBottomOf="@id/ll_calculate"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:orientation="vertical"
             android:visibility="visible"
-            >
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_calculate">
             <!-- Titles for detailed info -->
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
-                android:gravity="center"
                 android:background="@drawable/total_title_background"
                 android:elevation="10dp"
-                >
+                android:gravity="center"
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:rotation="-90"
                     android:text="@string/st_month"
                     android:textAlignment="center"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="12sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
                     android:text="@string/st_title_debt"
                     android:textAlignment="center"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
                     android:text="@string/st_title_interest"
                     android:textAlignment="center"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
                     android:text="@string/st_title_total_payment"
                     android:textAlignment="center"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
                     android:text="@string/st_title_balance"
                     android:textAlignment="center"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_title_text_size"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -270,113 +258,104 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_details_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-            </androidx.recyclerview.widget.RecyclerView>
-
+                android:layout_height="wrap_content"/>
 
             <!-- Total Layout -->
             <LinearLayout
                 android:id="@+id/ll_total"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginHorizontal="5dp"
-                android:paddingVertical="5dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/total_title_background"
-                android:gravity="center"
                 android:elevation="5dp"
-                >
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/st_title_total"
                     android:textAlignment="center"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_text_size"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tv_totalMainMonthAmount"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    tools:text="123456789"
+                    android:layout_weight="2"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_text_size"
                     android:textStyle="bold"
-                    />
+                    tools:text="123456789" />
+
                 <TextView
                     android:id="@+id/tv_totalInterestInMonth"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    tools:text="123456789"
+                    android:layout_weight="2"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_text_size"
                     android:textStyle="bold"
-                    />
+                    tools:text="123456789" />
+
                 <TextView
                     android:id="@+id/tv_totalGeneralAmountInMonth"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    tools:text="123456789"
+                    android:layout_weight="2"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_text_size"
                     android:textStyle="bold"
-                    />
+                    tools:text="123456789" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1.5"
                     android:layout_height="wrap_content"
-                    tools:text="0"
+                    android:layout_weight="1.5"
                     android:textAlignment="textEnd"
                     android:textColor="@color/myPink_GoldTransparent"
                     android:textSize="@dimen/dim_item_text_size"
                     android:textStyle="bold"
-                    />
+                    tools:text="0" />
             </LinearLayout>
 
 
             <!-- Ads -->
-            <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView_detailsSecondBanner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:elevation="5dp"
                 ads:adSize="MEDIUM_RECTANGLE"
-                ads:adUnitId="@string/second_details_banner_id"
-                >
-            </com.google.android.gms.ads.AdView>
-
+                ads:adUnitId="@string/second_details_banner_id"/>
 
             <!-- Main Page button -->
             <ImageButton
                 android:id="@+id/ib_up"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="5dp"
                 android:background="@drawable/btn_small_ripple"
                 android:contentDescription="@string/st_up"
-                android:src="@drawable/ic_up"
-                android:scaleType="fitCenter"
-                android:layout_gravity="center_horizontal"
                 android:elevation="5dp"
-                />
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_up" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

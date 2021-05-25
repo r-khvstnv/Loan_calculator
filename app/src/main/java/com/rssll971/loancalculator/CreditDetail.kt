@@ -24,7 +24,7 @@ class CreditDetail : AppCompatActivity() {
     //адаптер для rv
     private lateinit var resultAdapter: MonthResultAdapter
     //массив с результатами вычислений
-    private lateinit var resultList: ArrayList<MonthCreditInfo>
+    private lateinit var resultList: ArrayList<MonthCreditModel>
     private lateinit var selectedCreditType: String
     //общие суммы выплат (необходимы для отображения в конце)
     private var interestOverall: Float = 0.0f
@@ -54,7 +54,6 @@ class CreditDetail : AppCompatActivity() {
                 mFirstSmartBannerAd.loadAd(adRequest)
             }
         }
-
 
 
         /** Получаем тип кредита с предыдущей страницы*/
@@ -94,7 +93,7 @@ class CreditDetail : AppCompatActivity() {
                     }
                 }
 
-                /** Показываем сцену с результатами*/
+                /** Показываем таблицу с результатами*/
                 binding.llResultTable.visibility = View.VISIBLE
 
 
@@ -104,11 +103,9 @@ class CreditDetail : AppCompatActivity() {
                 */
                 showTotalInfo()
                 setupResultRecyclerView()
-                //немного прокручиваем сцену
+                //немного прокручиваем rv с таблицей
                 binding.scrollView.requestChildFocus(binding.llResultTable, binding.llResultTable)
-
-            }
-            else{
+            } else{
                 Toast.makeText(this, getString(R.string.st_add_data), Toast.LENGTH_LONG).show()
             }
         }
@@ -142,58 +139,54 @@ class CreditDetail : AppCompatActivity() {
         var gracePeriod = loanGracePeriod
         interestOverall = 0.0f
         amountOverall = 0.0f
-        resultList = ArrayList<MonthCreditInfo>()
+        resultList = ArrayList()
         resultList.clear()
         val interest = loanInterest / 100.0f
 
         //процентная ставка в месяц
         //делим на 12 тк процент указан годовой
         val interestRateInMonth: Float = interest / 12.0f
-        //общая сумма выплаты в месяц
-        var generalAmountInMonth: Float = 0.0f
         //основной долг в месяц
-        var mainAmountInMonth: Float = 0.0f
+        var mainAmountInMonth: Float
         //выплата процента по кредиту в месяц
-        var interestAmountInMonth: Float = 0.0f
+        var interestAmountInMonth: Float
         // создаем объект класса
-        var monthInfo: MonthCreditInfo
+        var monthInfo: MonthCreditModel
 
 
         /**
          * вычисляем общую сумму выплаты в месяц
          * колво месяцев в строке ниже влияет на отсрочку */
-        generalAmountInMonth = amount * (interestRateInMonth +
-                (interestRateInMonth / ((1 + interestRateInMonth).pow(loanPeriod - loanGracePeriod) - 1)))
+        val generalAmountInMonth: Float = amount * (interestRateInMonth + (interestRateInMonth /
+                        ((1 + interestRateInMonth).pow(loanPeriod - loanGracePeriod) - 1)))
         //цикл для вычислений каждого месяца
         for (i in 1..loanPeriod){
             //доля процентов в месячной выплате
             interestAmountInMonth = amount * (interest / 12)
             //суммируем проценты
             interestOverall += interestAmountInMonth
-            //дальнейшие вычисления проводятся относительно наличия отсрочки выплаты основного долга
+            //дальнейшие вычисления проводятся относительно
+            // наличия отсрочки выплаты основного долга
             if (gracePeriod > 0){
-                //при отсрочки сумма основного долга до истечения срока не меняется
-
+                /**при отсрочки сумма основного долга до истечения срока не меняется*/
                 // создаем объект класса
-                 monthInfo = MonthCreditInfo(i, 0.0f,
+                 monthInfo = MonthCreditModel(i, 0.0f,
                         interestAmountInMonth, interestAmountInMonth, amount)
                 //добавляем объект в массив
                 resultList.add(monthInfo)
                 //уменьшаем значение льготного периода
                 gracePeriod--
-            }
-            else{
+            } else{
                 //вычисляем основную сумму выплаты
                 mainAmountInMonth = generalAmountInMonth - interestAmountInMonth
                 //уменьшаем сумму основного долга
                 amount -= mainAmountInMonth
                 //убираем мелкую погрешность в последней строке
-                if (i == loanPeriod){
+                if (i == loanPeriod)
                     amount = 0.0f
-                }
 
                 //создаем объект класса
-                monthInfo = MonthCreditInfo(i, mainAmountInMonth,
+                monthInfo = MonthCreditModel(i, mainAmountInMonth,
                         interestAmountInMonth, generalAmountInMonth, amount)
                 //добавляем объект в массив
                 resultList.add(monthInfo)
@@ -202,7 +195,7 @@ class CreditDetail : AppCompatActivity() {
         //подсчитываем общую сумму выплаты
         amountOverall = loanAmount + interestOverall
         //добавляем результат вычислений в конец массива
-        monthInfo = MonthCreditInfo(-1, loanAmount,
+        monthInfo = MonthCreditModel(-1, loanAmount,
                 interestOverall, amountOverall, 0.0f)
         resultList.add(monthInfo)
     }
@@ -212,12 +205,15 @@ class CreditDetail : AppCompatActivity() {
      * Дифференцированный
      * действительность данных должно быть проверенно перед вызовом метода
      */
-    private fun estimateDifferential(loanAmount: Float, loanInterest: Float, loanPeriod: Int, loanGracePeriod: Int){
+    private fun estimateDifferential(loanAmount: Float,
+                                     loanInterest: Float,
+                                     loanPeriod: Int,
+                                     loanGracePeriod: Int){
         var amount = loanAmount
         var gracePeriod = loanGracePeriod
         interestOverall = 0.0f
         amountOverall = 0.0f
-        resultList = ArrayList<MonthCreditInfo>()
+        resultList = ArrayList()
         resultList.clear()
         val interest = loanInterest / 100.0f
 
@@ -225,19 +221,16 @@ class CreditDetail : AppCompatActivity() {
         //делим на 12 тк процент указан годовой
         val interestRateInMonth: Float = interest / 12.0f
         //общая сумма выплаты в месяц
-        var generalAmountInMonth: Float = 0.0f
-        //основной долг в месяц
-        var mainAmountInMonth: Float = 0.0f
+        var generalAmountInMonth: Float
         //выплата процента по кредиту в месяц
-        var interestAmountInMonth: Float = 0.0f
-
+        var interestAmountInMonth: Float
         // создаем объект класса
-        var monthInfo: MonthCreditInfo
+        var monthInfo: MonthCreditModel
 
         /**
          * вычисляем общую сумму выплаты в месяц
          * колво месяцев в строке ниже влияет на отсрочку */
-        mainAmountInMonth = amount / (loanPeriod - gracePeriod)
+        val mainAmountInMonth: Float = amount / (loanPeriod - gracePeriod)
         //цикл для вычислений каждого месяца
         for (i in 1..loanPeriod){
             //доля процентов в месячной выплате
@@ -245,30 +238,28 @@ class CreditDetail : AppCompatActivity() {
             //суммируем проценты
             interestOverall += interestAmountInMonth
 
-            //дальнейшие вычисления проводятся относительно наличия отсрочки выплаты основного долга
+            //дальнейшие вычисления проводятся относительно
+            // наличия отсрочки выплаты основного долга
             if (gracePeriod > 0){
-                //при отсрочки сумма основного долга до истечения срока не меняется
-
+                /**при отсрочки сумма основного долга до истечения срока не меняется*/
                 // создаем объект класса
-                monthInfo = MonthCreditInfo(i, 0.0f,
+                monthInfo = MonthCreditModel(i, 0.0f,
                         interestAmountInMonth, interestAmountInMonth, amount)
                 //добавляем объект в массив
                 resultList.add(monthInfo)
                 //уменьшаем значение льготного периода
                 gracePeriod--
-            }
-            else{
+            } else{
                 //вычисляем основную сумму выплаты
                 generalAmountInMonth = mainAmountInMonth + interestAmountInMonth
                 //уменьшаем сумму основного долга
                 amount -= mainAmountInMonth
                 //убираем мелкую погрешность в последней строке
-                if (i == loanPeriod){
+                if (i == loanPeriod)
                     amount = 0.0f
-                }
 
                 //создаем объект класса
-                monthInfo = MonthCreditInfo(i, mainAmountInMonth,
+                monthInfo = MonthCreditModel(i, mainAmountInMonth,
                         interestAmountInMonth, generalAmountInMonth, amount)
                 //добавляем объект в массив
                 resultList.add(monthInfo)
@@ -277,7 +268,7 @@ class CreditDetail : AppCompatActivity() {
         //подсчитываем общую сумму выплаты
         amountOverall = loanAmount + interestOverall
         //добавляем результат вычислений в конец массива
-        monthInfo = MonthCreditInfo(-1, loanAmount,
+        monthInfo = MonthCreditModel(-1, loanAmount,
                 interestOverall, amountOverall, 0.0f)
         resultList.add(monthInfo)
     }
@@ -288,18 +279,17 @@ class CreditDetail : AppCompatActivity() {
      */
     private fun showTotalInfo(){
         val totalItem = resultList[resultList.size - 1]
-        val mainMonthAmountAll= totalItem.getMainMonthDebt()
-        val interestAll = totalItem.getInterestInMonth()
-        val generalMonthAmountAll = totalItem.getGeneralAmountInMonth()
+        val mainMonthAmountAll= totalItem.mainMonthDebt
+        val interestAll = totalItem.interestInMonth
+        val generalMonthAmountAll = totalItem.generalAmountInMonth
 
         binding.tvTotalMainMonthAmount.text = String.format("%,.2f", mainMonthAmountAll)
         binding.tvTotalInterestInMonth.text = String.format("%,.2f", interestAll)
         binding.tvTotalGeneralAmountInMonth.text = String.format("%,.2f", generalMonthAmountAll)
 
         //ограничеваем максимальный размер rv если элементов больше 18
-        if (resultList.size > 15){
+        if (resultList.size > 15)
             binding.rvDetailsContainer.layoutParams.height = resources.getDimension(R.dimen.dim_rv_height).toInt()
-        }
     }
 
     /**

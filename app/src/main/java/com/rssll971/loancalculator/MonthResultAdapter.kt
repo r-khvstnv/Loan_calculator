@@ -4,13 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 /** Класс адаптера для rv*/
-class MonthResultAdapter(private val itemsList: ArrayList<MonthCreditInfo>,
+class MonthResultAdapter(private val itemsList: ArrayList<MonthCreditModel>,
                          private val context: Context) :
     RecyclerView.Adapter<MonthResultAdapter.MyViewHolder>() {
 
@@ -38,14 +36,14 @@ class MonthResultAdapter(private val itemsList: ArrayList<MonthCreditInfo>,
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         //записываем в локальные переменные для дальнейшего округления
-        val layoutItem: MonthCreditInfo = itemsList[position]
-        val mainMonthAmount = layoutItem.getMainMonthDebt()
-        val interestInMonth = layoutItem.getInterestInMonth()
-        val generalAmountInMonth = layoutItem.getGeneralAmountInMonth()
-        val remainderInMonth = layoutItem.getRemainder()
+        val item: MonthCreditModel = itemsList[position]
+        val mainMonthAmount = item.mainMonthDebt
+        val interestInMonth = item.interestInMonth
+        val generalAmountInMonth = item.generalAmountInMonth
+        val remainderInMonth = item.remainder
 
         //присваиваем значения
-        holder.tvMonth!!.text = layoutItem.getMonth().toString()
+        holder.tvMonth!!.text = item.month.toString()
         holder.tvMainMonthAmount!!.text = String.format("%,.2f", mainMonthAmount)
         holder.tvInterestInMonth!!.text = String.format("%,.2f", interestInMonth)
         holder.tvGeneralAmountInMonth!!.text = String.format("%,.2f", generalAmountInMonth)

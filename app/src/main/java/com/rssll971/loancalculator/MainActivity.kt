@@ -7,12 +7,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
@@ -57,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
         /**
          * Блок управления кнопками
          */
@@ -83,7 +76,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
 
     /**

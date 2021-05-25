@@ -6,11 +6,13 @@
 
 
     <string name="app_name">Simple Loan Calculator</string>
-    <string name="app_version" translatable="false">1.0.2</string>
+    <string name="app_version" translatable="false">1.0.3</string>
+    <string name="st_icon" translatable="false">Icon</string>
     <string name="st_version">Version:</string>
     <string name="st_back">Back</string>
     <string name="st_info">Info</string>
     <string name="st_up">Up</string>
+
 
     <!-- Main Activity-->
     <string name="st_title_credit_choose">Select Type of Loan</string>

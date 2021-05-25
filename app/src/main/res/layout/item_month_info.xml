@@ -1,70 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_item"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
     android:layout_marginHorizontal="5dp"
-    android:paddingVertical="5dp"
+    android:layout_marginTop="5dp"
     android:background="@drawable/layout_background"
-    android:gravity="center"
     android:elevation="5dp"
-    >
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingVertical="5dp">
+
     <TextView
         android:id="@+id/tv_month"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        tools:text="101"
+        android:layout_weight="1"
         android:textAlignment="center"
         android:textColor="@color/myDarkBlue_GoldTransparent"
         android:textSize="@dimen/dim_item_text_size"
-        />
+        tools:text="101" />
+
     <TextView
         android:id="@+id/tv_mainMonthAmount"
         android:layout_width="0dp"
-        android:layout_weight="2"
         android:layout_height="wrap_content"
-        tools:text="123456789"
+        android:layout_weight="2"
         android:textAlignment="textEnd"
         android:textColor="@color/myDarkBlue_GoldTransparent"
         android:textSize="@dimen/dim_item_text_size"
-        />
+        tools:text="123456789" />
+
     <TextView
         android:id="@+id/tv_interestInMonth"
         android:layout_width="0dp"
-        android:layout_weight="2"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        tools:text="123456789"
+        android:layout_weight="2"
         android:textAlignment="textEnd"
         android:textColor="@color/myDarkBlue_GoldTransparent"
         android:textSize="@dimen/dim_item_text_size"
-        />
+        tools:text="123456789" />
+
     <TextView
         android:id="@+id/tv_generalAmountInMonth"
         android:layout_width="0dp"
-        android:layout_weight="2"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        tools:text="123456789"
+        android:layout_weight="2"
         android:textAlignment="textEnd"
         android:textColor="@color/myDarkBlue_GoldTransparent"
         android:textSize="@dimen/dim_item_text_size"
-        />
+        tools:text="123456789" />
+
     <TextView
         android:id="@+id/tv_remainderInMonth"
         android:layout_width="0dp"
-        android:layout_weight="2"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="5dp"
-        tools:text="1234567890"
+        android:layout_weight="2"
         android:textAlignment="textEnd"
         android:textColor="@color/myDarkBlue_GoldTransparent"
         android:textSize="@dimen/dim_item_text_size"
-        />
+        tools:text="1234567890" />
 </LinearLayout>
