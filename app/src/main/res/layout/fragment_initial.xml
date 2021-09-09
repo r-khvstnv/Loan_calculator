@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_background"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.InitialFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/title_background"
+            android:elevation="5dp"
+            android:paddingVertical="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="30dp"
+            android:text="@string/st_title_credit_choose"
+            android:textAlignment="textStart"
+            android:textColor="@color/myWhite_DarkBlue"
+            android:textSize="28sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_annuity"
+            android:layout_width="340dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/credit_types_ripple"
+            android:elevation="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <TextView
+                android:id="@+id/tv_annuity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/st_annuity"
+                android:textAlignment="center"
+                android:textColor="@color/myPink_GoldTransparent"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/st_annuity_meaning"
+                android:textAlignment="center"
+                android:textColor="@color/myWhite_GoldTransparent"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/st_prompt"
+                android:textColor="@color/myPink_GoldTransparent"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_proportional"
+            android:layout_width="340dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/credit_types_ripple"
+            android:elevation="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_annuity">
+
+            <TextView
+                android:id="@+id/tv_proportional_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/st_proportional"
+                android:textAlignment="center"
+                android:textColor="@color/myPink_GoldTransparent"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/st_proportional_meaning"
+                android:textAlignment="center"
+                android:textColor="@color/myWhite_GoldTransparent"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView_main_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:elevation="5dp"
+            ads:adSize="LARGE_BANNER"
+            ads:adUnitId="@string/main_banner_id"
+            ads:layout_constraintTop_toBottomOf="@id/ll_proportional"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/ib_info"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/btn_small_ripple"
+            android:contentDescription="@string/st_info"
+            android:elevation="5dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adView_main_banner" />
+
+        <LinearLayout
+            android:id="@+id/ll_night"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/ll_night_mode_background"
+            android:elevation="5dp"
+            app:layout_constraintRight_toLeftOf="@id/ib_info"
+            app:layout_constraintTop_toTopOf="@id/ib_info">
+
+            <ToggleButton
+                android:id="@+id/tb_nightMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/night_mode_toggle"
+                android:checked="false"
+                android:textOff=""
+                android:textOn="" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator
+package com.rssll971.loancalculator.ui.main
 
 import android.app.Dialog
 import android.content.Intent
@@ -15,9 +15,14 @@ import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
+import com.rssll971.loancalculator.CreditDetail
+import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.databinding.ActivityMainBinding
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainContract.View {
+    @Inject
+    internal lateinit var presenter: MainPresenter
     //binding
     private lateinit var binding: ActivityMainBinding
     //ads
@@ -29,17 +34,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        //аналитика
+        presenter.attach(this)
+        /*//аналитика
         firebaseAnalytics = Firebase.analytics
         //выставляем правильное значение для tb
         getNightModeStatus()
         if (getNightModeStatus()){
             binding.tbNightMode.isChecked = true
-        }
+        }*/
 
 
-        /** Реклама */
+        /** Реклама
         MobileAds.initialize(this) {}
         mSmartBannerAd = findViewById(R.id.adView_main_banner)
         val adRequest = AdRequest.Builder().build()
@@ -47,13 +52,13 @@ class MainActivity : AppCompatActivity() {
         mSmartBannerAd.adListener = object : AdListener(){
             override fun onAdClosed() {
                 mSmartBannerAd.loadAd(adRequest)
-            }
+            }*/
         }
 
 
         /**
          * Блок управления кнопками
-         */
+         *//*
         //Кнопки выбранного кредита
         binding.llAnnuity.setOnClickListener {
             setCreditInfo(binding.tvAnnuityTitle.text.toString())
@@ -78,18 +83,18 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    /**
+    *//**
      * Ниже 2 метода для смены темы
-     */
+     *//*
     private fun themeModeToDark(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
     private fun themeModeToLight(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
-    /**
+    *//**
      * Метод получения информации о текущей теме
-     */
+     *//*
     private fun getNightModeStatus(): Boolean{
         return when(resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK){
@@ -106,9 +111,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    /**
+    *//**
      * Метод перехода к заполнению данных о кредите
-     */
+     *//*
     private fun setCreditInfo(loanType: String){
         //Создаем новую активити
         val intent = Intent(this, CreditDetail::class.java)
@@ -118,14 +123,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    /**
+    *//**
      * Метод показа диалогового окна с информацией о приложении
-     */
+     *//*
     private fun showInfo(){
         val dialogSettings = Dialog(this)
         dialogSettings.setContentView(R.layout.dialog_settings)
         //чтобы применить кастомный фон
         dialogSettings.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialogSettings.show()
-    }
+    }*/
 }
