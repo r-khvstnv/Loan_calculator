@@ -9,9 +9,7 @@ import javax.inject.Singleton
 @Module
 class ActivityModule(private var activity: Activity) {
     @Provides
-    fun providesActivity(): Activity{
-        return activity
-    }
+    fun providesActivity(): Activity = activity
     @Provides
     fun providesPresenter(): MainPresenter = MainPresenter()
 }

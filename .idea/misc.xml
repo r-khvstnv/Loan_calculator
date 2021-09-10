@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable-night/buttons_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/btn_small_ripple.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/buttons_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/buttons_ripple.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/activity_credit_detail.xml" value="0.1911231884057971" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/activity_main.xml" value="0.19882246376811594" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/dialog_settings.xml" value="0.264" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_base.xml" value="0.24010416666666667" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_credit_calculation.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_initial.xml" value="0.24010416666666667" />
       </map>
     </option>

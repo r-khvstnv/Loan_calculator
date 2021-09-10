@@ -15,14 +15,17 @@ import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
+import com.rssll971.loancalculator.BaseApp
 import com.rssll971.loancalculator.CreditDetail
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.databinding.ActivityMainBinding
+import com.rssll971.loancalculator.di.component.DaggerActivityComponent
+import com.rssll971.loancalculator.di.module.ActivityModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     @Inject
-    internal lateinit var presenter: MainPresenter
+    lateinit var presenter: MainPresenter
     //binding
     private lateinit var binding: ActivityMainBinding
     //ads
@@ -34,6 +37,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        some()
         presenter.attach(this)
         /*//аналитика
         firebaseAnalytics = Firebase.analytics
@@ -56,6 +61,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
 
 
+    fun some(){
+        val injectorMainComponent = DaggerActivityComponent.builder().activityModule(ActivityModule(this)).build()
+        injectorMainComponent.inject(this)
+    }
         /**
          * Блок управления кнопками
          *//*
