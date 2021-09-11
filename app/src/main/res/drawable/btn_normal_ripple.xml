@@ -2,5 +2,5 @@
 <ripple
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/myPink_GoldTransparent">
-    <item android:drawable="@drawable/buttons_background"/>
+    <item android:drawable="@drawable/btn_normal_shape"/>
 </ripple>

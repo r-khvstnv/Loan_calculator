@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/myPink_GoldTransparent"
+    android:color="@color/colorRippleEffect"
     >
-    <item android:drawable="@drawable/credit_types_background"/>
+    <item android:drawable="@drawable/btn_large_shape"/>
 </ripple>

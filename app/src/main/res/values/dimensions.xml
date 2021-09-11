@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="dim_btn_credit_types_width">340dp</dimen>
+    <dimen name="dim_btn_credit_types_height">170dp</dimen>
+
+
     <dimen name="dim_et_gap">30dp</dimen>
     <dimen name="dim_et_margin_horizontal">30dp</dimen>
     <dimen name="dim_et_text_size">20sp</dimen>

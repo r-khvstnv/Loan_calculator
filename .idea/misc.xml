@@ -4,15 +4,33 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable-night/buttons_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable-night/layout_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable-night/tb_night_mode.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/btn_small.xml" value="0.2703125" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/btn_small_ripple.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/btn_small_shape.xml" value="0.2703125" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/buttons_background.xml" value="0.2703125" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/buttons_ripple.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/credit_types_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/credit_types_ripple.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/ic_settings.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/layout_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/ll_night_mode_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/night_mode_toggle.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/tb_night_mode.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/tb_night_mode_off.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/tb_night_mode_on.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/tb_night_mode_selector.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/title_background.xml" value="0.2703125" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/drawable/total_title_background.xml" value="0.2703125" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/activity_credit_detail.xml" value="0.1911231884057971" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/activity_main.xml" value="0.19882246376811594" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/dialog_settings.xml" value="0.264" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_base.xml" value="0.24010416666666667" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_credit_calculation.xml" value="0.25416666666666665" />
-        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_initial.xml" value="0.24010416666666667" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_credit_result.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_initial.xml" value="0.264" />
+        <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/item_month_info.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
@@ -21,5 +39,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

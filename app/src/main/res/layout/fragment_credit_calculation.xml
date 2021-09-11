@@ -1,14 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.CreditCalculationFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:background="@color/colorLayoutBackground"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.calculation.CreditCalculationFragment">
+    <LinearLayout
+        android:id="@+id/ll_calculator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+            <!-- Credit type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/st_credit_type"
+                android:textAlignment="center"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textSize="26sp" />
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/tv_credit_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/myDarkBlue_GoldTransparent"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="@string/st_proportional" />
+
+            <!-- Loan amount -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
+                android:layout_marginTop="20dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="3"
+                    android:hint="@string/st_loan_amount"
+                    android:inputType="numberSigned"
+                    android:maxLength="10"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- Interest -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
+                android:layout_marginTop="@dimen/dim_et_gap">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_interest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="@string/st_annual_percentage"
+                    android:inputType="numberSigned"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColorHint="@color/myDarkBlue_GoldTransparent"
+                    android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- Period -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_loan_period"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
+                android:layout_marginTop="@dimen/dim_et_gap">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_loan_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="@string/st_period"
+                    android:inputType="numberSigned"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColorHint="@color/myDarkBlue_GoldTransparent"
+                    android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- Grace period -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_grace_period"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
+                android:layout_marginTop="@dimen/dim_et_gap">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_grace_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="@string/st_grace_period"
+                    android:inputType="numberSigned"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myDarkBlue_GoldTransparent"
+                    android:textColorHint="@color/myDarkBlue_GoldTransparent"
+                    android:textCursorDrawable="@color/myDarkBlue_GoldTransparent"
+                    android:textSize="@dimen/dim_et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Calculate button -->
+            <TextView
+                android:id="@+id/ll_calculate"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_normal_ripple"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:paddingHorizontal="50dp"
+                android:text="@string/st_calculate"
+                android:textAllCaps="true"
+                android:textColor="@color/myWhite_GoldTransparent"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_credit_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackgroundAccent"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:rotation="-90"
+                    android:text="@string/st_month"
+                    android:textAlignment="center"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
+                    android:text="@string/st_title_debt"
+                    android:textAlignment="center"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
+                    android:text="@string/st_title_interest"
+                    android:textAlignment="center"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
+                    android:text="@string/st_title_total_payment"
+                    android:textAlignment="center"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="2"
+                    android:text="@string/st_title_balance"
+                    android:textAlignment="center"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_title_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Rv with detailed items-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_details_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Total Layout -->
+            <LinearLayout
+                android:id="@+id/ll_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorBackgroundAccent"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/st_title_total"
+                    android:textAlignment="center"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_totalMainMonthAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="2"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_text_size"
+                    android:textStyle="bold"
+                    tools:text="123456789" />
+
+                <TextView
+                    android:id="@+id/tv_totalInterestInMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="2"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_text_size"
+                    android:textStyle="bold"
+                    tools:text="123456789" />
+
+                <TextView
+                    android:id="@+id/tv_totalGeneralAmountInMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="2"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_text_size"
+                    android:textStyle="bold"
+                    tools:text="123456789" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/myPink_GoldTransparent"
+                    android:textSize="@dimen/dim_item_text_size"
+                    android:textStyle="bold"
+                    tools:text="0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

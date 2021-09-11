@@ -6,13 +6,6 @@ interface BaseContract {
     interface Presenter<in V>{
         fun attach(view: V)
         fun detach()
-        fun replaceFragmentTo(fragment: Fragment)
-        fun replaceFragmentAndBackStack(fragment: Fragment)
-        fun onBackButtonPressed()
-        fun changeThemeMode()
-        fun changeLanguage()
     }
-    interface View{
-
-    }
+    interface View{}
 }

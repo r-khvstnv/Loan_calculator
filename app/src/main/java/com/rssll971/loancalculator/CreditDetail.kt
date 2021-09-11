@@ -37,7 +37,7 @@ class CreditDetail : AppCompatActivity() {
         setContentView(view)
 
         /** Реклама */
-        MobileAds.initialize(this) {}
+        /*MobileAds.initialize(this) {}
         mFirstSmartBannerAd = findViewById(R.id.adView_detailsFirstBanner)
         mResultSmartBannerAd = findViewById(R.id.adView_detailsSecondBanner)
         val adRequest = AdRequest.Builder().build()
@@ -56,16 +56,16 @@ class CreditDetail : AppCompatActivity() {
         }
 
 
-        /** Получаем тип кредита с предыдущей страницы*/
+        *//** Получаем тип кредита с предыдущей страницы*//*
         selectedCreditType = intent?.getStringExtra("LoanType").toString()
         binding.tvSelectedCreditType.text = selectedCreditType
-        /** Скрываем сцену с результатами*/
+        *//** Скрываем сцену с результатами*//*
         binding.llResultTable.visibility = View.GONE
 
 
-        /**
+        *//**
          * Блок управления кнопками
-         */
+         *//*
         //вычисление
         binding.llCalculate.setOnClickListener {
             //проверяем наличие данных
@@ -77,7 +77,7 @@ class CreditDetail : AppCompatActivity() {
                     binding.etGracePeriod.setText("0")
                 }
 
-                /**Переходим к вычеслениям относительно типа кредита*/
+                *//**Переходим к вычеслениям относительно типа кредита*//*
                 when(binding.tvSelectedCreditType.text){
                     resources.getString(R.string.st_annuity) -> {
                         estimateAnnuity(binding.etAmount.text.toString().toFloat(),
@@ -93,14 +93,14 @@ class CreditDetail : AppCompatActivity() {
                     }
                 }
 
-                /** Показываем таблицу с результатами*/
+                *//** Показываем таблицу с результатами*//*
                 binding.llResultTable.visibility = View.VISIBLE
 
 
-                /**
+                *//**
                  * Сначала показываем конечную информацию,
                  * тк для Rv будет удален последний элемент в массиве
-                */
+                *//*
                 showTotalInfo()
                 setupResultRecyclerView()
                 //немного прокручиваем rv с таблицей
@@ -112,13 +112,13 @@ class CreditDetail : AppCompatActivity() {
         //прокрутка вверх
         binding.ibUp.setOnClickListener {
             binding.scrollView.smoothScrollTo(0, 0)
-        }
+        }*/
     }
 
-    /**
+   /* *//**
      * Метод, который прячет клавиатуру,
      * когда пользователь совершил действие вне области клавиатуры
-     */
+     *//*
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         if (currentFocus != null){
             val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -127,13 +127,13 @@ class CreditDetail : AppCompatActivity() {
         return super.dispatchTouchEvent(ev)
     }
 
-    /**
+    *//**
      * Дальше 2 метода вычесления кредита
-     */
-    /**
+     *//*
+    *//**
      * Ануитентный
      * действительность данных должно быть проверенно перед вызовом метода
-     */
+     *//*
     private fun estimateAnnuity(loanAmount: Float, loanInterest: Float, loanPeriod: Int, loanGracePeriod: Int){
         var amount = loanAmount
         var gracePeriod = loanGracePeriod
@@ -154,9 +154,9 @@ class CreditDetail : AppCompatActivity() {
         var monthInfo: MonthCreditModel
 
 
-        /**
+        *//**
          * вычисляем общую сумму выплаты в месяц
-         * колво месяцев в строке ниже влияет на отсрочку */
+         * колво месяцев в строке ниже влияет на отсрочку *//*
         val generalAmountInMonth: Float = amount * (interestRateInMonth + (interestRateInMonth /
                         ((1 + interestRateInMonth).pow(loanPeriod - loanGracePeriod) - 1)))
         //цикл для вычислений каждого месяца
@@ -168,7 +168,7 @@ class CreditDetail : AppCompatActivity() {
             //дальнейшие вычисления проводятся относительно
             // наличия отсрочки выплаты основного долга
             if (gracePeriod > 0){
-                /**при отсрочки сумма основного долга до истечения срока не меняется*/
+                *//**при отсрочки сумма основного долга до истечения срока не меняется*//*
                 // создаем объект класса
                  monthInfo = MonthCreditModel(i, 0.0f,
                         interestAmountInMonth, interestAmountInMonth, amount)
@@ -201,10 +201,10 @@ class CreditDetail : AppCompatActivity() {
     }
 
 
-    /**
+    *//**
      * Дифференцированный
      * действительность данных должно быть проверенно перед вызовом метода
-     */
+     *//*
     private fun estimateDifferential(loanAmount: Float,
                                      loanInterest: Float,
                                      loanPeriod: Int,
@@ -227,9 +227,9 @@ class CreditDetail : AppCompatActivity() {
         // создаем объект класса
         var monthInfo: MonthCreditModel
 
-        /**
+        *//**
          * вычисляем общую сумму выплаты в месяц
-         * колво месяцев в строке ниже влияет на отсрочку */
+         * колво месяцев в строке ниже влияет на отсрочку *//*
         val mainAmountInMonth: Float = amount / (loanPeriod - gracePeriod)
         //цикл для вычислений каждого месяца
         for (i in 1..loanPeriod){
@@ -241,7 +241,7 @@ class CreditDetail : AppCompatActivity() {
             //дальнейшие вычисления проводятся относительно
             // наличия отсрочки выплаты основного долга
             if (gracePeriod > 0){
-                /**при отсрочки сумма основного долга до истечения срока не меняется*/
+                *//**при отсрочки сумма основного долга до истечения срока не меняется*//*
                 // создаем объект класса
                 monthInfo = MonthCreditModel(i, 0.0f,
                         interestAmountInMonth, interestAmountInMonth, amount)
@@ -274,9 +274,9 @@ class CreditDetail : AppCompatActivity() {
     }
 
 
-    /**
+    *//**
      * Метод показа итоговой строки
-     */
+     *//*
     private fun showTotalInfo(){
         val totalItem = resultList[resultList.size - 1]
         val mainMonthAmountAll= totalItem.mainMonthDebt
@@ -292,9 +292,9 @@ class CreditDetail : AppCompatActivity() {
             binding.rvDetailsContainer.layoutParams.height = resources.getDimension(R.dimen.dim_rv_height).toInt()
     }
 
-    /**
+    *//**
      * Метод показа результатов вычисления в Rv
-     */
+     *//*
     private fun setupResultRecyclerView(){
         binding.rvDetailsContainer.layoutManager =
                 LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -303,5 +303,5 @@ class CreditDetail : AppCompatActivity() {
         //запускаем адаптер
         resultAdapter = MonthResultAdapter(resultList, this)
         binding.rvDetailsContainer.adapter = resultAdapter
-    }
+    }*/
 }

@@ -1,26 +1,18 @@
 package com.rssll971.loancalculator.ui.main
 
-import android.app.Dialog
-import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.FragmentTransaction
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
-import com.google.firebase.ktx.Firebase
-import com.rssll971.loancalculator.BaseApp
-import com.rssll971.loancalculator.CreditDetail
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.databinding.ActivityMainBinding
 import com.rssll971.loancalculator.di.component.DaggerActivityComponent
 import com.rssll971.loancalculator.di.module.ActivityModule
+import com.rssll971.loancalculator.ui.fragments.initial.InitialFragment
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainContract.View {
@@ -38,108 +30,44 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         val view = binding.root
         setContentView(view)
 
-        some()
+        injector()
         presenter.attach(this)
-        /*//аналитика
+        /*//аналитика todo enable
         firebaseAnalytics = Firebase.analytics
-        //выставляем правильное значение для tb
-        getNightModeStatus()
-        if (getNightModeStatus()){
-            binding.tbNightMode.isChecked = true
-        }*/
+        */
 
 
-        /** Реклама
+        /** Реклама */
         MobileAds.initialize(this) {}
-        mSmartBannerAd = findViewById(R.id.adView_main_banner)
+        mSmartBannerAd = findViewById(R.id.adView_main)
         val adRequest = AdRequest.Builder().build()
         mSmartBannerAd.loadAd(adRequest)
-        mSmartBannerAd.adListener = object : AdListener(){
+        mSmartBannerAd.adListener = object : AdListener() {
             override fun onAdClosed() {
                 mSmartBannerAd.loadAd(adRequest)
-            }*/
+            }
         }
 
+        supportFragmentManager.beginTransaction().apply {
+            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            replace(R.id.ll_container, InitialFragment())
+            setReorderingAllowed(true)
+            commit()
+        }
+    }
 
-    fun some(){
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detach()
+    }
+
+
+    private fun injector(){
         val injectorMainComponent = DaggerActivityComponent.builder().activityModule(ActivityModule(this)).build()
         injectorMainComponent.inject(this)
     }
-        /**
-         * Блок управления кнопками
-         *//*
-        //Кнопки выбранного кредита
-        binding.llAnnuity.setOnClickListener {
-            setCreditInfo(binding.tvAnnuityTitle.text.toString())
-        }
-        binding.llProportional.setOnClickListener {
-            setCreditInfo(binding.tvProportionalTitle.text.toString())
-        }
-        //информация
-        binding.ibInfo.setOnClickListener {
-            showInfo()
-        }
-        //ночной режим
-        binding.tbNightMode.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                //Меняем тему на темную
-                themeModeToDark()
-            } else {
-                //Меняем тему на светлую
-                themeModeToLight()
-            }
-        }
-    }
 
 
-    *//**
-     * Ниже 2 метода для смены темы
-     *//*
-    private fun themeModeToDark(){
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-    }
-    private fun themeModeToLight(){
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-    }
-    *//**
-     * Метод получения информации о текущей теме
-     *//*
-    private fun getNightModeStatus(): Boolean{
-        return when(resources.configuration.uiMode
-                and Configuration.UI_MODE_NIGHT_MASK){
-            //Светлая тема
-            Configuration.UI_MODE_NIGHT_NO -> {
-                false
-            }
-            //Темная тема
-            Configuration.UI_MODE_NIGHT_YES -> {
-                true
-            }
-            else -> false
-        }
-    }
 
 
-    *//**
-     * Метод перехода к заполнению данных о кредите
-     *//*
-    private fun setCreditInfo(loanType: String){
-        //Создаем новую активити
-        val intent = Intent(this, CreditDetail::class.java)
-        intent.putExtra("LoanType", loanType)
-        //запускаем новую активити
-        startActivity(intent)
-    }
-
-
-    *//**
-     * Метод показа диалогового окна с информацией о приложении
-     *//*
-    private fun showInfo(){
-        val dialogSettings = Dialog(this)
-        dialogSettings.setContentView(R.layout.dialog_settings)
-        //чтобы применить кастомный фон
-        dialogSettings.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialogSettings.show()
-    }*/
 }

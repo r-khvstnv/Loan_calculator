@@ -17,10 +17,13 @@
     <!--Theme colors for objects-->
     <item name="colorText" type="color">@color/myWhite</item>
     <item name="colorTextAccent" type="color">@color/myPink</item>
+
     <item name="colorBtnBackground" type="color">@color/myDarkBlue</item>
     <item name="colorBackgroundAccent" type="color">@color/myDarkBlue</item>
     <item name="colorRippleEffect" type="color">@color/myPink</item>
     <item name="colorIcon" type="color">@color/myWhite</item>
+
+    <item name="colorLayoutBackground" type="color">@color/myPinkLight</item>
 
 
     <style name="Theme.NoActionBarLoan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
