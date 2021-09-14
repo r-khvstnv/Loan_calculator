@@ -35,11 +35,11 @@
             android:layout_width="@dimen/dim_btn_credit_types_width"
             android:layout_height="@dimen/dim_btn_credit_types_height"
             android:layout_marginTop="50dp"
-            android:tag="@string/st_annuity"
             android:background="@drawable/btn_large_ripple"
             android:elevation="5dp"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:tag="@string/st_annuity">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,12 +75,11 @@
             android:layout_width="@dimen/dim_btn_credit_types_width"
             android:layout_height="@dimen/dim_btn_credit_types_height"
             android:layout_marginTop="50dp"
-            android:tag="@string/st_proportional"
             android:background="@drawable/btn_large_ripple"
             android:elevation="5dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            >
+            android:tag="@string/st_proportional">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,31 +101,38 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/ib_settings"
-            android:layout_width="64dp"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:background="@drawable/btn_small_ripple"
-            android:contentDescription="@string/st_info"
-            android:elevation="5dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_settings"
-            app:tint="@color/colorIcon"
-            />
-        <ToggleButton
-            android:id="@+id/tb_night_mode"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="end"
-            android:background="@drawable/tb_night_mode_selector"
-            android:textOff=""
-            android:textOn=""
-            />
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="end"
+            android:orientation="horizontal"
+            >
+
+            <ToggleButton
+                android:id="@+id/tb_night_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/tb_night_mode_selector"
+                android:textOff=""
+                android:textOn="" />
+
+            <ImageView
+                android:id="@+id/ib_settings"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_small_ripple"
+                android:contentDescription="@string/st_info"
+                android:elevation="5dp"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_info"
+                app:tint="@color/colorIcon" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

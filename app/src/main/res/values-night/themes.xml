@@ -14,30 +14,37 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <!--Theme colors for objects todo change night colors-->
-    <item name="colorText" type="color">@color/myWhite</item>
-    <item name="colorTextAccent" type="color">@color/myPink</item>
+    <!--Theme colors for objects -->
+    <item name="colorText" type="color">@color/myWhite_transparent</item>
+    <item name="colorTextAccent" type="color">@color/myGold</item>
+    <item name="colorTextDark" type="color">@color/myGoldTransparent</item>
 
-    <item name="colorBtnBackground" type="color">@color/myDarkBlue</item>
-    <item name="colorBackgroundAccent" type="color">@color/myDarkBlue</item>
-    <item name="colorRippleEffect" type="color">@color/myPink</item>
-    <item name="colorIcon" type="color">@color/myWhite</item>
+    <item name="colorBtnBackground" type="color">@color/myBlackBlue</item>
+    <item name="colorBackgroundAccent" type="color">@color/myBlackBlue</item>
+    <item name="colorEditText" type="color">@color/myGoldTransparent</item>
+    <item name="colorRippleEffect" type="color">@color/myGold</item>
+    <item name="colorIcon" type="color">@color/myWhite_transparent</item>
 
     <item name="colorLayoutBackground" type="color">@color/myDarkBlue</item>
+    <item name="colorSnackBarBackground" type="color">@color/myBlackBlue</item>
 
 
     <style name="Theme.NoActionBarLoan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/myDarkBlue_GoldTransparent</item>
-        <item name="colorPrimaryVariant">@color/myDarkBlue_GoldTransparent</item>
-        <item name="colorOnPrimary">@color/myDarkBlue_GoldTransparent</item>
+        <item name="colorPrimary">@color/myGoldTransparent</item>
+        <item name="colorPrimaryVariant">@color/myGoldTransparent</item>
+        <item name="colorOnPrimary">@color/myGoldTransparent</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/myPink_GoldTransparent</item>
-        <item name="colorSecondaryVariant">@color/myPink_GoldTransparent</item>
-        <item name="colorOnSecondary">@color/myPink_GoldTransparent</item>
+        <item name="colorSecondary">@color/myGoldTransparent</item>
+        <item name="colorSecondaryVariant">@color/myGoldTransparent</item>
+        <item name="colorOnSecondary">@color/myGoldTransparent</item>
 
         <item name="android:statusBarColor">@color/myDarkBlue</item>
         <item name="android:navigationBarColor">@color/myDarkBlue</item>
+    </style>
 
-
+    <style name="MyEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorControlNormal">@color/colorEditText</item>
+        <item name="colorControlActivated">@color/colorEditText</item>
+        <item name="colorControlHighlight">@color/colorEditText</item>
     </style>
 </resources>

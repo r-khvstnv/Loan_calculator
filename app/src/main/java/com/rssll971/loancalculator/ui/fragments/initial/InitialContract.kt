@@ -6,7 +6,7 @@ interface InitialContract {
     interface Presenter: BaseContract.Presenter<InitialView>{
         fun creditTypeWasClicked(isAnnuity: Boolean)
         fun infoWasClicked()
-        fun changeThemeMode(isChecked: Boolean)
+        fun switchNightMode(isChecked: Boolean)
     }
     interface InitialView: BaseContract.View{
         fun requestCreditCalculationFragment(isAnnuity: Boolean)

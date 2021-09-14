@@ -3,19 +3,16 @@
     package="com.rssll971.loancalculator">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:name=".BaseApp"
         android:icon="@mipmap/ic_house_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_house_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NoActionBarLoan">
-        <activity
-            android:name=".CreditDetail"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity android:name=".ui.main.MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,5 +23,4 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/ad_id" />
     </application>
-
 </manifest>

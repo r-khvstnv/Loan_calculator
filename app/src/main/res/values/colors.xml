@@ -14,6 +14,7 @@
     <!-- Цвета меняющиеся также при изменении темы-->
     <color name="myWhite_DarkBlue">#EFEFEF</color>
     <color name="myWhite_GoldTransparent">#EFEFEF</color>
+    <color name="myWhite_transparent">#B3EFEFEF</color>
     <color name="myPink_GoldTransparent">#ff9e9e</color>
     <color name="myPinkLight">#E9DADA</color>
     <color name="myDarkBlue">#292E3C</color>

@@ -1,30 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!--Theme colors for objects-->
-    <item name="colorText" type="color">@color/myWhite</item>
-    <item name="colorTextAccent" type="color">@color/myPink</item>
-
-    <item name="colorBtnBackground" type="color">@color/myDarkBlue</item>
-    <item name="colorBackgroundAccent" type="color">@color/myDarkBlue</item>
-    <item name="colorRippleEffect" type="color">@color/myPink</item>
-    <item name="colorIcon" type="color">@color/myWhite</item>
-
-    <item name="colorLayoutBackground" type="color">@color/myPinkLight</item>
-
-
     <style name="Theme.NoActionBarLoan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <item name="colorPrimary">@color/myDarkBlue_GoldTransparent</item>
-        <item name="colorPrimaryVariant">@color/myDarkBlue_GoldTransparent</item>
-        <item name="colorOnPrimary">@color/myDarkBlue_GoldTransparent</item>
+        <item name="colorPrimary">@color/myDarkBlue</item>
+        <item name="colorPrimaryVariant">@color/myDarkBlue</item>
+        <item name="colorOnPrimary">@color/myDarkBlue</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/myPink_GoldTransparent</item>
-        <item name="colorSecondaryVariant">@color/myPink_GoldTransparent</item>
-        <item name="colorOnSecondary">@color/myPink_GoldTransparent</item>
+        <item name="colorSecondary">@color/myPink</item>
+        <item name="colorSecondaryVariant">@color/myPink</item>
+        <item name="colorOnSecondary">@color/myPink</item>
 
         <item name="android:statusBarColor">@color/myPinkLight</item>
         <item name="android:navigationBarColor">@color/myPinkLight</item>
+
         <item name="android:windowLightStatusBar">true</item>
 
     </style>

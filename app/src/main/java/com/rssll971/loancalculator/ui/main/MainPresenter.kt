@@ -1,7 +1,5 @@
 package com.rssll971.loancalculator.ui.main
 
-import androidx.fragment.app.Fragment
-
 class MainPresenter: MainContract.Presenter {
     private var view: MainContract.View? = null
     override fun attach(view: MainContract.View) {

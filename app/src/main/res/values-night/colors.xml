@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="myWhite_DarkBlue">#292E3C</color>
-    <color name="myWhite_GoldTransparent">#B3F5BC8C</color>
-    <color name="myPink_GoldTransparent">#B3F5BC8C</color>
-    <color name="myDarkBlue_GoldTransparent">#B3F5BC8C</color>
-    <color name="myDarkBlue_BlackBlue">#2F3239</color>
-
-</resources>

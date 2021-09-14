@@ -40,7 +40,7 @@ class InitialFragment : Fragment(), InitialContract.InitialView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.attach(this)
-        getNightModeStatus()
+        checkNightModeStatus()
 
         with(binding){
             llAnnuity.setOnClickListener {
@@ -53,7 +53,7 @@ class InitialFragment : Fragment(), InitialContract.InitialView {
                 presenter.infoWasClicked()
             }
             tbNightMode.setOnCheckedChangeListener { _, isChecked ->
-                presenter.changeThemeMode(isChecked = isChecked)
+                presenter.switchNightMode(isChecked = isChecked)
             }
         }
     }
@@ -64,11 +64,13 @@ class InitialFragment : Fragment(), InitialContract.InitialView {
     }
 
     private fun injector(){
-        val fragmentComponent = DaggerFragmentComponent.builder().fragmentModule(FragmentModule()).build()
+        val fragmentComponent =
+            DaggerFragmentComponent.builder()
+                .fragmentModule(FragmentModule()).build()
         fragmentComponent.inject(this)
     }
 
-    private fun getNightModeStatus(){
+    private fun checkNightModeStatus(){
         binding.tbNightMode.isChecked = when(resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK){
             Configuration.UI_MODE_NIGHT_NO -> {

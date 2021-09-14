@@ -21,7 +21,7 @@ class InitialPresenter: InitialContract.Presenter {
         view?.showInfo()
     }
 
-    override fun changeThemeMode(isChecked: Boolean) {
+    override fun switchNightMode(isChecked: Boolean) {
         if (isChecked)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         else
