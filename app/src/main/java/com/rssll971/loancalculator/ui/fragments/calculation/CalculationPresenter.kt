@@ -1,5 +1,6 @@
 package com.rssll971.loancalculator.ui.fragments.calculation
 
+import android.content.res.Resources
 import com.rssll971.loancalculator.models.CreditModel
 import com.rssll971.loancalculator.models.MonthCreditModel
 import kotlin.math.pow
@@ -119,7 +120,7 @@ class CalculationPresenter: CalculationContract.Presenter {
         //add result to the end of array
         val overall = MonthCreditModel(-1, creditModel.amount.toFloat(),
             interestOverall, amountOverall, 0.0f)
-        view?.onEstimationCallback(resultList, overall)
+        providesCreditTableData(resultList, overall)
     }
 
     private fun estimateDifferential(creditModel: CreditModel){
@@ -186,8 +187,19 @@ class CalculationPresenter: CalculationContract.Presenter {
         val overall = MonthCreditModel(-1, creditModel.amount.toFloat(),
             interestOverall, amountOverall, 0.0f)
 
-        view?.onEstimationCallback(resultList, overall)
+        providesCreditTableData(resultList, overall)
     }
 
+    private fun providesCreditTableData(monthList: ArrayList<MonthCreditModel>,
+                                        totalData: MonthCreditModel){
+        val rvHeight = if (monthList.size <= 24)
+            (monthList.size * 30).dp()
+        else
+            600.dp()
+        view?.provideRecyclerViewHeight(rvHeight)
+        view?.onEstimationCallback(monthList, totalData)
+
+    }
+    fun Int.dp(): Int = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
 }
 

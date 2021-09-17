@@ -15,6 +15,7 @@ interface CalculationContract {
         fun showCreditType(isAnnuity: Boolean)
         fun showPoorDataErrorMessage()
         fun onEstimationCallback(monthCreditList: ArrayList<MonthCreditModel>,
-                                 resultInfo: MonthCreditModel)
+                                 resultData: MonthCreditModel)
+        fun provideRecyclerViewHeight(height: Int)
     }
 }

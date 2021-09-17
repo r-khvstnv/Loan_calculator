@@ -26,6 +26,7 @@ class CreditCalculationFragment : Fragment(), CalculationContract.CalculatorView
     private val binding get() = _binding!!
     private lateinit var mSmartBannerAd: AdView
     private var isAnnuity = true
+    private var rvHeight: Int = 300
 
     @Inject
     lateinit var presenter: CalculationContract.Presenter
@@ -100,23 +101,31 @@ class CreditCalculationFragment : Fragment(), CalculationContract.CalculatorView
 
     override fun onEstimationCallback(
         monthCreditList: ArrayList<MonthCreditModel>,
-        resultInfo: MonthCreditModel
+        resultData: MonthCreditModel
     ) {
         setupResultRecyclerView(monthCreditList = monthCreditList)
         //show overall result
         with(binding){
-            tvTotalMainMonthAmount.text = String.format("%,.2f", resultInfo.mainMonthDebt)
-            tvTotalInterestInMonth.text = String.format("%,.2f", resultInfo.interestInMonth)
-            tvTotalOverallAmountInMonth.text = String.format("%,.2f", resultInfo.overallAmountInMonth)
+            tvTotalMainMonthAmount.text = String.format("%,.2f", resultData.mainMonthDebt)
+            tvTotalInterestInMonth.text = String.format("%,.2f", resultData.interestInMonth)
+            tvTotalOverallAmountInMonth.text = String.format("%,.2f", resultData.overallAmountInMonth)
             llCreditResult.visibility = View.VISIBLE
-            scrollView.requestChildFocus(llCreditResult, llCreditResult)
+            scrollView.requestChildFocus(adViewResult, adViewResult)
         }
     }
 
+    override fun provideRecyclerViewHeight(height: Int) {
+        rvHeight = height
+    }
     private fun setupResultRecyclerView(monthCreditList: ArrayList<MonthCreditModel>){
-        binding.rvDetailsContainer.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val resultAdapter = MonthResultAdapter(monthCreditList, requireContext())
-        binding.rvDetailsContainer.adapter = resultAdapter
+        with(binding){
+            rvDetailsContainer.layoutManager =
+                LinearLayoutManager(requireContext(),
+                    LinearLayoutManager.VERTICAL, false)
+            rvDetailsContainer.layoutParams.height = rvHeight
+            rvDetailsContainer.adapter = resultAdapter
+        }
+
     }
 }
