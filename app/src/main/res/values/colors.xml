@@ -12,16 +12,11 @@
     <color name="myPink">#ff9e9e</color>
 
     <!-- Цвета меняющиеся также при изменении темы-->
-    <color name="myWhite_DarkBlue">#EFEFEF</color>
-    <color name="myWhite_GoldTransparent">#EFEFEF</color>
     <color name="myWhite_transparent">#B3EFEFEF</color>
-    <color name="myPink_GoldTransparent">#ff9e9e</color>
     <color name="myPinkLight">#E9DADA</color>
     <color name="myDarkBlue">#292E3C</color>
     <color name="myBlackBlue">#2F3239</color>
-    <color name="myDarkBlue_BlackBlue">#292E3C</color>
-    <color name="myDarkBlue_GoldTransparent">#292E3C</color>
-    <color name="myGoldTransparent">#B3F5BC8C</color>
+    <color name="myGoldTransparent">#CDA07B</color>
     <color name="myGold">#F5BC8C</color>
 
 

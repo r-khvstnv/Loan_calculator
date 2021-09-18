@@ -32,9 +32,11 @@
 
         <LinearLayout
             android:id="@+id/ll_annuity"
-            android:layout_width="@dimen/dim_btn_credit_types_width"
-            android:layout_height="@dimen/dim_btn_credit_types_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="@dimen/dim_credit_btn_margin_horizontal"
+            android:padding="@dimen/im_credit_btn_padding"
             android:background="@drawable/btn_large_ripple"
             android:elevation="5dp"
             android:gravity="center_horizontal"
@@ -44,21 +46,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/dim_credit_type_title_margin_top"
                 android:text="@string/st_annuity"
                 android:textAlignment="center"
                 android:textColor="@color/colorTextAccent"
-                android:textSize="28sp" />
+                android:textSize="@dimen/dim_credit_type_titles_text_size" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingHorizontal="10dp"
+                android:layout_marginTop="@dimen/dim_credit_description_margin_top"
+                android:paddingHorizontal="@dimen/dim_credit_description_margin_horizontal"
                 android:text="@string/st_annuity_meaning"
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
-                android:textSize="12sp" />
+                android:textSize="@dimen/dim_credit_description_text_size" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -66,15 +68,17 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/st_prompt"
                 android:textColor="@color/colorTextAccent"
-                android:textSize="14sp" />
+                android:textSize="@dimen/dim_credit_description_text_size" />
         </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/ll_proportional"
-            android:layout_width="@dimen/dim_btn_credit_types_width"
-            android:layout_height="@dimen/dim_btn_credit_types_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="@dimen/dim_credit_btn_margin_horizontal"
+            android:padding="@dimen/im_credit_btn_padding"
             android:background="@drawable/btn_large_ripple"
             android:elevation="5dp"
             android:gravity="center_horizontal"
@@ -84,21 +88,29 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/dim_credit_type_title_margin_top"
                 android:text="@string/st_proportional"
                 android:textAlignment="center"
                 android:textColor="@color/colorTextAccent"
-                android:textSize="28sp" />
+                android:textSize="@dimen/dim_credit_type_titles_text_size" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingHorizontal="10dp"
+                android:layout_marginTop="@dimen/dim_credit_description_margin_top"
+                android:paddingHorizontal="@dimen/dim_credit_description_margin_horizontal"
                 android:text="@string/st_proportional_meaning"
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
-                android:textSize="12sp" />
+                android:textSize="@dimen/dim_credit_description_text_size" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible"
+                android:text="@string/st_prompt"
+                android:textColor="@color/colorTextAccent"
+                android:textSize="@dimen/dim_credit_description_text_size" />
         </LinearLayout>
 
         <LinearLayout

@@ -12,7 +12,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
-import com.rssll971.loancalculator.MonthResultAdapter
+import com.rssll971.loancalculator.adapters.MonthResultAdapter
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.databinding.FragmentCreditCalculationBinding
 import com.rssll971.loancalculator.di.component.DaggerFragmentComponent
@@ -79,6 +79,10 @@ class CreditCalculationFragment : Fragment(), CalculationContract.CalculatorView
         fragmentComponent.inject(this)
     }
 
+    override fun onDestroyView() {
+        presenter.detach()
+        super.onDestroyView()
+    }
     override fun showCreditType(isAnnuity: Boolean) {
         val creditType = if (isAnnuity)
                 getString(R.string.st_annuity)

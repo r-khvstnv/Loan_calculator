@@ -6,7 +6,7 @@
 
 
     <string name="app_name">Simple Loan Calculator</string>
-    <string name="app_version" translatable="false">1.0.4</string>
+    <string name="app_version" translatable="false">1.0.5</string>
     <string name="st_icon" translatable="false">Icon</string>
     <string name="st_version">Version:</string>
     <string name="st_back">Back</string>
