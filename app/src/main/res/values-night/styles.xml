@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Theme colors for objects -->
+    <item name="colorText" type="color">@color/myWhite_transparent</item>
+    <item name="colorTextAccent" type="color">@color/myGold</item>
+    <item name="colorTextDark" type="color">@color/myGoldTransparent</item>
+
+    <item name="colorBtnBackground" type="color">@color/myBlackBlue</item>
+    <item name="colorBackgroundAccent" type="color">@color/myBlackBlue</item>
+    <item name="colorEditText" type="color">@color/myGoldTransparent</item>
+    <item name="colorRippleEffect" type="color">@color/myGold</item>
+    <item name="colorIcon" type="color">@color/myWhite_transparent</item>
+    <item name="colorTitleBackground" type="color">@color/myBlackBlue</item>
+
+    <item name="colorLayoutBackground" type="color">@color/myDarkBlue</item>
+    <item name="colorSnackBarBackground" type="color">@color/myBlackBlue</item>
+</resources>

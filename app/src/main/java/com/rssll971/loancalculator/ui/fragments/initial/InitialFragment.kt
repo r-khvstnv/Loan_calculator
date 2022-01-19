@@ -99,7 +99,7 @@ class InitialFragment : Fragment(), InitialContract.InitialView {
 
     override fun showInfo(){
         val dialogSettings = Dialog(requireContext())
-        dialogSettings.setContentView(R.layout.dialog_settings)
+        dialogSettings.setContentView(R.layout.dialog_info)
 
         dialogSettings.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialogSettings.show()

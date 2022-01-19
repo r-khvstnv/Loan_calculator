@@ -34,13 +34,13 @@
             android:id="@+id/ll_annuity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_marginHorizontal="@dimen/dim_credit_btn_margin_horizontal"
-            android:padding="@dimen/im_credit_btn_padding"
+            android:layout_marginTop="50dp"
             android:background="@drawable/btn_large_ripple"
             android:elevation="5dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
+            android:padding="@dimen/im_credit_btn_padding"
             android:tag="@string/st_annuity">
 
             <TextView
@@ -76,13 +76,13 @@
             android:id="@+id/ll_proportional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_marginHorizontal="@dimen/dim_credit_btn_margin_horizontal"
-            android:padding="@dimen/im_credit_btn_padding"
+            android:layout_marginTop="50dp"
             android:background="@drawable/btn_large_ripple"
             android:elevation="5dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
+            android:padding="@dimen/im_credit_btn_padding"
             android:tag="@string/st_proportional">
 
             <TextView
@@ -103,14 +103,15 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/dim_credit_description_text_size" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:visibility="invisible"
                 android:text="@string/st_prompt"
                 android:textColor="@color/colorTextAccent"
-                android:textSize="@dimen/dim_credit_description_text_size" />
+                android:textSize="@dimen/dim_credit_description_text_size"
+                android:visibility="invisible" />
         </LinearLayout>
 
         <LinearLayout
@@ -120,15 +121,14 @@
             android:layout_marginTop="80dp"
             android:layout_marginBottom="10dp"
             android:gravity="end"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <ToggleButton
                 android:id="@+id/tb_night_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
                 android:layout_margin="10dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/tb_night_mode_selector"
                 android:textOff=""
                 android:textOn="" />

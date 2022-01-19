@@ -14,21 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <!--Theme colors for objects -->
-    <item name="colorText" type="color">@color/myWhite_transparent</item>
-    <item name="colorTextAccent" type="color">@color/myGold</item>
-    <item name="colorTextDark" type="color">@color/myGoldTransparent</item>
-
-    <item name="colorBtnBackground" type="color">@color/myBlackBlue</item>
-    <item name="colorBackgroundAccent" type="color">@color/myBlackBlue</item>
-    <item name="colorEditText" type="color">@color/myGoldTransparent</item>
-    <item name="colorRippleEffect" type="color">@color/myGold</item>
-    <item name="colorIcon" type="color">@color/myWhite_transparent</item>
-    <item name="colorTitleBackground" type="color">@color/myBlackBlue</item>
-
-    <item name="colorLayoutBackground" type="color">@color/myDarkBlue</item>
-    <item name="colorSnackBarBackground" type="color">@color/myBlackBlue</item>
-
 
     <style name="Theme.NoActionBarLoan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/myGoldTransparent</item>
@@ -41,11 +26,5 @@
 
         <item name="android:statusBarColor">@color/myDarkBlue</item>
         <item name="android:navigationBarColor">@color/myDarkBlue</item>
-    </style>
-
-    <style name="MyEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="colorControlNormal">@color/colorEditText</item>
-        <item name="colorControlActivated">@color/colorEditText</item>
-        <item name="colorControlHighlight">@color/colorEditText</item>
     </style>
 </resources>

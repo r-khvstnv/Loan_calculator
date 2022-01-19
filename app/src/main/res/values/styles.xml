@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditTextLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorControlNormal">@color/colorEditText</item>
+        <item name="colorControlActivated">@color/colorEditText</item>
+        <item name="colorControlHighlight">@color/colorEditText</item>
+    </style>
+
+    <style name="EditTextStyle" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:inputType">numberSigned</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:textColorHint">@color/colorEditText</item>
+        <item name="android:textCursorDrawable">@color/colorEditText</item>
+        <item name="android:textSize">@dimen/dim_et_text_size</item>
+        <item name="android:ems">3</item>
+    </style>
+
+    <!--Theme colors for objects-->
+    <item name="colorText" type="color">@color/myWhite</item>
+    <item name="colorTextAccent" type="color">@color/myPink</item>
+    <item name="colorTextDark" type="color">@color/myDarkBlue</item>
+
+    <item name="colorBtnBackground" type="color">@color/myDarkBlue</item>
+    <item name="colorBackgroundAccent" type="color">@color/myDarkBlue</item>
+    <item name="colorEditText" type="color">@color/myDarkBlue</item>
+    <item name="colorRippleEffect" type="color">@color/myPink</item>
+    <item name="colorIcon" type="color">@color/myWhite</item>
+    <item name="colorTitleBackground" type="color">@color/myDarkBlue</item>
+
+    <item name="colorLayoutBackground" type="color">@color/myPinkLight</item>
+    <item name="colorSnackBarBackground" type="color">@color/myDarkBlue</item>
+
+
+</resources>

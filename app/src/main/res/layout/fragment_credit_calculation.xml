@@ -42,7 +42,7 @@
 
             <!-- Loan amount -->
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/MyEditText"
+                style="@style/EditTextLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
@@ -50,23 +50,16 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_amount"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:ems="3"
-                    android:hint="@string/st_loan_amount"
-                    android:inputType="numberSigned"
-                    android:maxLength="10"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorEditText"
-                    android:textColorHint="@color/colorEditText"
-                    android:textCursorDrawable="@color/colorEditText"
-                    android:textSize="@dimen/dim_et_text_size" />
+                    android:hint="@string/st_loan_amount" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <!-- Interest -->
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/MyEditText"
+                style="@style/EditTextLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
@@ -74,23 +67,17 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_interest"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:ems="10"
-                    android:hint="@string/st_annual_percentage"
-                    android:inputType="numberSigned"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorEditText"
-                    android:textColorHint="@color/colorEditText"
-                    android:textCursorDrawable="@color/colorEditText"
-                    android:textSize="@dimen/dim_et_text_size" />
+                    android:hint="@string/st_annual_percentage" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <!-- Period -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_loan_period"
-                style="@style/MyEditText"
+                style="@style/EditTextLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
@@ -98,23 +85,17 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_loan_period"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:ems="10"
-                    android:hint="@string/st_period"
-                    android:inputType="numberSigned"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorEditText"
-                    android:textColorHint="@color/colorEditText"
-                    android:textCursorDrawable="@color/colorEditText"
-                    android:textSize="@dimen/dim_et_text_size" />
+                    android:hint="@string/st_period" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <!-- Grace period -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_grace_period"
-                style="@style/MyEditText"
+                style="@style/EditTextLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dim_et_margin_horizontal"
@@ -122,16 +103,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_grace_period"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
-                    android:hint="@string/st_grace_period"
-                    android:inputType="numberSigned"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorEditText"
-                    android:textColorHint="@color/colorEditText"
-                    android:textCursorDrawable="@color/colorEditText"
-                    android:textSize="@dimen/dim_et_text_size" />
+                    android:hint="@string/st_grace_period" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Calculate button -->
