@@ -71,6 +71,7 @@ class InitialFragment : Fragment(), InitialContract.InitialView {
     }
 
     private fun checkNightModeStatus(){
+
         binding.tbNightMode.isChecked = when(resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK){
             Configuration.UI_MODE_NIGHT_NO -> {

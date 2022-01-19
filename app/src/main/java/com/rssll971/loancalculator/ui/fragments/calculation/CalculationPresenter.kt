@@ -1,6 +1,8 @@
 package com.rssll971.loancalculator.ui.fragments.calculation
 
+import android.content.Context
 import android.content.res.Resources
+import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.models.CreditModel
 import com.rssll971.loancalculator.models.MonthCreditModel
 import kotlin.math.pow
@@ -17,9 +19,15 @@ class CalculationPresenter: CalculationContract.Presenter {
     }
 
     /**Get chosen by user credit type from view*/
-    override fun getCreditType(isAnnuity: Boolean) {
+    override fun getCreditType(isAnnuity: Boolean, context: Context) {
         this.isAnnuity = isAnnuity
-        view?.showCreditType(this.isAnnuity)
+
+        val creditType = if (isAnnuity)
+            context.getString(R.string.st_annuity)
+        else
+            context.getString(R.string.st_proportional)
+
+        view?.showCreditType(creditType)
     }
 
     /**Validate entered data.
@@ -52,7 +60,6 @@ class CalculationPresenter: CalculationContract.Presenter {
             estimateAnnuity(creditModel = creditModel)
         else
             estimateDifferential(creditModel = creditModel)
-
     }
 
     /**Next two fun calculate the credit tables*/
@@ -200,6 +207,6 @@ class CalculationPresenter: CalculationContract.Presenter {
         view?.onEstimationCallback(monthList, totalData)
 
     }
-    fun Int.dp(): Int = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
+    private fun Int.dp(): Int = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
 }
 

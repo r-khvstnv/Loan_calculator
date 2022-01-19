@@ -17,8 +17,8 @@ android {
         applicationId "com.rssll971.loancalculator"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 6
-        versionName "1.0.5"
+        versionCode 7
+        versionName "1.0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -54,7 +54,6 @@ dependencies {
     testImplementation 'junit:junit:4+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
 
     implementation "com.google.android.gms:play-services-ads:20.5.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"

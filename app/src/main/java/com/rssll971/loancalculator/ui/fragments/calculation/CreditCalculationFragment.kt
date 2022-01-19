@@ -48,7 +48,7 @@ class CreditCalculationFragment : Fragment(), CalculationContract.CalculatorView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.attach(this)
-        presenter.getCreditType(isAnnuity)
+        presenter.getCreditType(isAnnuity, requireContext())
 
         //prepare Ads
         MobileAds.initialize(requireContext()) {}
@@ -83,12 +83,8 @@ class CreditCalculationFragment : Fragment(), CalculationContract.CalculatorView
         presenter.detach()
         super.onDestroyView()
     }
-    override fun showCreditType(isAnnuity: Boolean) {
-        val creditType = if (isAnnuity)
-                getString(R.string.st_annuity)
-            else
-                getString(R.string.st_proportional)
-        binding.tvCreditType.text = creditType
+    override fun showCreditType(title: String) {
+        binding.tvCreditType.text = title
     }
 
     override fun showPoorDataErrorMessage() {

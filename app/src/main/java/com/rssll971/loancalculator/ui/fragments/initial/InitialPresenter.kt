@@ -1,11 +1,14 @@
 package com.rssll971.loancalculator.ui.fragments.initial
 
+import android.content.res.Configuration
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.rssll971.loancalculator.ui.base.BaseContract
 
 class InitialPresenter: InitialContract.Presenter {
     private var view: InitialContract.InitialView? = null
+    private var counter: Int = 0
     override fun attach(view: InitialContract.InitialView) {
         this.view = view
     }
@@ -27,5 +30,4 @@ class InitialPresenter: InitialContract.Presenter {
         else
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
-
 }
