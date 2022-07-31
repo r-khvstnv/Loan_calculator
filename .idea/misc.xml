@@ -33,6 +33,12 @@
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_credit_result.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/fragment_initial.xml" value="0.264" />
         <entry key="..\:/Programming/Projects_Work/Loancalculator/app/src/main/res/layout/item_month_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/ProjectsFolder/Loan_calculator/app/src/main/res/drawable/btn_large_ripple.xml" value="0.119" />
+        <entry key="..\:/ProjectsFolder/Loan_calculator/app/src/main/res/drawable/btn_large_shape.xml" value="0.119" />
+        <entry key="..\:/ProjectsFolder/Loan_calculator/app/src/main/res/drawable/ic_chart_downtrend.xml" value="0.1325" />
+        <entry key="..\:/ProjectsFolder/Loan_calculator/app/src/main/res/drawable/ic_chart_flat.xml" value="0.1325" />
+        <entry key="..\:/ProjectsFolder/Loan_calculator/app/src/main/res/drawable/title_background.xml" value="0.119" />
+        <entry key="..\:/ProjectsFolder/Loan_calculator/app/src/main/res/layout/fragment_initial.xml" value="0.25" />
       </map>
     </option>
   </component>

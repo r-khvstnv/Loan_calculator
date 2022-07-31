@@ -4,39 +4,52 @@
     <string name="first_details_banner_id" translatable="false">ca-app-pub-4362142146545991/2944370105</string>
     <string name="ad_banner_id_credit_result" translatable="false">ca-app-pub-4362142146545991/6963506167</string>
 
-
     <string name="app_name">Simple Loan Calculator</string>
     <string name="app_version" translatable="false">1.0.7</string>
-    <string name="st_icon" translatable="false">Icon</string>
-    <string name="st_version">Version:</string>
-    <string name="st_back">Back</string>
-    <string name="st_info">Info</string>
-    <string name="st_up">Up</string>
+
+    <string name="content_description_icon" translatable="false">Icon</string>
+    <string name="bundle_is_annuity_loan_type" translatable="false">isAnnuityLoanType</string>
+
+    <string name="title_version">Version:</string>
+    <string name="title_info">Info</string>
+
+    <string name="action_up">Up</string>
+    <string name="action_select">Select</string>
+    <string name="action_back">Back</string>
+    <string name="action_calculate">Calculate</string>
+
+    <string name="error_add_data">Enter the missing data</string>
 
 
     <!-- Main Activity-->
-    <string name="st_title_credit_choose">Select Type of Loan</string>
-    <string name="st_proportional">Differential</string>
-    <string name="st_annuity">Annuity</string>
-    <string name="st_annuity_meaning">The loan amount for payment is divided into unequal parts, and the interest rate is charged on the balance of the loan body. The amount of the contribution remains unchanged</string>
-    <string name="st_proportional_meaning">The loan amount is evenly divided for the entire term, and interest is charged monthly on the remaining amount of money. The amount of the contribution in the graph is reflected in unequal values</string>
-    <string name="st_prompt">Hint: More commonly used by banks</string>
+    <string name="title_select_loan_type">Select Loan Type</string>
+    <string name="title_differential">Differential</string>
+    <string name="title_annuity">Annuity</string>
+
+    <string name="description_annuity">The loan amount for payment is divided into unequal parts, and the interest rate is charged on the balance of the loan body. The amount of the contribution remains unchanged</string>
+    <string name="description_differential">The loan amount is evenly divided for the entire term, and interest is charged monthly on the remaining amount of money. The amount of the contribution in the graph is reflected in unequal values</string>
+
+    <string name="hint_annuity">Hint: More commonly used by banks</string>
+
+
     <!-- Credit Details Activity-->
-    <string name="st_credit_type">Type of credit</string>
-    <string name="st_loan_amount">Loan amount (c.u)</string>
-    <string name="st_annual_percentage">Interest (%)</string>
-    <string name="st_period">Period (months)</string>
-    <string name="st_grace_period">Grace Period (optional)</string>
-    <string name="st_calculate">Calculate</string>
-    <string name="st_add_data">Enter the missing data</string>
+    <string name="title_credit_type">Type of credit</string>
+    <string name="title_loan_amount">Loan amount (c.u)</string>
+    <string name="title_annual_percentage">Interest (%)</string>
+    <string name="title_period">Period (months)</string>
+    <string name="title_grace_period">Grace Period (optional)</string>
+
+
     <!-- Result Layout-->
-    <string name="st_month">Month</string>
-    <string name="st_title_debt">Main Debt</string>
-    <string name="st_title_interest">Interest</string>
-    <string name="st_title_total_payment">Total Payment</string>
-    <string name="st_title_balance">Balance</string>
-    <string name="st_title_total">Total</string>
+    <string name="title_month">Month</string>
+    <string name="title_debt">Main Debt</string>
+    <string name="title_interest">Interest</string>
+    <string name="title_total_payment">Total Payment</string>
+    <string name="title_balance">Balance</string>
+    <string name="title_total">Total</string>
+
+
     <!-- Info-->
-    <string name="st_note">Note</string>
-    <string name="st_note_description">The calculation is preliminary. The exact amount of the monthly payment will be determined by the Bank based on the results of consideration of the application</string>
+    <string name="title_note">Note</string>
+    <string name="description_note">The calculation is preliminary. The exact amount of the monthly payment will be determined by the Bank based on the results of consideration of the application</string>
 </resources>
