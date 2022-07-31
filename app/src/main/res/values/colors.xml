@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
     <color name="myWhite" >#EFEFEF</color>
     <color name="myPink">#ff9e9e</color>
-
-    <!-- Цвета меняющиеся также при изменении темы-->
     <color name="myWhite_transparent">#B3EFEFEF</color>
     <color name="myPinkLight">#E9DADA</color>
     <color name="myDarkBlue">#292E3C</color>
@@ -19,5 +9,29 @@
     <color name="myGoldTransparent">#CDA07B</color>
     <color name="myGold">#F5BC8C</color>
 
+    <color name="md_theme_light_primary">#FF626263</color>
+    <color name="md_theme_light_onPrimary">#FFFFFFFF</color>
+    <color name="md_theme_light_secondary">#ffbf6f6f</color>
+    <color name="md_theme_light_onSecondary">#FFFFFFFF</color>
+    <color name="md_theme_light_error">#BA1B1B</color>
+    <color name="md_theme_light_errorContainer">#FFDAD4</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410001</color>
+    <color name="md_theme_light_background">#FDFBFF</color>
+    <color name="md_theme_light_onBackground">#1B1B1D</color>
+    <color name="md_theme_light_surface">#FDFBFF</color>
+    <color name="md_theme_light_onSurface">#1B1B1D</color>
 
+    <color name="md_theme_dark_primary">#FF383839</color>
+    <color name="md_theme_dark_onPrimary">#B3EFEFEF</color>
+    <color name="md_theme_dark_secondary">#FF8c4244</color>
+    <color name="md_theme_dark_onSecondary">#fefefefe</color>
+    <color name="md_theme_dark_error">#FFB4A9</color>
+    <color name="md_theme_dark_errorContainer">#930006</color>
+    <color name="md_theme_dark_onError">#680003</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD4</color>
+    <color name="md_theme_dark_background">#1B1B1D</color>
+    <color name="md_theme_dark_onBackground">#E4E2E6</color>
+    <color name="md_theme_dark_surface">#1B1B1D</color>
+    <color name="md_theme_dark_onSurface">#E4E2E6</color>
 </resources>
