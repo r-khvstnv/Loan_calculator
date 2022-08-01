@@ -4,7 +4,7 @@
     <string name="first_details_banner_id" translatable="false">ca-app-pub-4362142146545991/2944370105</string>
     <string name="ad_banner_id_credit_result" translatable="false">ca-app-pub-4362142146545991/6963506167</string>
 
-    <string name="app_name">Simple Loan Calculator</string>
+    <string name="app_name">Loan Calculator</string>
     <string name="app_version" translatable="false">1.0.7</string>
 
     <string name="content_description_icon" translatable="false">Icon</string>
@@ -33,11 +33,13 @@
 
 
     <!-- Credit Details Activity-->
-    <string name="title_credit_type">Type of credit</string>
-    <string name="title_loan_amount">Loan amount (c.u)</string>
+    <string name="title_credit_type">Type of credit: </string>
+    <string name="title_loan_amount">Loan amount (c.u.)</string>
     <string name="title_annual_percentage">Interest (%)</string>
     <string name="title_period">Period (months)</string>
-    <string name="title_grace_period">Grace Period (optional)</string>
+    <string name="title_grace_period">Grace Period (months)</string>
+    <string name="title_initial_fee">Initial Fee (c.u.)</string>
+    <string name="title_optional">Optional</string>
 
 
     <!-- Result Layout-->

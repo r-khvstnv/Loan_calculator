@@ -1,10 +1,10 @@
 package com.rssll971.loancalculator.models
 
 /**This class is also used for total credit info*/
-data class LoanByMonth(
+data class MonthlyPayment(
     val month: Int,
-    val mainMonthDebt: Float,
-    val interestInMonth: Float,
-    val overallAmountInMonth: Float,
+    val mainDebtAmount: Float,
+    val interestAmount: Float,
+    val totalAmount: Float,
     val remainder: Float
 )

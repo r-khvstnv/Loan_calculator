@@ -13,8 +13,8 @@
     <string name="title_credit_type">Тип кредита:</string>
     <string name="title_loan_amount">Сумма кредита (у.е.)</string>
     <string name="title_annual_percentage">Проценты (%)</string>
-    <string name="title_period">Срок кредита (месяцев)</string>
-    <string name="title_grace_period">Льготный период (опционально)</string>
+    <string name="title_period">Срок кредита (месяцы)</string>
+    <string name="title_grace_period">Льготный период (месяцы)</string>
     <string name="action_calculate">Рассчитать</string>
     <string name="title_month">Месяц</string>
     <string name="title_debt">Основной долг</string>
@@ -27,4 +27,6 @@
     <string name="error_add_data">Введите недостающие данные</string>
     <string name="action_up">Вверх</string>
     <string name="action_select">Выбрать</string>
+    <string name="title_optional">Опционально</string>
+    <string name="title_initial_fee">Первоначальный взнос (у.е.)</string>
 </resources>
