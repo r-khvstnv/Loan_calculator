@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.rssll971.loancalculator.databinding.ActivityMainBinding
 import com.rssll971.loancalculator.ui.fragments.calculation.LoanCalculationFragment
+import com.rssll971.loancalculator.ui.fragments.details.DetailsFragment
 import com.rssll971.loancalculator.ui.fragments.initial.InitialFragment
 import com.rssll971.loancalculator.utils.Constants
 
@@ -61,6 +62,8 @@ class MainActivity : AppCompatActivity() {
                     type = NavType.BoolType
                 }
             }
+
+            fragment<DetailsFragment>(Constants.DEST_CALCULATION)
         }
     }
 
