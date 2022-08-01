@@ -11,7 +11,6 @@
         android:theme="@style/Theme.LoanCalc"
         >
         <activity android:name=".MainActivity"
-            android:screenOrientation="locked"
             android:windowSoftInputMode="stateAlwaysVisible"
             android:exported="true">
             <intent-filter>
