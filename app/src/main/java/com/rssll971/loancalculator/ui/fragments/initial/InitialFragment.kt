@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.rssll971.loancalculator.R
-import com.rssll971.loancalculator.ui.fragments.calculation.LoanCalculationFragment
+import androidx.navigation.fragment.findNavController
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
+import com.rssll971.loancalculator.utils.Constants
 
 class InitialFragment : Fragment() {
     override fun onCreateView(
@@ -32,17 +31,7 @@ class InitialFragment : Fragment() {
 
 
     private fun requestLoanCalculatorByType(isAnnuityType: Boolean){
-        val bundle = Bundle()
-        bundle.putBoolean(getString(R.string.title_credit_type), isAnnuityType)
-        val calculationFragment = LoanCalculationFragment()
-        calculationFragment.arguments = bundle
-        parentFragmentManager.beginTransaction().apply {
-            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-            replace(R.id.ll_container, calculationFragment)
-            setReorderingAllowed(true)
-            addToBackStack("initial")
-            commit()
-        }
+        findNavController().navigate("${Constants.DEST_CALCULATION}/$isAnnuityType")
     }
 }
 
