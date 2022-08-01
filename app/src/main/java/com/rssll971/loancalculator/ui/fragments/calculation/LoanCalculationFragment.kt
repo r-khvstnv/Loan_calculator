@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rssll971.loancalculator.R
-import com.rssll971.loancalculator.models.MonthlyPayment
+import com.rssll971.loancalculator.models.LoanResult
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 import com.rssll971.loancalculator.utils.Constants
 
@@ -71,10 +71,26 @@ class LoanCalculationFragment : Fragment() {
                             viewModel = viewModel
                         )
 
-                        val buttonModifier = Modifier.padding(16.dp, 5.dp)
+                        val buttonModifier = Modifier.padding(16.dp, 20.dp)
                         CalculateButton(modifier = buttonModifier) {
                             //todo calculate
                         }
+
+                        Spacer(modifier = Modifier.padding(30.dp))
+                        val loanResult = LoanResult(
+                            true,
+                            100000000.123f,
+                            122000000.456f,
+                            48,
+                            25,
+                            22,
+                            emptyList()
+                        )
+
+                        LoanResultCard(loanResult = loanResult) {
+                            findNavController().navigate(Constants.DEST_CALCULATION)
+                        }
+                        Spacer(modifier = Modifier.padding(30.dp))
 
 
                     }
