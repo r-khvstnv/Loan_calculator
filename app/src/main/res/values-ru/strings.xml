@@ -11,10 +11,10 @@
     <string name="description_annuity">Размер займа по платежу разбивается на неравные части, а процентная ставка начисляется на остаток тела кредита. Размер взноса остается неизменным</string>
     <string name="hint_annuity">Подсказка: Чаще используется банками</string>
     <string name="title_credit_type">Тип кредита:</string>
-    <string name="title_loan_amount">Сумма кредита (у.е.)</string>
-    <string name="title_annual_percentage">Проценты (%)</string>
-    <string name="title_period">Срок кредита (месяцы)</string>
-    <string name="title_grace_period">Льготный период (месяцы)</string>
+    <string name="hint_loan_amount">Сумма кредита (у.е.)</string>
+    <string name="hint_interest">Проценты (%)</string>
+    <string name="hint_period">Срок кредита (месяцы)</string>
+    <string name="hint_grace_period">Льготный период (месяцы)</string>
     <string name="action_calculate">Рассчитать</string>
     <string name="title_month">Месяц</string>
     <string name="title_debt">Основной долг</string>
@@ -28,5 +28,12 @@
     <string name="action_up">Вверх</string>
     <string name="action_select">Выбрать</string>
     <string name="title_optional">Опционально</string>
-    <string name="title_initial_fee">Первоначальный взнос (у.е.)</string>
+    <string name="hint_initial_fee">Первоначальный взнос (у.е.)</string>
+    <string name="title_loan_amount">Сумма кредита</string>
+    <string name="title_payout_amount">Сумма выплат</string>
+    <string name="title_interest_gross">Процент по кредиту</string>
+    <string name="title_interest_net">Итоговый процент</string>
+    <string name="title_payment_schedule">График платежей</string>
+    <string name="title_period">Срок</string>
+    <string name="title_months">месяц(ев)</string>
 </resources>

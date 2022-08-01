@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.details
+package com.rssll971.loancalculator.ui.fragments.details.composable
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -23,20 +24,24 @@ import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
     showBackground = true,
+    widthDp = 500,
 )
 @Composable
-fun ResultColumnsTitlePreview(){
+fun MonthlyPaymentTitlePreview(){
     LoanCalcTheme {
-        ResultColumnsTitle()
+        MonthlyPaymentTitle()
     }
 }
 
 @Composable
-fun ResultColumnsTitle() {
+fun MonthlyPaymentTitle() {
+    val screenWidth = LocalConfiguration.current.screenWidthDp.dp
+    //Margin for all text
     val textModifier = Modifier.padding(2.dp)
+
     val textStyle = TextStyle(
         color = MaterialTheme.colors.onPrimary,
-        fontSize = 18.sp,
+        fontSize = if (screenWidth >= 500.dp) 22.sp else 16.sp,
         textAlign = TextAlign.Center,
         fontWeight = FontWeight.Medium
     )
@@ -44,11 +49,13 @@ fun ResultColumnsTitle() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .wrapContentHeight()
             .background(color = MaterialTheme.colors.primary)
             .padding(0.dp, 8.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
+
         Text(
             text = stringResource(id = R.string.title_month),
             fontSize = 12.sp,
@@ -56,24 +63,28 @@ fun ResultColumnsTitle() {
             style = textStyle,
             overflow = TextOverflow.Visible
         )
+
         Text(
             text = stringResource(id = R.string.title_debt),
             modifier = textModifier.weight(2f),
             style = textStyle,
             overflow = TextOverflow.Visible
         )
+
         Text(
             text = stringResource(id = R.string.title_interest),
             modifier = textModifier.weight(2f),
             style = textStyle,
             overflow = TextOverflow.Visible
         )
+
         Text(
             text = stringResource(id = R.string.title_total_payment),
             modifier = textModifier.weight(2f),
             style = textStyle,
             overflow = TextOverflow.Visible
         )
+
         Text(
             text = stringResource(id = R.string.title_balance),
             modifier = textModifier.weight(2f),

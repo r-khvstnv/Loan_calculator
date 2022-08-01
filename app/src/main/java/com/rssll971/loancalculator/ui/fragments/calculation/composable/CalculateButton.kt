@@ -1,7 +1,6 @@
-package com.rssll971.loancalculator.ui.fragments.calculation
+package com.rssll971.loancalculator.ui.fragments.calculation.composable
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.AbsoluteRoundedCornerShape
@@ -11,6 +10,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -20,14 +20,13 @@ import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 
 @Preview(
     uiMode = UI_MODE_NIGHT_NO,
-    showBackground = true
+    showBackground = true,
+    locale = "en"
 )
 @Composable
 fun CalculateButtonPreview(){
     LoanCalcTheme {
-        val modifier = Modifier.padding(16.dp, 5.dp)
-        CalculateButton(
-            modifier = modifier) {
+        CalculateButton{
 
         }
     }
@@ -35,12 +34,13 @@ fun CalculateButtonPreview(){
 
 @Composable
 fun CalculateButton(
-    modifier: Modifier,
     onCalculateClick: () -> Unit
 ){
     Button(
         onClick = onCalculateClick,
-        modifier = modifier.fillMaxWidth(),
+        modifier = Modifier
+            .padding(dimensionResource(id = R.dimen.calculate_field_margin_horizontal), 0.dp)
+            .fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary),
         shape = AbsoluteRoundedCornerShape(8.dp)
     ) {

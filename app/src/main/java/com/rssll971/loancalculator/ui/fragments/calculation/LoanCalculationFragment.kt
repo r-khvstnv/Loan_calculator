@@ -19,14 +19,19 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.rssll971.loancalculator.SharedViewModel
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.models.LoanResult
+import com.rssll971.loancalculator.ui.fragments.calculation.composable.CalculateButton
+import com.rssll971.loancalculator.ui.fragments.calculation.composable.CalculatorTextFields
+import com.rssll971.loancalculator.ui.fragments.calculation.composable.CalculatorTopBar
+import com.rssll971.loancalculator.ui.fragments.calculation.composable.LoanResultCard
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 import com.rssll971.loancalculator.utils.Constants
 
 
 class LoanCalculationFragment : Fragment() {
-    private val viewModel: LoanCalculationViewModel by viewModels()
+    private val viewModel: SharedViewModel by viewModels()
 
     private var isAnnuity = true
 
@@ -53,7 +58,7 @@ class LoanCalculationFragment : Fragment() {
                             .verticalScroll(rememberScrollState())
                     ){
                         CalculatorTopBar(
-                            loanType =
+                            loanType = //TODO CHANGE TO STATE FLOW
                             if (isAnnuity) stringResource(id = R.string.title_annuity)
                             else stringResource(id = R.string.title_differential),
                             onCloseClick = {
@@ -64,20 +69,18 @@ class LoanCalculationFragment : Fragment() {
                             }
                         )
 
+
                         Spacer(modifier = Modifier.padding(10.dp))
+                        CalculatorTextFields(viewModel = viewModel)
+                        Spacer(modifier = Modifier.padding(20.dp))
 
 
-                        CalculatorTextFields(
-                            viewModel = viewModel
-                        )
-
-                        val buttonModifier = Modifier.padding(16.dp, 20.dp)
-                        CalculateButton(modifier = buttonModifier) {
-                            //todo calculate
+                        CalculateButton {
+                            //TODO CALCULATE FUN
                         }
 
-                        Spacer(modifier = Modifier.padding(30.dp))
-                        val loanResult = LoanResult(
+                        Spacer(modifier = Modifier.padding(50.dp))
+                        val loanResult = LoanResult( //TODO REMOVE TEST IMPL
                             true,
                             100000000.123f,
                             122000000.456f,
@@ -88,11 +91,9 @@ class LoanCalculationFragment : Fragment() {
                         )
 
                         LoanResultCard(loanResult = loanResult) {
-                            findNavController().navigate(Constants.DEST_CALCULATION)
+                            findNavController().navigate(Constants.DEST_DETAILS)
                         }
                         Spacer(modifier = Modifier.padding(30.dp))
-
-
                     }
                 }
             }

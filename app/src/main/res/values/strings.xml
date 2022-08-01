@@ -34,12 +34,21 @@
 
     <!-- Credit Details Activity-->
     <string name="title_credit_type">Type of credit: </string>
-    <string name="title_loan_amount">Loan amount (c.u.)</string>
-    <string name="title_annual_percentage">Interest (%)</string>
-    <string name="title_period">Period (months)</string>
-    <string name="title_grace_period">Grace Period (months)</string>
-    <string name="title_initial_fee">Initial Fee (c.u.)</string>
     <string name="title_optional">Optional</string>
+    <string name="title_loan_amount">Loan Amount</string>
+    <string name="title_payout_amount">Payout Amount</string>
+    <string name="title_interest_gross">Gross Interest</string>
+    <string name="title_interest_net">Net Interest</string>
+    <string name="title_payment_schedule">Payment Schedule</string>
+    <string name="title_period">Period</string>
+    <string name="title_months">months</string>
+
+    <string name="hint_loan_amount">Loan amount (c.u.)</string>
+    <string name="hint_interest">Interest (%)</string>
+    <string name="hint_period">Period (months)</string>
+    <string name="hint_grace_period">Grace Period (months)</string>
+    <string name="hint_initial_fee">Initial Fee (c.u.)</string>
+
 
 
     <!-- Result Layout-->

@@ -8,6 +8,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.rssll971.loancalculator.ui.fragments.initial.composable.InitialContent
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 import com.rssll971.loancalculator.utils.Constants
 
@@ -20,10 +21,14 @@ class InitialFragment : Fragment() {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
                 LoanCalcTheme {
-                    InitialUi {
-                        isAnnuity ->
-                        requestLoanCalculatorByType(isAnnuityType = isAnnuity)
-                    }
+                    InitialContent(
+                        onLoanCardClick = {
+                            requestLoanCalculatorByType(isAnnuityType = it)
+                        },
+                        onInfoClick = {
+                            //TODO ADD INFO DIALOG
+                        }
+                    )
                 }
             }
         }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".MainActivity">
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView_main"
@@ -14,12 +14,14 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/ad_banner_id_main" />
 
-    <LinearLayout
-        android:id="@+id/ll_container"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:defaultNavHost="true"
         android:orientation="vertical"
-        tools:background="@color/colorLayoutBackground" />
+        />
 </LinearLayout>
 
 

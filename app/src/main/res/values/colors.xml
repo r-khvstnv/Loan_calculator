@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="myWhite" >#EFEFEF</color>
-    <color name="myPink">#ff9e9e</color>
-    <color name="myWhite_transparent">#B3EFEFEF</color>
-    <color name="myPinkLight">#E9DADA</color>
-    <color name="myDarkBlue">#292E3C</color>
-    <color name="myBlackBlue">#2F3239</color>
-    <color name="myGoldTransparent">#CDA07B</color>
-    <color name="myGold">#F5BC8C</color>
-
     <color name="seed">#0a2b47</color>
     <color name="md_theme_light_primary">#0a2b47</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>

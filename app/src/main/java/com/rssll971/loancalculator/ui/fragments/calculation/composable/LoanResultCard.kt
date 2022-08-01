@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.calculation
+package com.rssll971.loancalculator.ui.fragments.calculation.composable
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -54,27 +55,30 @@ fun LoanResultCard(
             .fillMaxWidth(),
         shape = AbsoluteRoundedCornerShape(4.dp),
         backgroundColor = MaterialTheme.colors.background,
-        elevation = 6.dp
+        elevation = dimensionResource(id = R.dimen.m_default_elevation)
     ) {
         Column(
             modifier = Modifier.padding(8.dp)
         ) {
+            //Total title
             Text(
                 text = stringResource(id = R.string.title_total),
                 color = MaterialTheme.colors.primary,
-                fontSize = 36.sp,
+                fontSize = 32.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth().padding(0.dp, 8.dp, 0.dp, 0.dp)
+                modifier = Modifier
+                    .padding(0.dp, 8.dp, 0.dp, 0.dp)
+                    .fillMaxWidth()
             )
 
+            /**Styles for texts*/
             val titleTextStyle = TextStyle(
                 color = MaterialTheme.colors.primary,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Medium,
                 textAlign = TextAlign.Center,
             )
-
             val valueTextStyle = TextStyle(
                 color = MaterialTheme.colors.secondary,
                 fontSize = 18.sp,
@@ -84,16 +88,19 @@ fun LoanResultCard(
                 .fillMaxWidth()
                 .padding(0.dp, 5.dp)
 
+
+
             Spacer(modifier = Modifier.padding(0.dp, 16.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth()
             ) {
+                /**Loan amount info*/
                 Column (
                     modifier = Modifier.weight(1f)
                 ){
                     Text(
-                        text = "Loan Amount",
+                        text = stringResource(id = R.string.title_loan_amount),
                         style = titleTextStyle,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -104,11 +111,12 @@ fun LoanResultCard(
                     )
                 }
 
+                /**Payout amount info*/
                 Column(
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = "Payout Amount",
+                        text = stringResource(id = R.string.title_payout_amount),
                         style = titleTextStyle,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -125,11 +133,12 @@ fun LoanResultCard(
             Row(
                 modifier = Modifier.fillMaxWidth()
             ) {
+                /**Gross interest info*/
                 Column (
                     modifier = Modifier.weight(1f)
                 ){
                     Text(
-                        text = "Interest Gross",
+                        text = stringResource(id = R.string.title_interest_gross),
                         style = titleTextStyle,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -140,11 +149,12 @@ fun LoanResultCard(
                     )
                 }
 
+                /**Gross interest info*/
                 Column(
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = "Interest Net",
+                        text = stringResource(id = R.string.title_interest_net),
                         style = titleTextStyle,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -155,6 +165,7 @@ fun LoanResultCard(
                     )
                 }
             }
+
 
             Divider(
                 color = MaterialTheme.colors.primary,
@@ -167,14 +178,17 @@ fun LoanResultCard(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()
             ) {
+                /**Period info*/
                 Text(
-                    text = "Period: ${loanResult.period} months",
+                    text =
+                    "${stringResource(id = R.string.title_period)}: ${loanResult.period} ${stringResource(id = R.string.title_months)}",
                     style = titleTextStyle,
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.weight(1.6f)
                 )
 
+                /**Schedule button*/
                 Button(
                     onClick = onClick,
                     colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary),
@@ -182,13 +196,12 @@ fun LoanResultCard(
                     modifier = Modifier.weight(2f)
                 ) {
                     Text(
-                        text = "Payment Schedule",
+                        text = stringResource(id = R.string.title_payment_schedule),
                         fontSize = 16.sp,
                         color = MaterialTheme.colors.onSecondary
                     )
                 }
             }
-
         }
     }
 }

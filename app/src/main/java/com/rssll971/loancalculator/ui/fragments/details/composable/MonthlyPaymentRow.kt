@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.details
+package com.rssll971.loancalculator.ui.fragments.details.composable
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -66,6 +66,7 @@ fun MonthlyPaymentRow(
     val rowModifier: Modifier
     val textStyle: TextStyle
 
+    /**If it's last month in year, will set another style*/
     if (monthlyPayment.month % 12 == 0){
         rowModifier = rowModifierEndOfYear
         textStyle = textStyleEndOfYear

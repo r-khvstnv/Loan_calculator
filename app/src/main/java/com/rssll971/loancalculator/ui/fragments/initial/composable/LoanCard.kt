@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.initial
+package com.rssll971.loancalculator.ui.fragments.initial.composable
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.util.Log
@@ -18,12 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rssll971.loancalculator.R
@@ -31,7 +31,8 @@ import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 
 @Preview(
     uiMode = UI_MODE_NIGHT_NO,
-    showBackground = true
+    showBackground = true,
+    locale = "en"
 )
 @Composable
 fun LoanCardPreview(){
@@ -41,8 +42,6 @@ fun LoanCardPreview(){
             title = stringResource(id = R.string.title_annuity),
             description = stringResource(id = R.string.description_annuity),
             hint = stringResource(id = R.string.hint_annuity),
-            paddingTop = 5.dp,
-            paddingBottom = 5.dp,
             painterResource(id = R.drawable.ic_chart_flat),
             true
         ){
@@ -56,79 +55,102 @@ fun LoanCard(
     title: String,
     description: String,
     hint: String,
-    paddingTop: Dp,
-    paddingBottom: Dp,
     icon: Painter,
     isAnnuityLoan: Boolean,
     onClick: (Boolean) -> Unit
 ){
     Card(
         modifier = Modifier
-            .padding(20.dp, paddingTop, 20.dp, paddingBottom)
+            .padding(dimensionResource(id = R.dimen.loan_card_margin_horizontal), 0.dp)
             .fillMaxWidth()
+            //pass loan type onClick
             .clickable { onClick(isAnnuityLoan) },
-        shape = AbsoluteRoundedCornerShape(4.dp),
+        shape = AbsoluteRoundedCornerShape(dimensionResource(id = R.dimen.loan_card_corner_radius)),
         backgroundColor = MaterialTheme.colors.background,
-        elevation = 6.dp
+        elevation = dimensionResource(id = R.dimen.m_default_elevation)
     ) {
-        Column {
 
+        Column {
+            /**Loan Type*/
             Text(
                 text = title,
                 color = MaterialTheme.colors.onPrimary,
                 fontSize = 28.sp,
                 textAlign = TextAlign.Start ,
                 modifier = Modifier
-                    .padding(0.dp, 16.dp, 80.dp, 0.dp)
+                    //margin
+                    .padding(
+                        0.dp,
+                        dimensionResource(id = R.dimen.loan_card_padding_vertical),
+                        80.dp,
+                        0.dp
+                    )
                     .background(
                         color = MaterialTheme.colors.primary,
                         shape = AbsoluteCutCornerShape(0.dp, 0.dp, 40.dp, 0.dp)
                     )
                     .fillMaxWidth()
+                    //padding
                     .padding(16.dp, 5.dp, 70.dp, 5.dp)
             )
 
+            Spacer(modifier = Modifier.padding(20.dp))
+
+            /**Loan Image*/
             Image(
                 painter = icon,
                 contentDescription = "",
                 alignment = Alignment.Center,
                 colorFilter = ColorFilter.tint(MaterialTheme.colors.primary),
                 modifier = Modifier
-                    .padding(20.dp, 30.dp, 20.dp, 40.dp)
-                    .size(128.dp)
+                    .size(dimensionResource(id = R.dimen.loan_card_image_size))
+                    .fillMaxSize()
                     .align(alignment = Alignment.CenterHorizontally)
             )
 
+
+
             Divider(
                 color = MaterialTheme.colors.primary,
-                thickness = 2.dp,
-                modifier = Modifier.padding(20.dp, 30.dp, 20.dp, 5.dp)
+                thickness = dimensionResource(id = R.dimen.loan_card_divider_thickness),
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.loan_card_padding_horizontal), 50.dp,
+                    dimensionResource(id = R.dimen.loan_card_padding_horizontal), 0.dp
+                )
             )
 
+            /**Description*/
             Text(
                 text = description,
                 color = MaterialTheme.colors.onBackground,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Start,
                 modifier = Modifier
-                    .padding(22.dp, 0.dp)
+                    .padding(dimensionResource(id = R.dimen.loan_card_padding_horizontal), 5.dp)
                     .fillMaxWidth()
-
             )
 
             Divider(
                 color = MaterialTheme.colors.primary,
-                thickness = 2.dp,
-                modifier = Modifier.padding(20.dp, 5.dp)
+                thickness = dimensionResource(id = R.dimen.loan_card_divider_thickness),
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.loan_card_padding_horizontal), 0.dp)
             )
 
+
+            /**Hint with Button*/
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
-                    .padding(20.dp, 5.dp, 20.dp, 20.dp)
+                    .padding(
+                        dimensionResource(id = R.dimen.loan_card_padding_horizontal),
+                        10.dp,
+                        dimensionResource(id = R.dimen.loan_card_padding_horizontal),
+                        dimensionResource(id = R.dimen.loan_card_padding_vertical)
+                    )
                     .fillMaxWidth()
             ) {
+                /**Hint*/
                 Text(
                     text = hint,
                     color = MaterialTheme.colors.secondary,
@@ -139,9 +161,9 @@ fun LoanCard(
                         .padding(0.dp, 0.dp, 8.dp, 0.dp)
                         .weight(2f)
                 )
-
+                /**Button*/
                 Text(
-                    text = "Select",
+                    text = stringResource(id = R.string.action_select),
                     color = MaterialTheme.colors.onSecondary,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
@@ -152,7 +174,7 @@ fun LoanCard(
                             shape = AbsoluteRoundedCornerShape(4.dp)
                         )
                         .padding(16.dp, 10.dp)
-                        .weight(1f)
+                        .weight(1.3f)
                 )
             }
         }

@@ -48,13 +48,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+        /**Navigation Graph*/
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         val navController = navHostFragment.findNavController()
         navController.graph = navController.createGraph(
             startDestination = Constants.DEST_INITIAL
         ){
+            //InitialFragment
             fragment<InitialFragment>(Constants.DEST_INITIAL)
-
+            //LoanCalculationFragment with isAnnuity argument
             fragment<LoanCalculationFragment>(
                 "${Constants.DEST_CALCULATION}/{${Constants.ARGS_IS_ANNUITY}}"
             ){
@@ -62,8 +65,8 @@ class MainActivity : AppCompatActivity() {
                     type = NavType.BoolType
                 }
             }
-
-            fragment<DetailsFragment>(Constants.DEST_CALCULATION)
+            //DetailsFragment
+            fragment<DetailsFragment>(Constants.DEST_DETAILS)
         }
     }
 
@@ -76,4 +79,5 @@ class MainActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
+
 }
