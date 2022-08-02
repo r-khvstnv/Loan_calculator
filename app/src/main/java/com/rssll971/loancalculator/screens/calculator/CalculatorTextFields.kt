@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.calculation.composable
+package com.rssll971.loancalculator.screens.calculator
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*

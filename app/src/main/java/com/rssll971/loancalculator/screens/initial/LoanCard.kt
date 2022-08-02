@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.initial.composable
+package com.rssll971.loancalculator.screens.initial
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.util.Log

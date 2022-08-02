@@ -1,4 +1,4 @@
-package com.rssll971.loancalculator.ui.fragments.details
+package com.rssll971.loancalculator.screens.details
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
@@ -8,11 +8,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.rssll971.loancalculator.SharedViewModel
 import com.rssll971.loancalculator.models.MonthlyPayment
-import com.rssll971.loancalculator.ui.fragments.details.composable.MonthlyPaymentRow
-import com.rssll971.loancalculator.ui.fragments.details.composable.MonthlyPaymentTitle
+import com.rssll971.loancalculator.ui.composable.AdvertView
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 
 @Preview(
@@ -20,7 +22,7 @@ import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
     showBackground = true,
 )
 @Composable
-fun MonthlyPaymentLazyColumnPreview(){
+fun DetailsContentPreview(){
     LoanCalcTheme {
         val list = mutableListOf<MonthlyPayment>()
         for (i in 0..36){
@@ -31,12 +33,24 @@ fun MonthlyPaymentLazyColumnPreview(){
             list.add(monthlyPayment)
         }
 
-        MonthlyPaymentLazyColumn(monthlyPaymentList = list)
+        DetailsContent(monthlyPaymentList = list)
+    }
+}
+
+
+@Composable
+fun DetailsScreen(
+    viewModel: SharedViewModel
+){
+    val loanResult by viewModel.loanResult.collectAsState()
+    Column {
+        AdvertView()
+        DetailsContent(monthlyPaymentList = loanResult.monthlyPayments)
     }
 }
 
 @Composable
-fun MonthlyPaymentLazyColumn(monthlyPaymentList: List<MonthlyPayment>) {
+fun DetailsContent(monthlyPaymentList: List<MonthlyPayment>) {
     val state = rememberLazyListState()
     Column (
         modifier = Modifier.fillMaxSize()
