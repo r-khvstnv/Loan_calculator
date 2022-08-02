@@ -7,5 +7,5 @@ data class LoanResult(
     val period: Int = 0,
     val interestGross: Int = 0,
     val interestNet: Int = 0,
-    val monthlyPayments: List<MonthlyPayment>
+    val monthlyPayments: List<MonthlyPayment> = emptyList()
 )
