@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.models.LoanResult
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
+import com.rssll971.loancalculator.utils.isRuCurrLocale
 
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
@@ -78,7 +79,7 @@ fun LoanResultCard(
                 /**Styles for texts*/
                 val titleTextStyle = TextStyle(
                     color = MaterialTheme.colors.primary,
-                    fontSize = 24.sp,
+                    fontSize = if (isRuCurrLocale()) 20.sp else 24.sp,
                     fontWeight = FontWeight.Medium,
                     textAlign = TextAlign.Center,
                 )

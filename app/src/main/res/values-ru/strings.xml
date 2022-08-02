@@ -28,10 +28,10 @@
     <string name="action_up">Вверх</string>
     <string name="action_select">Выбрать</string>
     <string name="title_optional">Опционально</string>
-    <string name="hint_initial_fee">Первоначальный взнос (у.е.)</string>
+    <string name="hint_initial_fee">Первоначальный взнос (%)</string>
     <string name="title_loan_amount">Сумма кредита</string>
     <string name="title_payout_amount">Сумма выплат</string>
-    <string name="title_interest_gross">Процент по кредиту</string>
+    <string name="title_interest_gross">Кредитная ставка</string>
     <string name="title_interest_net">Итоговый процент</string>
     <string name="title_payment_schedule">График платежей</string>
     <string name="title_period">Срок</string>

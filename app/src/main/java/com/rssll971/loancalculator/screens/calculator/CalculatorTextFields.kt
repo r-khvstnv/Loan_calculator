@@ -132,7 +132,7 @@ fun CalculatorTextFields(
         //Initial fee (optional)
         OutlinedTextField(
             value = initialFee,
-            onValueChange = viewModel::setTypedLoanInitialFee,
+            onValueChange = {if(it.length <= 2) viewModel.setTypedLoanInitialFee(it)},
             label = { Text(text = stringResource(id = R.string.hint_initial_fee))},
             keyboardOptions = tFldKeyboardOptions,
             modifier = textFieldsModifier,

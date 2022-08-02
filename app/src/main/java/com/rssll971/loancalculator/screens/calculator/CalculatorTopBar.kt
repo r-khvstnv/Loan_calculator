@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.ui.composable.IconButtonSmall
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
+import com.rssll971.loancalculator.utils.isRuCurrLocale
 
 @Preview(
     uiMode = UI_MODE_NIGHT_NO,
@@ -63,7 +64,7 @@ fun CalculatorTopBar(
         Text(
             text = loanType,
             textAlign = TextAlign.Center,
-            fontSize = 28.sp,
+            fontSize = if (isRuCurrLocale()) 20.sp else 28.sp,
             fontWeight = FontWeight.Medium,
             color = MaterialTheme.colors.primary,
             modifier = Modifier.padding(10.dp, 0.dp)

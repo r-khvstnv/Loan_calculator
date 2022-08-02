@@ -23,11 +23,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rssll971.loancalculator.R
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
+import com.rssll971.loancalculator.utils.isRuCurrLocale
 
 @Preview(
     uiMode = UI_MODE_NIGHT_NO,
@@ -75,8 +77,8 @@ fun LoanCard(
             Text(
                 text = title,
                 color = MaterialTheme.colors.onPrimary,
-                fontSize = 28.sp,
-                textAlign = TextAlign.Start ,
+                fontSize = if (isRuCurrLocale()) 22.sp else 28.sp,
+                textAlign = TextAlign.Start,
                 modifier = Modifier
                     //margin
                     .padding(
@@ -91,7 +93,9 @@ fun LoanCard(
                     )
                     .fillMaxWidth()
                     //padding
-                    .padding(16.dp, 5.dp, 70.dp, 5.dp)
+                    .padding(16.dp, 5.dp, 50.dp, 5.dp),
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 1
             )
 
             Spacer(modifier = Modifier.padding(20.dp))
@@ -154,7 +158,7 @@ fun LoanCard(
                 Text(
                     text = hint,
                     color = MaterialTheme.colors.secondary,
-                    fontSize = 16.sp,
+                    fontSize = if (isRuCurrLocale()) 14.sp else 16.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Start,
                     modifier = Modifier

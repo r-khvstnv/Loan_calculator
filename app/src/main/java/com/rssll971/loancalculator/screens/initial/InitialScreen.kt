@@ -11,8 +11,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,6 +25,8 @@ import com.rssll971.loancalculator.ui.composable.AdvertView
 import com.rssll971.loancalculator.ui.composable.IconButtonSmall
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 import com.rssll971.loancalculator.utils.Constants
+import com.rssll971.loancalculator.utils.isRuCurrLocale
+import java.util.*
 
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
@@ -80,7 +84,18 @@ fun InitialContent(
                 .fillMaxWidth()
         ) {
             //Title
-            TopTitleText()
+            Text(
+                text = stringResource(id = R.string.title_select_loan_type),
+                color = MaterialTheme.colors.onPrimary,
+                fontSize = if (isRuCurrLocale()) 22.sp else 28.sp,
+                textAlign = TextAlign.Start ,
+                modifier = Modifier
+                    .background(
+                        color = MaterialTheme.colors.primary,
+                        shape = AbsoluteCutCornerShape(0.dp, 0.dp, 50.dp, 0.dp)
+                    )
+                    .padding(20.dp, 10.dp, 70.dp, 10.dp)
+            )
             //Info button
             IconButtonSmall(
                 icon = painterResource(id = R.drawable.ic_info),
@@ -125,21 +140,4 @@ fun InitialContent(
             Spacer(modifier = Modifier.padding(30.dp))
         }
     }
-}
-
-/**Method shows styled title*/
-@Composable
-fun TopTitleText(){
-    Text(
-        text = stringResource(id = R.string.title_select_loan_type),
-        color = MaterialTheme.colors.onPrimary,
-        fontSize = 28.sp,
-        textAlign = TextAlign.Start ,
-        modifier = Modifier
-            .background(
-                color = MaterialTheme.colors.primary,
-                shape = AbsoluteCutCornerShape(0.dp, 0.dp, 50.dp, 0.dp)
-            )
-            .padding(20.dp, 10.dp, 70.dp, 10.dp)
-    )
 }
