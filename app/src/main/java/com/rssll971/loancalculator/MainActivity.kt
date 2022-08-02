@@ -6,7 +6,6 @@ import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
 import androidx.navigation.compose.rememberNavController
 import com.rssll971.loancalculator.navigation.SetupNavHostController
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
@@ -21,13 +20,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-
             LoanCalcTheme {
                 SetupNavHostController(navController)
-                Column {
-                    //AdvertView()
-
-                }
 
                 if (savedInstanceState == null){
                     navController.navigate(Constants.DEST_INITIAL)

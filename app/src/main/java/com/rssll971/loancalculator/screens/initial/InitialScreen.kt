@@ -9,6 +9,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -21,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.rssll971.loancalculator.R
+import com.rssll971.loancalculator.screens.info.InfoDialog
 import com.rssll971.loancalculator.ui.composable.AdvertView
 import com.rssll971.loancalculator.ui.composable.IconButtonSmall
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
@@ -46,6 +49,7 @@ fun InitialContentPreview(){
 fun InitialScreen(
     navController: NavController
 ){
+    val dialogState = remember { mutableStateOf(false)}
     Column {
         AdvertView()
 
@@ -56,9 +60,15 @@ fun InitialScreen(
                 navController.navigate("${Constants.DEST_CALCULATION}/$it")
             },
             onInfoClick = {
-                //TODO ADD INFO DIALOG
+                dialogState.value = true
             }
         )
+    }
+
+    InfoDialog(
+        state = dialogState
+    ) {
+        dialogState.value = false
     }
 }
 
