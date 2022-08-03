@@ -1,3 +1,11 @@
+/************************************************
+ * Created by Ruslan Khvastunov                 *
+ * r.khvastunov@gmail.com                       *
+ * Copyright (c) 2022                           *
+ * All rights reserved.                         *
+ *                                              *
+ ************************************************/
+
 package com.rssll971.loancalculator.screens.calculator
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
