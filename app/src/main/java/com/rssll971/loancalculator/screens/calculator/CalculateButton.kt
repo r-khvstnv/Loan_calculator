@@ -26,9 +26,7 @@ import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 @Composable
 fun CalculateButtonPreview(){
     LoanCalcTheme {
-        CalculateButton{
-
-        }
+        CalculateButton{}
     }
 }
 

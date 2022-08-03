@@ -16,16 +16,17 @@ import com.rssll971.loancalculator.utils.Constants
 
 @Composable
 fun SetupNavHostController(navController: NavHostController){
-
     val sharedViewModel: SharedViewModel = viewModel()
 
-    NavHost(navController = navController, startDestination = Constants.DEST_INITIAL){
 
+    NavHost(navController = navController, startDestination = Constants.DEST_INITIAL){
+        //InitialScreen
         composable(Constants.DEST_INITIAL){
             InitialScreen(navController)
         }
 
         navigation(startDestination = Constants.DEST_INITIAL, Constants.GRAPH_SHARED){
+            //LoanCalculationScreen
             composable(
                 route = "${Constants.DEST_CALCULATION}/{${Constants.ARGS_IS_ANNUITY}}",
                 arguments = listOf(navArgument(Constants.ARGS_IS_ANNUITY){type = NavType.BoolType})
@@ -36,6 +37,7 @@ fun SetupNavHostController(navController: NavHostController){
                     viewModel = sharedViewModel
                 )
             }
+            //DetailsScreen
             composable(Constants.DEST_DETAILS){
                 DetailsScreen(
                     viewModel = sharedViewModel

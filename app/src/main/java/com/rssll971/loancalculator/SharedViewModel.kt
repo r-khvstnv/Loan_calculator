@@ -9,22 +9,24 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.pow
 
 class SharedViewModel: ViewModel() {
-    private var _typedLoanAmount = MutableStateFlow("123456")
+    //States for textFields
+    private var _typedLoanAmount = MutableStateFlow("")
     val typedLoanAmount: StateFlow<String> get() = _typedLoanAmount
-    private var _typedLoanInterest = MutableStateFlow("1")
+    private var _typedLoanInterest = MutableStateFlow("")
     val typedLoanInterest: StateFlow<String> get() = _typedLoanInterest
-    private var _typedLoanPeriod = MutableStateFlow("5")
+    private var _typedLoanPeriod = MutableStateFlow("")
     val typedLoanPeriod: StateFlow<String> get() = _typedLoanPeriod
     private var _typedLoanGracePeriod = MutableStateFlow("")
     val typedLoanGracePeriod: StateFlow<String> get() = _typedLoanGracePeriod
     private var _typedLoanInitialFee = MutableStateFlow("")
     val typedLoanInitialFee: StateFlow<String> get() = _typedLoanInitialFee
-
+    //Loan type state
     private var _isAnnuity = MutableStateFlow(true)
     val isAnnuity: StateFlow<Boolean> get() = _isAnnuity
-    //private var _isFieldMissed  = MutableStateFlow(false)
-    //val isFieldMissed: StateFlow<Boolean> get() = _isFieldMissed
-
+    //State for missed data
+    private var _isFieldMissed  = MutableStateFlow(false)
+    val isFieldMissed: StateFlow<Boolean> get() = _isFieldMissed
+    //Loan calculation result
     private var _loanResult = MutableStateFlow(LoanResult())
     val loanResult: StateFlow<LoanResult> get() = _loanResult
 
@@ -37,6 +39,7 @@ class SharedViewModel: ViewModel() {
         _loanResult.value = LoanResult()
     }
 
+    /*Next methods set value of typed data*/
     fun setTypedLoanAmount(value: String){
         _typedLoanAmount.value = value
     }
@@ -53,7 +56,9 @@ class SharedViewModel: ViewModel() {
         _typedLoanInitialFee.value = value
     }
 
+    /**Method validates that mandatory data is provided*/
     private fun isUserInputIsValid(): Boolean{
+        _isFieldMissed.value = false
         return when{
             _typedLoanAmount.value.isEmpty() -> false
             _typedLoanInterest.value.isEmpty() -> false
@@ -62,9 +67,11 @@ class SharedViewModel: ViewModel() {
         }
     }
 
+    /**Method maps loan data from text fields into Loan model and
+     * requests corresponding calculation type.*/
     fun mapLoanData(){
         if (!isUserInputIsValid()){
-            //_isFieldMissed.value = true
+            _isFieldMissed.value = true
         } else{
 
             val gracePeriod = if (_typedLoanGracePeriod.value.isNotEmpty()) {
@@ -96,13 +103,14 @@ class SharedViewModel: ViewModel() {
         }
     }
 
+    /**Method estimates payment schedule for annuity loan */
     private fun estimateAsAnnuityLoan(loan: Loan){
         val initialFee: Float = loan.amount * (loan.initialFee / 100f)
         var amount: Float = loan.amount - initialFee
         var gracePeriod = loan.gracePeriod
         val interest: Float = loan.interest / 100.0f
 
-        var interestAmountOverall = 0.0f //todo interest total
+        var interestAmountOverall = 0.0f
 
         val monthlyPaymentList: ArrayList<MonthlyPayment> = ArrayList()
 
@@ -182,6 +190,7 @@ class SharedViewModel: ViewModel() {
         _loanResult.value = loanResult
     }
 
+    /**Method estimates payment schedule for differential loan */
     private fun estimateAsDifferentialLoan(loan: Loan){
         val initialFee: Float = loan.amount * (loan.initialFee / 100f)
         var amount: Float = loan.amount - initialFee

@@ -1,5 +1,6 @@
 package com.rssll971.loancalculator.models
 
+/**Preliminary loan data model*/
 data class Loan(
     val isAnnuityType: Boolean = true,
     val amount: Int = 0,

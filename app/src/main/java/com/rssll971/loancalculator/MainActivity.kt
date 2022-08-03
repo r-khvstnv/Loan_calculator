@@ -7,17 +7,23 @@ import android.view.inputmethod.InputMethodManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import com.rssll971.loancalculator.navigation.SetupNavHostController
 import com.rssll971.loancalculator.ui.theme.LoanCalcTheme
 import com.rssll971.loancalculator.utils.Constants
 
 
 class MainActivity : ComponentActivity() {
-    //analytics TODO ACTIVATE
-    //private lateinit var firebaseAnalytics: FirebaseAnalytics
+    //analytics
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        firebaseAnalytics = Firebase.analytics
+
         setContent {
             val navController = rememberNavController()
             LoanCalcTheme {
@@ -28,10 +34,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-
-
-        //аналитика TODO ACTIVATE
-        //firebaseAnalytics = Firebase.analytics
     }
 
     /**Hide keyboard on outside click*/

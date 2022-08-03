@@ -68,7 +68,7 @@ fun InfoDialog(
                     Row(
                         verticalAlignment = Alignment.CenterVertically
                     ){
-                        //todo change to logo
+
                         Image(
                             painter = painterResource(id = R.drawable.ic_logo_v2),
                             contentDescription = "",

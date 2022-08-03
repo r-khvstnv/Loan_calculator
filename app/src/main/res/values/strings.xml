@@ -1,11 +1,9 @@
 <resources>
     <string name="ad_id" translatable="false">ca-app-pub-4362142146545991~8164250653</string>
     <string name="ad_banner_id_main" translatable="false">ca-app-pub-4362142146545991/6276453919</string>
-    <string name="first_details_banner_id" translatable="false">ca-app-pub-4362142146545991/2944370105</string>
-    <string name="ad_banner_id_credit_result" translatable="false">ca-app-pub-4362142146545991/6963506167</string>
 
     <string name="app_name">Loan Calculator</string>
-    <string name="app_version" translatable="false">1.0.7</string>
+    <string name="app_version" translatable="false">1.1.0</string>
 
     <string name="content_description_icon" translatable="false">Icon</string>
     <string name="bundle_is_annuity_loan_type" translatable="false">isAnnuityLoanType</string>

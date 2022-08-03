@@ -53,6 +53,7 @@ fun CalculatorTextFields(
         val period by viewModel.typedLoanPeriod.collectAsState()
         val gracePeriod by viewModel.typedLoanGracePeriod.collectAsState()
         val initialFee by viewModel.typedLoanInitialFee.collectAsState()
+        val isFieldMissed by viewModel.isFieldMissed.collectAsState()
 
 
         val textFieldsModifier = Modifier
@@ -67,7 +68,8 @@ fun CalculatorTextFields(
             label = { Text(text = stringResource(id = R.string.hint_loan_amount))},
             keyboardOptions = tFldKeyboardOptions,
             modifier = textFieldsModifier,
-            maxLines = 1
+            maxLines = 1,
+            isError = isFieldMissed && amount.isEmpty()
         )
         //Interest
         OutlinedTextField(
@@ -76,7 +78,8 @@ fun CalculatorTextFields(
             label = { Text(text = stringResource(id = R.string.title_interest))},
             keyboardOptions = tFldKeyboardOptions,
             modifier = textFieldsModifier,
-            maxLines = 1
+            maxLines = 1,
+            isError = isFieldMissed && interest.isEmpty()
         )
         //Period
         OutlinedTextField(
@@ -85,7 +88,8 @@ fun CalculatorTextFields(
             label = { Text(text = stringResource(id = R.string.hint_period))},
             keyboardOptions = tFldKeyboardOptions,
             modifier = textFieldsModifier,
-            maxLines = 1
+            maxLines = 1,
+            isError = isFieldMissed && period.isEmpty()
         )
 
 
@@ -127,7 +131,7 @@ fun CalculatorTextFields(
             label = { Text(text = stringResource(id = R.string.hint_grace_period))},
             keyboardOptions = tFldKeyboardOptions,
             modifier = textFieldsModifier,
-            maxLines = 1
+            maxLines = 1,
         )
         //Initial fee (optional)
         OutlinedTextField(
