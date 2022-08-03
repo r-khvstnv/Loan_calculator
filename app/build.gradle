@@ -1,11 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
     id 'com.google.gms.google-services'
-    // Apply the Crashlytics Gradle plugin
+    //Crashlytics Gradle plugin
     id 'com.google.firebase.crashlytics'
-    // Apply the Performance Monitoring plugin
+    //Performance Monitoring plugin
     id 'com.google.firebase.firebase-perf'
 }
 
@@ -16,8 +15,8 @@ android {
         applicationId "com.rssll971.loancalculator"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 10
+        versionName "1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -49,7 +48,6 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
@@ -67,12 +65,12 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 
     implementation "com.google.android.gms:play-services-ads:21.1.0"
-    implementation "androidx.recyclerview:recyclerview:1.2.1"
 
+    //Firebase
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    // Declare the dependencies for the Crashlytics and Analytics libraries
+    //Crashlytics and Analytics libraries
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
-    // Declare the dependency for the Performance Monitoring library
+    //Performance Monitoring library
     implementation 'com.google.firebase:firebase-perf-ktx'
 }
